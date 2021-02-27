@@ -19,7 +19,7 @@ class CreateDishesTable extends Migration
             $table -> string('name', 100);
             $table -> text('desc');
             $table -> integer('price');
-            $table -> tinyInteger('visibile');
+            $table -> tinyInteger('visible');
             $table -> string('type') -> nullable();
 
             $table -> unsignedBigInteger('user_id');

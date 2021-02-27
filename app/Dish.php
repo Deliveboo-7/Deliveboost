@@ -10,7 +10,7 @@ class Dish extends Model
         'name',
         'desc',
         'price',
-        'visibile',
+        'visible',
         'type',
     ];
 
