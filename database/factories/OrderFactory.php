@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-        'code' => $faker -> unique() -> word,
+        'code' => $faker -> unique() -> numberBetween(1111, 9999),
         'customer_name' => $faker -> name,
         'customer_address' => $faker -> streetAddress,
         'customer_phone' => "392-" . rand(1234567, 9876543),

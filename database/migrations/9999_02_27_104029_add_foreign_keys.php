@@ -50,6 +50,12 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
+        Schema::table('dish_order', function (Blueprint $table) {
+
+            $table  -> dropForeign('dish_order-dishes');
+            $table  -> dropForeign('dish_order-orders');
+        });
+
         Schema::table('dishes', function (Blueprint $table) {
 
             $table  -> dropForeign('dishes-user');
