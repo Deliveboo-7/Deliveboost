@@ -23,6 +23,13 @@ class AddForeignKeys extends Migration
                     -> references('id')
                     -> on('typologies');
         });
+
+        Schema::table('dishes', function (Blueprint $table) {
+
+            $table  -> foreign('user_id', "dishes-user")
+                -> references('id')
+                -> on('users');
+        });
     }
 
     /**
@@ -32,6 +39,11 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
+        Schema::table('dishes', function (Blueprint $table) {
+
+            $table  -> dropForeign('dishes-user');
+        });
+
         Schema::table('typology_user', function (Blueprint $table) {
 
             $table  -> dropForeign('typology_user-typology');
