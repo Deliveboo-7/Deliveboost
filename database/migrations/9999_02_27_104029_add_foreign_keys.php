@@ -30,6 +30,17 @@ class AddForeignKeys extends Migration
                 -> references('id')
                 -> on('users');
         });
+
+        Schema::table('dish_order', function (Blueprint $table) {
+
+            $table  -> foreign('order_id', "dish_order-orders")
+                -> references('id')
+                -> on('orders');
+
+            $table  -> foreign('dish_id', "dish_order-dishes")
+                -> references('id')
+                -> on('dishes');
+        });
     }
 
     /**
