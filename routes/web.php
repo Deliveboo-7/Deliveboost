@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/dash', function () {
+    return view('pages.dash');
+});
+
+Route::get('/myfoods', function () {
+    return view('pages.myfoods');
+});
+
