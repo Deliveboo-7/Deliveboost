@@ -45,7 +45,7 @@
 
         .restButton {
             background-color: red;
-            /*border: 1px black solid;*/
+            border: 1px black solid;
             height: 100px;
         }
 

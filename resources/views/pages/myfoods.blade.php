@@ -117,6 +117,13 @@
 
             </div>
 
+            <div class="row">
+                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4">
+                    Inserisci un nuovo piatto
+                </div>
+            </div>
+
+
 
 
 
