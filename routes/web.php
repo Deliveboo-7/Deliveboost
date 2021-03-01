@@ -24,3 +24,11 @@ Route::get('/test/create', 'RestaurantController@create')->name('dishes-create')
 Route::post('/test/store', 'RestaurantController@store')->name('dishes-store');
 
 
+Route::get('/dash', function () {
+    return view('pages.dash');
+});
+
+Route::get('/myfoods', function () {
+    return view('pages.myfoods');
+});
+
