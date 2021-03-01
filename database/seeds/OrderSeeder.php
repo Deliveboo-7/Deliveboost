@@ -17,7 +17,7 @@ class OrderSeeder extends Seeder
             -> create()
             -> each(function ($order) {
 
-                $dish = Dish::inRandomOrder() -> first();
+                $dish = Dish::inRandomOrder() -> limit(3) -> get();
                 $order -> dishes() -> attach($dish);
             });
     }
