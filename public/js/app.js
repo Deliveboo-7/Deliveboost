@@ -19432,8 +19432,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\CORSO FULL STACK BOOLEAN\Progetto Finale\Deliveboost\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\CORSO FULL STACK BOOLEAN\Progetto Finale\Deliveboost\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\progetti\Deliveroo\Deliveboost\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\progetti\Deliveroo\Deliveboost\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
