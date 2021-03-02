@@ -7,7 +7,7 @@
     <title>Dashboard</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <style>
         * {
@@ -38,7 +38,6 @@
         }
         .restProfile {
             background-color: orange;
-            height: 200px;
             display: flex;
             justify-content: space-around;
         }
@@ -46,11 +45,45 @@
         .restButton {
             background-color: red;
             border: 1px black solid;
-            height: 100px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            /* align-content: center; */
+            align-items: center;
         }
 
+        .restButton img{
+            width: 80px;
+            height: 80px;
+        }
+
+    
+        @media (min-width: 576px) { 
+
+            .restButton img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (min-width: 768px) { 
+            
+            .restButton img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (min-width: 992px) { 
+            
+            .restButton img{
+                width: 200px;
+                height: 200px;
+            }
+        }
 
     </style>
+
 </head>
 <body>
     <div class="container-fluid">
@@ -71,16 +104,32 @@
                         <li>sfddsfsdfds</li>
                         <li>sfddsfsdfds</li>
                         <li>sfddsfsdfds</li>
-
                     </ul>
-
-
                 </div>
-                <div class="restButton col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-3 offset-lg-0">1</div>
-                <div class="restButton col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-3 offset-lg-0">2</div>
-                <div class="restButton col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-3 offset-lg-0">3</div>
 
-
+                <div class="restButton col-4 col-lg-3">
+                    <img src="https://marigoldmaison.com/wp-content/uploads/Indian-Cuisine.jpg" alt=""><br>
+                    <div>
+                        <i class="fas fa-utensils"></i>
+                        <span>My foods</span>
+                    </div>
+                </div>
+                <div class="restButton col-4 col-lg-3">
+                    <img src="https://ae01.alicdn.com/kf/Hcd8da9fa129d41a3a7f7e8435edb094co/MBBITL-Slide-Check-Rack-Kitchen-Bill-Orders-Holder-Ticket-Grabber-Aluminium-Wall-Mountable-Tab-for-Restaurant.jpg" alt=""><br>
+                    <div>
+                        <i class="fas fa-sort-amount-down-alt"></i>
+                        <span>My orders</span>
+                    </div>
+                    
+                    
+                </div>
+                <div class="restButton col-4 col-lg-3">
+                    <img src="https://h5p.org/sites/default/files/styles/medium-logo/public/logos/chart-icon-color.png?itok=kpLTYHHJ" alt=""><br>
+                    <div>
+                        <i class="fas fa-chart-pie"></i>
+                        <span>My stats</span>
+                    </div>
+                </div>
             </div>
 
         </div>
