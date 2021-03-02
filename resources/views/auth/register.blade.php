@@ -126,7 +126,11 @@
                             <label for="opening_info" class="col-md-4 col-form-label text-md-right">{{ __('Opening hours') }}</label>
 
                             <div class="col-md-6">
-                                <input id="opening_info" type="text" class="form-control @error('opening_info') is-invalid @enderror" name="opening_info" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus>
+                                {{-- <input id="opening_info" type="text" class="form-control @error('opening_info') is-invalid @enderror" name="opening_info" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus> --}}
+                                <textarea name="opening_info" class="form-control @error('opening_info') is-invalid @enderror" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus cols="30" rows="10">
+
+
+                                </textarea>
 
                                 @error('opening_info')
                                     <span class="invalid-feedback" role="alert">
