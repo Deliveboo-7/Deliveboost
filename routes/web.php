@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/myfoods', 'DishController@index')->name('dishes-index');
 Route::get('/test/create', 'DishController@create')->name('dishes-create');
 Route::post('/test/store', 'DishController@store')->name('dishes-store');
 Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
@@ -32,7 +33,4 @@ Route::get('/dash', function () {
     return view('pages.dash');
 });
 
-Route::get('/myfoods', function () {
-    return view('pages.myfoods');
-});
 

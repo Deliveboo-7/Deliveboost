@@ -13,6 +13,14 @@ class DishController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+
+        $dishes = Dish::all();
+
+        return view ('pages.dishes-index', compact('dishes')); 
+
+    }
+
     // ----------------------- CREATE & STORE -------------------
     public function create(){
 
