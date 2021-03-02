@@ -20,8 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/test/create', 'RestaurantController@create')->name('dishes-create');
-Route::post('/test/store', 'RestaurantController@store')->name('dishes-store');
+Route::get('/test/create', 'DishController@create')->name('dishes-create');
+Route::post('/test/store', 'DishController@store')->name('dishes-store');
+Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
+Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
+
+
 
 
 Route::get('/dash', function () {
