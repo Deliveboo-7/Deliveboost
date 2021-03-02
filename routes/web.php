@@ -29,8 +29,8 @@ Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update')
 
 
 
-Route::get('/dash', function () {
-    return view('pages.dash');
+Route::get('/dashboard', function () {
+    return view('pages.dashboard');
 });
 
 
