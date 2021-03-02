@@ -1,0 +1,24 @@
+.titleMyFoods {
+    background-color: yellow;
+    height: 100px;
+}
+
+.addDish {
+    background-color: grey;
+
+}
+
+.listItem {
+    border: 2px dotted black;
+
+}
+
+.listItem * {
+    text-align: center;
+    border: 1px solid red;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+}

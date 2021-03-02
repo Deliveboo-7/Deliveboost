@@ -35,6 +35,8 @@
                         </span>
                     @enderror
                 <br>
+
+                <label for="visible"> Visible:</label>
                 <select name="visible" class="@error('visible') is-invalid @enderror">
                     <option value="1" >Si</option>
                     <option value="0">No</option>

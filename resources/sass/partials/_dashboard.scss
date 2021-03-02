@@ -1,0 +1,54 @@
+.restCover {
+    background-color: yellow;
+    height: 300px;
+}
+.restProfile {
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+}
+
+.restButton {
+    background-color: red;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-content: center; */
+    align-items: center;
+    min-height: 100%;
+}
+
+.restButton{
+
+    img{
+        width: 80px;
+        height: 80px;
+    }
+    
+}
+
+
+@media (min-width: 576px) { 
+
+    .restButton img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 768px) { 
+    
+    .restButton img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 992px) { 
+    
+    .restButton img{
+        width: 200px;
+        height: 200px;
+    }
+}

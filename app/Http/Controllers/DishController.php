@@ -24,7 +24,7 @@ class DishController extends Controller
     // ----------------------- CREATE & STORE -------------------
     public function create(){
 
-        return view('dishes-create');
+        return view('pages.dishes-create');
     }
 
 
