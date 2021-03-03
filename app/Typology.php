@@ -11,7 +11,7 @@ class Typology extends Model
         'icon'
     ];
 
-    public function typologies() {
+    public function users() {
         return $this -> belongsToMany(User::class);
     }
 }
