@@ -27,6 +27,8 @@ Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
 Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
 
 
-
+Route::get('/menu', function(){
+    return view('pages.menu-index');
+});
 
 
