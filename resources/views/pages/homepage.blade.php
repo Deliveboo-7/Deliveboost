@@ -2,10 +2,17 @@
 
 @section('content')
 
-    <h1>
-        hello deliveboost
+    <section class="homeJumbotron">
 
-    </h1>
+    </section>
+
+    <section  class="homeTypologies">
+
+    </section>
+
+    <section  class="homeRestourants">
+
+    </section>
 @endsection
 
 
