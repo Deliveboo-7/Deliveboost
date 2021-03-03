@@ -1,8 +1,12 @@
 <footer>
 
-    <div class="footer">
+    <div class="footer text-center">
 
-        <h3>placeholder</h3>
+        <span>Cookies & Privacy</span>
+        
+        <span>Credits</span>
+
+
     </div>
 
 </footer>
