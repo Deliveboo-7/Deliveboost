@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table -> string('company_name', 100);
             $table -> string('address', 200);
             $table -> string('vat', 11) -> unique();
-            $table -> string('img');
             $table -> string('phone_number', 20) -> unique();
             $table -> text('opening_info');
             $table -> string('website');

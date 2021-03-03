@@ -1,0 +1,38 @@
+.card-header{
+    text-align: center;
+    padding:.5rem;
+    font-size:1.5rem;
+    color: $gold;
+    background-color: $body;
+    border:none;
+}
+
+.container{
+
+    background-color: $body;
+}
+
+.label{
+    margin:0;
+}
+
+.col-form-label{
+    color:$gold;
+    padding:0 15px;;
+}
+
+.card{
+    background-color: $body;
+}
+
+
+.card-body input{
+    background-color: $silver;
+}
+
+.btn{
+
+    color:$gold;
+
+
+}
