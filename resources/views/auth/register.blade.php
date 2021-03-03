@@ -62,7 +62,7 @@
                             <div class="form-group row">
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
-                                <div class="col-md-6">
+                                <div class=" col-md-6">
                                     <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" maxlength="20" autofocus>
 
                                     @error('phone_number')
@@ -72,7 +72,7 @@
                                     @enderror
                                 </div>
                             </div>
-                       
+                    
 
                         {{-- -------------- OPENING HOURS---------------- --}}
                         <div class="form-group row">
@@ -80,7 +80,7 @@
 
                             <div class="col-md-6">
                                 {{-- <input id="opening_info" type="text" class="form-control @error('opening_info') is-invalid @enderror" name="opening_info" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus> --}}
-                                <textarea name="opening_info" class="form-control @error('opening_info') is-invalid @enderror" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus cols="30" rows="10">
+                                <textarea style="resizable:none;" name="opening_info" class="form-control @error('opening_info') is-invalid @enderror" value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus cols="30" rows="5">
 
                                 </textarea>
 
@@ -149,27 +149,11 @@
                             </div>
                         </div>
 
-
-                        {{-- <div class="form-group row">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Restaurant Cover') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="img" type="text" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus>
-
-                                @error('img')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
-
+                        {{-- -------------- REGISTER BUTTON----------------  --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-
-                                {{-- messo disable si potrebbe abilitare on tutti i campi pieni --}}
-                                <button type="submit" class="btn btn-outline-light btn-block" disabled>
+                                <button type="submit" class="btn btn-outline-light btn-block">
                                     {{ __('Register') }}
                                 </button>
                             </div>
