@@ -13,7 +13,6 @@ $factory->define(User::class, function (Faker $faker) {
         'company_name' => $faker -> name,
         'address' => $faker -> streetAddress(),
         'vat' => rand(1000, 9999),
-        'img' => "logo ristorante",
         'phone_number' => "392-" . rand(1234567, 9876543),
         'opening_info' => $faker -> sentence(),
         'website' => $faker -> url,
