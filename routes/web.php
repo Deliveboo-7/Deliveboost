@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.homepage');
-});
 
 Auth::routes();
+
+// Homepage
+Route::get('/', 'PublicController@index') -> name('homepage');
 
 Route::get('/home', 'HomeController@index')->name('home'); //va a dashboard
 Route::get('/myfoods', 'DishController@index')->name('dishes-index');
@@ -25,6 +25,9 @@ Route::get('/test/create', 'DishController@create')->name('dishes-create');
 Route::post('/test/store', 'DishController@store')->name('dishes-store');
 Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
 Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
+
+
+Route::get('/restaurant/{id}/menu', 'PublicController@getMenu')->name('restaurant-menu');
 
 
 

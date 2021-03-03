@@ -21,7 +21,6 @@ class User extends Authenticatable
         'company_name',
         'address',
         'vat',
-        'img',
         'phone_number',
         'opening_info',
         'website',
