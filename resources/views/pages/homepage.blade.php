@@ -2,24 +2,23 @@
 
 @section('content')
 
-    <div class="homeContainer container-fluid">
+    <div class="container-fluid homeContainer">
 
-        <section class="homeJumbotron col-xs-12">
-            <h1>DELIVEBOOST</h1>
-            <h2>The luxuriest end fastest food delivery service</h2>
+        <section class="homeJumbotron row">
+            <h1 class="col-sm-10 offset-sm-1">DELIVEBO<img src="storage/icons/logo.svg"/>ST</h1>
+            <h2 class="col-sm-10 offset-sm-1">The luxuriest end fastest food delivery service</h2>
         </section>
 
-        <section  class="homeTypologies col-xs-12">
+        <section  class="homeTypologies row">
 
             @foreach ($typologies as $typology)
                 
                 <div 
-                class="homeTypo col-xs-12" 
+                class="homeTypo" 
                 @click="getData({{ $typology -> id }})"
                 >
                     <img 
-                        src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/quizzes/fast_food_smarts_rmq/650x350_fast_food_smarts_rmq.jpg" alt=""
-                        
+                        src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt=""                        
                     >
                     <div class="homeTypName">
                         <span>
@@ -35,9 +34,9 @@
 
         </section>
 
-        <section  class="homeRestourants  col-xs-12">
+        <section  class="homeRestourants row">
 
-            <h2>
+            <h2 class="col-sm-10 offset-sm-1">
                 Select the types of food you prefer, and find the restaurants that have them all!
             </h2>
 
