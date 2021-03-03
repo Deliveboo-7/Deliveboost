@@ -47,7 +47,7 @@ class DishController extends Controller
         $newDish -> user() -> associate($loggedUser);
         $newDish -> save();
 
-        return redirect() -> route('home');
+        return redirect() -> route('dashboard');
 
         
     }
@@ -66,7 +66,7 @@ class DishController extends Controller
 
         } else {
 
-            return redirect() -> route('home');
+            return redirect() -> route('pages.dashboard');
 
         }
     }
@@ -95,7 +95,7 @@ class DishController extends Controller
 
         } else {
 
-            return redirect() -> route('home');
+            return redirect() -> route('pages.dashboard');
 
         }
     

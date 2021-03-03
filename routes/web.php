@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.homepage');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); //va a dashboard
 Route::get('/myfoods', 'DishController@index')->name('dishes-index');
 Route::get('/test/create', 'DishController@create')->name('dishes-create');
 Route::post('/test/store', 'DishController@store')->name('dishes-store');
@@ -28,9 +28,5 @@ Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update')
 
 
 
-
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-});
 
 
