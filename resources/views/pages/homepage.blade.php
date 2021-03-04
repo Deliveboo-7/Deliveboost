@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid homeContainer min-vh-100">
+    <div class="container homeContainer min-vh-100">
 
         <section class="homeJumbotron row d-flex justify-content-center py-5 px-3    ">
 
@@ -50,7 +50,7 @@
             <ul v-if="restaurants.length >= 1" class="text-center w-100">
                 <li class="mt-2 mb-2" v-for="restaurant in restaurants">
                     @{{ restaurant.company_name }}
-                    <a class="btn btn-dark p-1" href="{{ route('restaurant-menu') }}">VEDI MENU</a>
+                    <a class="btn btn-dark p-1" href=`{{ route('restaurant-menu', '') }}/${restaurant.id}`>VEDI MENU</a>
                 </li>
             </ul>
         </section>

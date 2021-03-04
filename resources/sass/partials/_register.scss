@@ -1,4 +1,4 @@
-.card-header{
+.card-headerRegister{
     padding:.5rem;
     font-size:1.5rem;
     color: $gold;
@@ -7,20 +7,19 @@
     margin-bottom: 10px;
 }
 
-.container{
-
+.registerContainer {  
     border:none;
     height:calc(100vh - 80px);
     background-color: $body;
 }
-
+/*
 .label{
     margin:0;
 }
-
+*/
 .col-form-label{
-    color:$gold;
-    padding:0 15px;;
+    color: $gold;
+    padding: 0 15px;
 }
 
 .card{
@@ -41,7 +40,7 @@
     background-color: $silver;
 }
 
-.btn{
+.registerBtn {
     color:$gold;
 }
 

@@ -1,5 +1,6 @@
 .homeContainer {
     background-color: $body;
+    min-height: calc(100vh - 120px);
 }
 
 .homeJumbotron {
@@ -8,7 +9,7 @@
         font-size: 40px;
     }
     h2 {
-        color: $gold;
+        color: $silver;
         font-size: 25px;
     }
     img {
@@ -44,6 +45,20 @@
 .homeRestourants {
     color: $gold;
     font-size: 50px;
+}
+
+.emptySearchMex {
+    color: $silver;
+}
+
+.restSearchResults {
+    ul {
+        list-style-type: none;
+        color: $gold;
+        li {
+            border-bottom: 1px solid $gold;
+        }
+    }
 }
 
 @media (min-width: 576px) { 

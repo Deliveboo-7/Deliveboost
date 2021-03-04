@@ -2,125 +2,108 @@
 
 @section('content')
 
-    <div class="container-fluid">
-        <section class=" row">
+    <div class="container-fluid containerPageMenu">
+        <section class=" row no-gutters">
             <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
-                <div class="align-middle restName">
-                    <h1>RISTORANTE PIZZERIA DA PINO</h1>
+                <div class="align-middle restName text-uppercase">
+                    <h1>{{$restaurant -> company_name}}</h1>
                 </div>
             </div>
         </section>
 
-        <section class="row">
-            <div class="col-12 order-2 col-lg-8 order-lg-1 menuList accordion" id="accordion">
+        <!--ACCORDION-->
+        <section class="row no-gutters">
+            <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
-                <!--inserire foreach-->                        
+                @foreach ($dishes as $dish)
+
                     <div class="row card listDish mt-4 offset-1 col-10">
-                        <div class="card-header " id="headingOne">
+                        <div class="card-header " id="heading-{{$dish -> id}}">
                             <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapseOne"  aria-controls="collapseOne" aria-expanded="false">
+                                <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false">
                                     <span class="item">
-                                        PIZZA MARGHERITA 
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        {{$dish -> name}}
                                     </span>
-                                    <span class="price">
-                                        12,5€
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </span>                         
+                                    <div>
+                                        <span class="price">
+                                            {{$dish -> price / 100}} €
+                                        </span>
+                                        <div class="addToOrder">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </div>  
+                                    </div>
                                 </button>
                             </h2>
                         </div>
                     
-                        <div id="collapseOne" class="collapse col-12" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapse-{{$dish -> id}}" class="collapse col-12" aria-labelledby="heading-{{$dish -> id}}" data-parent="#accordion">
                             <div class="card-body">
-                                <div class="desc">INGREDIENTI</div>
+                                <div class="desc">{{$dish -> desc}}</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row card listDish mt-4 offset-1 col-10">
-                        <div class="card-header " id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapseTwo"  aria-controls="collapseTwo" aria-expanded="false">
-                                    <span class="item">
-                                        PIZZA MARGHERITA 
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </span>
-                                    <span class="price">
-                                        12,5€
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </span>                         
-                                </button>
-                            </h2>
-                        </div>
-                    
-                        <div id="collapseTwo" class="collapse col-12" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="desc">INGREDIENTI</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row card listDish mt-4 offset-1 col-10">
-                        <div class="card-header " id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapseThree"  aria-controls="collapseThree" aria-expanded="false">
-                                    <span class="item">
-                                        PIZZA MARGHERITA 
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </span>
-                                    <span class="price">
-                                        12,5€
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </span>                         
-                                </button>
-                            </h2>
-                        </div>
-                    
-                        <div id="collapseThree" class="collapse col-12" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="desc">INGREDIENTI</div>
-                            </div>
-                        </div>
-                    </div>
-    
-                <!--fine foreach-->
+                @endforeach                        
 
             </div> <!--fine accordion-->
 
-            <div class="col-12 order-1 col-lg-4 order-lg-2">
+            <!--SIDEBAR-->
+            <div class="col-12 order-1 col-lg-5 order-lg-2 container-sidebar">
                 <div class="row no-gutters sidebar sticky-top p-2">
                     
-                    <div class="col-12 generalInfo p-4">
+                    <div class="col-12 generalInfo pb-3 pt-3">
                         <div class="row detailsRest">
-                            <div class="col-12 pt-4">
-                                <span>OPENING HOURS:</span>
-                                <span>ogni lunedi dalle 8 alle 19</span>
-                            </div>
-                            <div class="col-12 pt-4">
-                                <span>ADDRESS:</span>
-                                <span>Via San Giovanni Roma</span>
-                            </div>
-                            <div class="col-12 pt-4">
-                                <span>TIPOLOGIA:</span>
-                                <span>cinese, italiano, messicano</span>
-                            </div>
-                            <div class="col-12 pt-4">
-                                <span>CONSEGNA</span>
-                                <span>2,50€</span>
-                            </div>              
-                        </div>
-                        <div class="col-12 text-center pt-4">
-                            <h5>PAGAMENTO</h5>
-                            <div class="row">
-                                <div class="col-6">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    Cash
+
+                            <!--left-->
+                            <div class="col-6">
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Address:</span>
+                                    <span>{{$restaurant -> address}}</span>
                                 </div>
-                                <div class="col-6">
-                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    Credit Card
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Website:</span>
+                                    <span>{{$restaurant -> website}}</span>
                                 </div>
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Phone:</span>
+                                    <span>{{$restaurant -> phone_number}}</span>
+                                </div>
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Typology:</span>
+                                    <span>
+                                        @foreach ($restaurant -> typologies as $typology)
+                                            {{$typology -> name}}
+
+                                            @if (!$loop->last)
+                                                ,
+                                            @endif
+
+                                        @endforeach     
+                                    </span> <!--da inserire-->
+                                </div>
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Delivery:</span>
+                                    <span>2,50€</span> 
+                                </div> 
+                                <div class="col-12 detail">
+                                    <span class="detailTitle">Payment:</span>
+                                    <span><i class="fas fa-money-bill-wave"></i>
+                                        Cash
+                                    </span>
+                                    <span>
+                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                        Credit Card
+                                    </span>
+                                </div>            
+                            </div>
+
+                            <!--right-->
+                            <div class="col-6 opening">
+                                <div class="col-12">
+                                    <span class="detailTitle">OPENING HOURS:</span>
+                                    <p>{{$restaurant -> opening_info}}</p>
+                                </div>    
                             </div>
            
                         </div>
@@ -129,23 +112,47 @@
                     <div class="col-12 cart p-4 ">
                         <div class="dishesSelected d-none d-lg-block">
                             <h4>YOUR ORDER</h4>
-                            <ul>
-                                <li>
-                                    <span>pizza margherita</span>
-                                    <span class="numbItem">5</span>
-                                </li>
-                                <li>
-                                    <span>pizza ciao</span>
-                                    <span class="numbItem">2</span>
-                                </li>
-                                <li>
-                                    <span>carbonara</span>
-                                    <span class="numbItem">4</span>
-                                </li>
-                            </ul>
+
+                            <div class="itemsOrdered mb-2">
+                                <ul>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>pizza margherita</span>
+                                        <span class="numbItem">5</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>pizza ciao</span>
+                                        <span class="numbItem">2</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between pb-2">
+                                        <span>carbonara</span>
+                                        <span class="numbItem">4</span>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                         <button type="button" class="btn btn-checkout btn-lg btn-block d-flex justify-content-around">
-                            <i class="fa fa-chevron-up d-block d-lg-none" aria-hidden="true"></i>
+                            <span class="d-block d-lg-none">Items: ...</span>
                             <span>CHECKOUT</span>
                             <span>Total: 20,50€ </span>
                         </button>
