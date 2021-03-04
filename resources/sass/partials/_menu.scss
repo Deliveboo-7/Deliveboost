@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background-color:$body;
+    color: white;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.coverRist{
+
+    //debug
+    height: 300px;
+    background-image: url('https://www.dynamicgift.com.au/media/blog/colors_associated_with_food.jpeg');
+    background-size: cover;
+
+    .restName{
+        background-color: $silver;
+        opacity: 0.7;
+        height: 100px;
+        color: black;
+        width: 100%;
+        text-align: center;
+
+        h1{
+            position: relative;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+    }
+}
+
+.menuList{
+    //debug
+    min-height: 100px;
+    color: black;
+
+    .card{
+        background-color: $silver;
+        .card-header{
+    
+            .btn-dish{
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none !important;
+                color: $gold !important;
+
+                .item{
+                    i{
+                        padding-left: 15px;
+                    }
+                }
+
+                .price{
+                    i{
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+.sidebar{
+    width:100%;
+
+    .generalInfo{
+
+        border-bottom: 1px solid white;
+
+        //debug
+        min-height: 100px;
+
+        .detailsRest{
+
+            span{
+                padding-right: 10px;
+            }
+        }
+    }
+    
+    .cart{
+        //debug
+        // min-height: 100px;
+        width:100%;
+
+        h4{
+            text-align: center;
+        }
+
+        .numbItem{
+            background-color: white;
+            color: black;
+            padding: 1px;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+    
+        .btn-checkout{
+            background-color: $gold;
+            color:black;
+        }
+    }
+}
+
+
+@media (max-width: 992px){
+
+    .cart{
+        position: fixed;
+        bottom:0;
+        left:0;
+        z-index: 500;
+        padding: 0 !important;
+    }
+}
+
+
