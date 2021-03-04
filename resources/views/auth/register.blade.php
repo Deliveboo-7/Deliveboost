@@ -119,9 +119,7 @@
                             <hr class="ml-0">
                             
                         </div>
-
                         
-
                         {{-- -------------- WEBSITE ----------------  --}}
                         <div class="form-group row mt-3">
                             <label for="website" class="col-xl-4 col-form-label text-xl-right">{{ __('Website') }}</label>
@@ -175,31 +173,11 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-
-                        {{-- <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
-                            </div>
-                        </div> --}}
-
                         {{-- -------------- REGISTER----------------  --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-sm-12 col-md-12  col-lg-12  col-xl-4 offset-xl-4 ">
-                                <button type="submit" class="btn btn-outline-light btn-block registerBtn">
+                                <button type="submit" class="btn-gold btn-block registerBtn">
                                     {{ __('Register') }}
                                 </button>
                             </div>

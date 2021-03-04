@@ -4,7 +4,7 @@
 <div class="container loginContainer col-sm-12 col-md-8  col-lg-6">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card loginCard">
+            <div class="loginCard card-border">
                 <div class="card-header text-left  mb-0">{{ __('Login') }}
                 
                     <hr class="ml-0">
@@ -62,7 +62,7 @@
                         {{-- -------------- BUTTON----------------  --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-outline-light btn-block">
+                                <button type="submit" class=" btn-gold btn-block">
                                     {{ __('Login') }}
                                 </button>
 
