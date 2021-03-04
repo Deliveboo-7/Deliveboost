@@ -34,8 +34,8 @@
         @include('components.header')
         
 
-        {{-- <main class="py-4"> --}}
-        <main >
+        <main>
+
             @yield('content')
             
         </main>

@@ -44,6 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function dishes() {
+        return $this -> hasMany(Dish::class);
+    }
+
     public function typologies() {
         return $this -> belongsToMany(Typology::class);
     }

@@ -1,122 +1,92 @@
 .homeContainer {
     background-color: $body;
-    min-height: 100vh;
-    //display: flex;
-  //  flex-direction: column;
- //   align-items: center;
 }
 
-
 .homeJumbotron {
-    padding: 50px 5px 50px 5px;
-
-    text-align: center;
-
-    background-color: blue;
     h1 {
         color: $gold;
         font-size: 40px;
     }
-
     h2 {
         color: $gold;
         font-size: 25px;
     }
+    img {
+        height: 40px;
+        width: auto;
+    }
 }
 
-
-
 .homeTypologies {
-    background-color: red;
-    padding-bottom: 50px;
-
     .homeTypo {
         position: relative;
     }
-
     .homeTypName {
-        color: $silver;
+        color: $gold;
         position: absolute;
-        top: 70%;
+        top: 60%;
+        left: 0;
         text-align: center;
         background-color: $body;
         width: 100%;
+        font-size: 20px;
+        font-weight: bold;
         text-transform: uppercase;
-        opacity: 0.7;
-    }
-
-    
+        opacity: 0.8;
+        
+    }    
     img{
         width: 100%;
         height: auto;
     }
-    
 }
 
 .homeRestourants {
-    background-color: purple;
-    color: white;
+    color: $gold;
     font-size: 50px;
-    
 }
 
 @media (min-width: 576px) { 
 
     .homeJumbotron {
-        padding: 60px 5px 60px 5px;
-    
         h1 {
             font-size: 55px;
-        }
-    
+        }   
         h2 {
             font-size: 30px;
         }
-    }
-}
-
-@media (min-width: 768px) { 
-
-    .homeJumbotron {
-        padding: 100px 10px 100px 10px;
-
-        h1 {
-            font-size: 80px;
+        img {
+            height: 55px;
+            width: auto;
         }
     
-        h2 {
-            font-size: 40px;
-        }
     }
-
-    .homeTypologies {
-     //   width: 80vw;
-     //   display: flex;
-    //    flex-wrap: wrap;
-    }
-
-    .homeTypo {
-    //   padding: 10px;
-    }
-
-    
     .homeTypologies div {
         width: calc(100%/2);
         height: auto;
     }
 
-    .homeTypologies img{
-        max-width: 100%;
-        max-height: auto;
+}
+
+@media (min-width: 768px) { 
+
+    .homeJumbotron {
+        h1 {
+            font-size: 80px;
+        }   
+        h2 {
+            font-size: 40px;
+        }
+        img {
+            height: 80px;
+            width: auto;
+        }
+    
+    }    
+    .homeTypologies div {
+    //    width: calc(100%/2);
+  //      height: auto;
     }
-
-    .homeRestourants {
-        width: 80vw;
- //       padding: 20px 0px 20px 0px;
-    }
-
-
-
 }
 
 @media (min-width: 992px) { 
@@ -124,30 +94,20 @@
     .homeJumbotron {
         h1 {
             font-size: 100px;
-        }
-    
+        }    
         h2 {
             font-size: 45px;
         }
+        img {
+            height: 100px;
+            width: auto;
+        }
+    
     }
-
-    .homeTypologies div {
-        width: calc(100%/4);
-        height: auto;
+    .homeTypologies {
+        div {
+     //   width: calc(100%/4);
+      //  height: auto;
+        }
     }
-
-    .homeTypName {
-        color: $silver;
-        position: absolute;
-        top: 70%;
-        text-align: center;
-        background-color: $body;
-        width: 100%;
-        text-transform: uppercase;
-        opacity: 0.7;
-        
-    }
-
-
-
 }
