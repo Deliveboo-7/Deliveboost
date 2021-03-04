@@ -6,7 +6,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="restCover col-sm-12">
+            <div class="restCover col-sm-12 d-flex justify-content-center align-items-center">
+
                 <h1>{{Auth::user() -> company_name}}</h1>
             </div>
 
