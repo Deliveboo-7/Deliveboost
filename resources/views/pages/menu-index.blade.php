@@ -12,7 +12,7 @@
         </section>
 
         <section class="row">
-            <div class="col-12 col-lg-8 menuList accordion" id="accordion">
+            <div class="col-12 order-2 col-lg-8 order-lg-1 menuList accordion" id="accordion">
 
                 <!--inserire foreach-->                        
                     <div class="row card listDish mt-4 offset-1 col-10">
@@ -88,7 +88,7 @@
 
             </div> <!--fine accordion-->
 
-            <div class="col-12 col-lg-4">
+            <div class="col-12 order-1 col-lg-4 order-lg-2">
                 <div class="row no-gutters sidebar sticky-top p-2">
                     
                     <div class="col-12 generalInfo p-4">
@@ -114,7 +114,7 @@
                             <h5>PAGAMENTO</h5>
                             <div class="row">
                                 <div class="col-6">
-                                    <i class="fa fa-money" aria-hidden="true"></i>
+                                    <i class="fas fa-money-bill-wave"></i>
                                     Cash
                                 </div>
                                 <div class="col-6">

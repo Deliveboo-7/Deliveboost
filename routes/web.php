@@ -27,15 +27,12 @@ Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
 Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
 
 
-<<<<<<< HEAD
 Route::get('/menu', function(){
     return view('pages.menu-index');
 });
-=======
 Route::get('/restaurant/{id}/menu', 'PublicController@getMenu')->name('restaurant-menu');
 
 
 
->>>>>>> 3084f4ea56944b2226a05f45e68ddfd1478aa1bf
 
 
