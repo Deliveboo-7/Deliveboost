@@ -9,10 +9,9 @@
 }
 
 .container-fluid{
-    
+
     margin:0;
-    // padding:2px 20px;
-    
+
 }
 
 .navbar{
@@ -23,24 +22,26 @@
     height: 40px;
     z-index:2;
 
-    #navbarSupportedContent{
+    #navbarDropdown{
 
+        .dropdown-menu{
+
+            background-color: $lightgrey;
+        }
 
         a {
             color:$gold;
             text-decoration: none;
+
+            &:hover 
+            {
+                color:$body; 
+                text-decoration:none; 
+                cursor:pointer;  
+            }
         }
         
-        a:hover 
-        {
-            color:$silver; 
-            text-decoration:none; 
-            cursor:pointer;  
-        }
-
-
     }
-    
     
 }
 

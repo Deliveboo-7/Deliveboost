@@ -6,6 +6,7 @@ footer{
     padding:20px 0;
     background-color: $header;
     color:$gold;
+    
 
     a {
         color:$gold;
@@ -14,9 +15,13 @@ footer{
     
     a:hover 
     {
-         color:$silver; 
-         text-decoration:none; 
-         cursor:pointer;  
+        color:$silver; 
+        text-decoration:none; 
+        cursor:pointer;  
+    }
+    .row{
+
+        margin:0;
     }
 
 

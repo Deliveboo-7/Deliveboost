@@ -1,0 +1,80 @@
+// div,label{
+
+//     min-height: 30px;
+//     background-color: rgb(54, 54, 54);
+//     border:solid 1px red;
+// }
+// input{
+
+//     min-height: 30px;
+//     border:solid 1px red;
+// }
+
+
+
+.create_cover{
+    min-height: 300px;
+
+    background-image: url('storage/images/cover_2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.card-header{
+    
+    background-color: $body;
+    
+        
+        hr{
+        
+            width: 100%;
+            border-width: 1px;
+            border-color:$lightgrey;
+        }
+}
+
+// ------------------------------ tutto ciò qua sotto può essere globale  ------------------------------------
+
+//questo controlla tuttii bottoni del sito
+//è da uniformare per tutti
+
+// .btn{
+//     border: solid 1px $lightgrey;
+//     background-color: $body;
+//     color:$gold;
+        
+// }
+
+
+// form{
+
+//     label{
+
+//         color:$gold;
+//     }
+// }
+
+
+// main{
+
+//     margin-top: 40px;
+//     height: calc(100vh - 120px);
+//     padding:20px;
+//     background-image: url('storage/images/create.jpg');
+//     background-size: contain;
+    
+// }
+
+
+
+// input:focus{
+
+
+//     // vanno insieme?/
+//     border:solid 2px $gold;
+//     outline:$gold;
+// }
