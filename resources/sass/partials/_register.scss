@@ -1,14 +1,16 @@
 .card-header{
-    text-align: center;
     padding:.5rem;
     font-size:1.5rem;
     color: $gold;
     background-color: $body;
     border:none;
+    margin-bottom: 10px;
 }
 
 .container{
 
+    border:none;
+    height:calc(100vh - 80px);
     background-color: $body;
 }
 
@@ -22,17 +24,37 @@
 }
 
 .card{
+    
     background-color: $body;
-}
+    margin-top: 20%;
+        
+        hr{
+            // margin: 0 auto;
+            width: 100%;
 
+            border-width: 1px;
+            border-color:$lightgrey;
+        }
+}
 
 .card-body input{
     background-color: $silver;
 }
 
 .btn{
-
     color:$gold;
-
-
 }
+
+#opening_hours{
+    resize: none;
+}
+// div, label{
+
+//     min-height: 30px;
+//     background-color: rgb(54, 54, 54);
+//     border:solid 1px red;
+// }
+
+
+
+
