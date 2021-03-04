@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/typology/{id}', 'ApiController@restaurantsByTypology') -> name('get-restaurant');
+Route::get('/typology', 'ApiController@restaurantsByTypology') -> name('get-restaurant');
