@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid homeContainer min-vh-100">
+    <div class="container homeContainer min-vh-100">
 
         <section class="homeJumbotron row d-flex justify-content-center py-5 px-3    ">
 
@@ -42,7 +42,7 @@
         </section>
 
         <section  class="homeRestourants row ">
-<!--     py-5 px-3    -->
+
             <h2 class="col-sm-10 offset-sm-1">
                 Select the types of food you prefer, and find the restaurants that have them all!
             </h2>

@@ -1,5 +1,6 @@
 .homeContainer {
     background-color: $body;
+    min-height: calc(100vh - 120px);
 }
 
 .homeJumbotron {
@@ -8,7 +9,7 @@
         font-size: 40px;
     }
     h2 {
-        color: $gold;
+        color: $silver;
         font-size: 25px;
     }
     img {
