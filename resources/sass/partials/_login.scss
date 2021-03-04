@@ -1,4 +1,45 @@
 .form-check-label{
-
     color:$gold;
 }
+
+.card{
+    
+    background-color: $body;
+    margin-top: 20%;
+        
+        hr{
+        
+            width: 100%;
+            border-width: 1px;
+            border-color:$lightgrey;
+        }
+}
+
+.card-header{
+    padding:1.25rem;
+    font-size:1.5rem;
+    color: $gold;
+    background-color: $body;
+    border:none;
+    
+}
+
+.container{
+
+    border:none;
+    height:calc(100vh - 80px);
+    background-color: $body;
+}
+
+// div, label{
+
+//     min-height: 30px;
+//     background-color: rgb(54, 54, 54);
+//     border:solid 1px red;
+// }
+
+main {
+    
+    background-color: $body;
+}
+
