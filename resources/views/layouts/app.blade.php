@@ -32,7 +32,6 @@
 
         @include('components.header')
 
-
         <main>
 
             @yield('content')
