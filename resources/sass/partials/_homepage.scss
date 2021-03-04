@@ -47,6 +47,20 @@
     font-size: 50px;
 }
 
+.emptySearchMex {
+    color: $silver;
+}
+
+.restSearchResults {
+    ul {
+        list-style-type: none;
+        color: $gold;
+        li {
+            border-bottom: 1px solid $gold;
+        }
+    }
+}
+
 @media (min-width: 576px) { 
 
     .homeJumbotron {
