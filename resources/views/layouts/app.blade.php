@@ -32,10 +32,6 @@
 
         @include('components.header')
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 21af9e157ed4bdd64fedc6c0feda88ff6d9640e3
         <main>
 
             @yield('content')
