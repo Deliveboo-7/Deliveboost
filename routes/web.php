@@ -27,12 +27,10 @@ Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
 Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
 
 
-Route::get('/menu', function(){
-    return view('pages.menu-index');
+Route::get('/menu', function() {
+    $restaurant = \App\User::findOrfail(11);
+    $dishes = $restaurant -> dishes() -> get();
+    return view('pages.menu-index', compact('restaurant', 'dishes'));
 });
-Route::get('/restaurant/{id}/menu', 'PublicController@getMenu')->name('restaurant-menu');
-
-
-
 
 
