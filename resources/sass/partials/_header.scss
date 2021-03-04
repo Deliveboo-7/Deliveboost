@@ -11,13 +11,36 @@
 .container-fluid{
     
     margin:0;
-    padding:2px 20px;
+    // padding:2px 20px;
     
 }
 
 .navbar{
 
+    position: fixed;
     padding:0;
+    width: 100%;
+    height: 40px;
+    z-index:2;
+
+    #navbarSupportedContent{
+
+
+        a {
+            color:$gold;
+            text-decoration: none;
+        }
+        
+        a:hover 
+        {
+            color:$silver; 
+            text-decoration:none; 
+            cursor:pointer;  
+        }
+
+
+    }
+    
     
 }
 

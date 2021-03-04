@@ -1,16 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container col-sm-12 col-md-8  col-lg-6">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header text-left  mb-0">{{ __('Login') }}
+                
+                    <hr class="ml-0">
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        
                         {{-- -------------- EMAIL ----------------  --}}
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -26,6 +29,7 @@
                             </div>
                         </div>
 
+                        
                         {{-- -------------- PASSWORD ----------------  --}}
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -53,9 +57,11 @@
                                 </div>
                             </div>
                         </div>
+
+
                         {{-- -------------- BUTTON----------------  --}}
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-outline-light btn-block">
                                     {{ __('Login') }}
                                 </button>
