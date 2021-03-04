@@ -6,6 +6,9 @@
 // Variables
 @import 'variables';
 
+//common rules
+@import 'common-rules';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -19,7 +22,6 @@
 @import 'partials/register';
 @import 'partials/header';
 @import 'partials/footer';
-
 
 
 

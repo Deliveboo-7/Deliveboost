@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container col-md-10 col-md-12 ">
+<div class="container registerContainer col-md-10 col-md-12 ">
     <div class="row justify-content-center ">
         <div  class="col-sm-8 col-md-6">
             <div class="card">
@@ -114,7 +114,7 @@
                         </div>
 
                         {{-- -------------- USER INFO ----------------  --}}
-                        <div class="card-header text-left">{{ __('User Info') }}
+                        <div class="card-headerRegister text-left">{{ __('User Info') }}
                         
                             <hr class="ml-0">
                             
@@ -199,7 +199,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-sm-12 col-md-12  col-lg-12  col-xl-4 offset-xl-4 ">
-                                <button type="submit" class="btn btn-outline-light btn-block">
+                                <button type="submit" class="btn btn-outline-light btn-block registerBtn">
                                     {{ __('Register') }}
                                 </button>
                             </div>
