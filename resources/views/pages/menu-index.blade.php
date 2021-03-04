@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <div class="container-fluid containerPageMenu">
         <section class=" row no-gutters">
             <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="align-middle restName text-uppercase">
@@ -150,7 +150,7 @@
 
                         </div>
                         <button type="button" class="btn btn-checkout btn-lg btn-block d-flex justify-content-around">
-                            <i class="fa fa-chevron-up d-block d-lg-none" aria-hidden="true"></i>
+                            <span class="d-block d-lg-none">Items: ...</span>
                             <span>CHECKOUT</span>
                             <span>Total: 20,50€ </span>
                         </button>

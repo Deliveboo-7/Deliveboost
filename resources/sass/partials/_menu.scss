@@ -1,21 +1,12 @@
-*{
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
-}
-
-li{
-    list-style: none;
-}
-
-body{
-    background-color:$body;
-    color: white;
-}
-
-.container-fluid{
+.containerPageMenu{
     padding-left: 0 !important;
     padding-right:0 !important;
+    background-color:$body;
+    color: white;
+
+    li{
+        list-style: none;
+    }
 }
 //***************************************************//
 .coverRist{
@@ -62,7 +53,7 @@ body{
                 justify-content: space-between;
                 text-decoration: none !important;
                 color: $gold !important;
-                background-color: $lightgrey;
+                background-color: $lightgray;
                 padding-left: 20px;
                 padding-right: 20px;
 
