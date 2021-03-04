@@ -78,13 +78,13 @@
                 </ul>
             </div>
 
-            <div class="restButton col-4 col-lg-3 py-3">
+            <div class="restButton col-4 py-3">
                 <i class="fas fa-hamburger fa-7x"></i><br>
                     <div>
                     <span>MY FOODS</span>
                 </div>
             </div>
-            <div class="restButton col-4 col-lg-3 py-3">
+            <div class="restButton col-4 py-3">
                 <i class="fas fa-clipboard fa-7x"></i><br>
                 <div>
                     <span>MY ORDERS</span>
@@ -92,7 +92,7 @@
                 
                 
             </div>
-            <div class="restButton col-4 col-lg-3 py-3">
+            <div class="restButton col-4 py-3">
                 <i class="fas fa-chart-line fa-7x"></i><br>
                 <div>
                     <span>MY STATS</span>
