@@ -11,6 +11,7 @@
             </div>
         </section>
 
+        <!--ACCORDION-->
         <section class="row no-gutters">
             <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
@@ -26,7 +27,7 @@
                                     </span>
                                     <div>
                                         <span class="price">
-                                            {{$dish -> price}} €
+                                            {{$dish -> price / 100}} €
                                         </span>
                                         <div class="addToOrder">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
@@ -47,10 +48,11 @@
 
             </div> <!--fine accordion-->
 
+            <!--SIDEBAR-->
             <div class="col-12 order-1 col-lg-5 order-lg-2 container-sidebar">
                 <div class="row no-gutters sidebar sticky-top p-2">
                     
-                    <div class="col-12 generalInfo p-3">
+                    <div class="col-12 generalInfo pb-3 pt-3">
                         <div class="row detailsRest">
 
                             <!--left-->

@@ -123,6 +123,7 @@
 
         h4{
             text-align: center;
+            color: $gold;
         }
 
         .itemsOrdered{
@@ -132,11 +133,7 @@
             overflow-y: auto;
 
             .numbItem{
-                background-color: white;
-                color: black;
-                padding: 1px;
-                border-radius: 50%;
-                margin-left: 20px;
+                color: $gold;
             }
         }
 
