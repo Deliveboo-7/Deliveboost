@@ -45,14 +45,24 @@
 
 {{--        </section>--}}
 
-        <section class="row">
+        <section>
             <h3 class="text-center w-100" v-if="loading">LOADING</h3>
-            <ul v-if="restaurants.length >= 1" class="text-center w-100">
-                <li class="mt-2 mb-2" v-for="restaurant in restaurants">
+            <div class="row mt-2 mb-2 text-white border border-danger p-2" v-for="restaurant in restaurants">
+                <div class="col-10">
                     @{{ restaurant.company_name }}
-                    <a class="btn btn-dark p-1" href=`{{ route('restaurant-menu', '') }}/${restaurant.id}`>VEDI MENU</a>
-                </li>
-            </ul>
+                </div>
+                <div class="col-2">
+                    <a :href="getRestaurantMenu(restaurant.id)" class="btn btn-outline-light">MENU</a>
+                </div>
+{{--                NON CANCELLARE MI SERVE COME RIFERIMENTO--}}
+{{--                <ul v-if="restaurants.length >= 1" class="text-center w-100">--}}
+{{--                    <li class="mt-2 mb-2">--}}
+{{--                        --}}
+{{--    --}}{{--                    <a :href="`/restaurant/menu/${restaurant.id}`" class="btn btn-outline-dark">MENU</a>--}}
+{{--                        --}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+            </div>
         </section>
         <div class="row">
             <h3 class="col-12 text-center" v-if="restaurants.length == 0">Inizia o modifica la ricerca</h3>

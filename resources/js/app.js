@@ -51,6 +51,10 @@ new Vue({
                     console.log(this.restaurants);
                     this.loading = false;
             })
+        },
+        getRestaurantMenu(id) {
+            // location.href = '/restaurant/menu/' + id;
+            return `restaurant/menu/${id}`
         }
     },
 
