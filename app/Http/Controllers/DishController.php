@@ -91,7 +91,8 @@ class DishController extends Controller
             ]);
 
             $dish -> update($validatedData);
-            // return view('home', compact('dish'));
+            
+            return redirect() -> route('pages.dishes-index');
 
         } else {
 
