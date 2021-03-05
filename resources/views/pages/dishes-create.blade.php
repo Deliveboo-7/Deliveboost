@@ -48,7 +48,7 @@
                                 @enderror
 
                             <label for="visible" class="col-sm-2 offset-sm-2 text-left col-md-2 offset-md-0"> Visible:</label>
-                            <select name="visible" class=" col-sm-2 offset-sm-0 col-md-2 @error('visible') is-invalid @enderror">
+                            <select name="visible" class=" col-sm-2 offset-sm-0 col-md-2 offset-md-0 @error('visible') is-invalid @enderror">
                                 <option value="1" >Si</option>
                                 <option value="0">No</option>
                             </select>
