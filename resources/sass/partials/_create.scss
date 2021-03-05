@@ -10,20 +10,6 @@
 //     border:solid 1px red;
 // }
 
-
-
-.create_cover{
-    min-height: 300px;
-
-    background-image: url('storage/images/cover_2.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-
-
-
 .card-header{
     
     background-color: $body;
@@ -37,44 +23,3 @@
         }
 }
 
-// ------------------------------ tutto ciò qua sotto può essere globale  ------------------------------------
-
-//questo controlla tuttii bottoni del sito
-//è da uniformare per tutti
-
-// .btn{
-//     border: solid 1px $lightgrey;
-//     background-color: $body;
-//     color:$gold;
-        
-// }
-
-
-// form{
-
-//     label{
-
-//         color:$gold;
-//     }
-// }
-
-
-// main{
-
-//     margin-top: 40px;
-//     height: calc(100vh - 120px);
-//     padding:20px;
-//     background-image: url('storage/images/create.jpg');
-//     background-size: contain;
-    
-// }
-
-
-
-// input:focus{
-
-
-//     // vanno insieme?/
-//     border:solid 2px $gold;
-//     outline:$gold;
-// }
