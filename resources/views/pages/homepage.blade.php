@@ -52,7 +52,8 @@
                     @{{ restaurant.company_name }}
                 </div>
                 <div class="col-2">
-                    <a :href="getRestaurantMenu(restaurant.id)" class="btn btn-outline-light">MENU</a>
+{{--                    <div class="btn-gold" @click="getRestaurantMenu(restaurant.id)">MENU</div>--}}
+                    <a :href="getRestaurantMenu(restaurant.id)" class="btn-gold">MENU</a>
                 </div>
 {{--                NON CANCELLARE MI SERVE COME RIFERIMENTO--}}
 {{--                <ul v-if="restaurants.length >= 1" class="text-center w-100">--}}
@@ -64,7 +65,7 @@
 {{--                </ul>--}}
             </div>
         </section>
-        
+
 
     </div>
 
