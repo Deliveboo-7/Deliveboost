@@ -45,28 +45,21 @@
 
 {{--        </section>--}}
 
-        <section>
+        <section class="container p-0" v-if="restaurants.length >= 1">
+            <div class="btn-gold m-0" @click="deleteFilter()">DELETE FILTER</div>
             <h3 class="text-center w-100" v-if="loading">LOADING</h3>
-            <div class="row mt-2 mb-2 text-white border border-danger p-2" v-for="restaurant in restaurants">
+            <div class="row mb-3 text-white border border-danger pt-2 pb-2" v-for="restaurant in restaurants">
                 <div class="col-10">
                     @{{ restaurant.company_name }}
                 </div>
-                <div class="col-2">
-{{--                    <div class="btn-gold" @click="getRestaurantMenu(restaurant.id)">MENU</div>--}}
+                <div class="col-2 text-right">
+{{--                <div class="btn-gold" @click="getRestaurantMenu(restaurant.id)">MENU</div>--}}
                     <a :href="getRestaurantMenu(restaurant.id)" class="btn-gold">MENU</a>
+{{--                <a :href="`/restaurant/menu/${restaurant.id}`" class="btn btn-outline-dark">MENU</a>--}}
+
                 </div>
-{{--                NON CANCELLARE MI SERVE COME RIFERIMENTO--}}
-{{--                <ul v-if="restaurants.length >= 1" class="text-center w-100">--}}
-{{--                    <li class="mt-2 mb-2">--}}
-{{--                        --}}
-{{--    --}}{{--                    <a :href="`/restaurant/menu/${restaurant.id}`" class="btn btn-outline-dark">MENU</a>--}}
-{{--                        --}}
-{{--                    </li>--}}
-{{--                </ul>--}}
             </div>
         </section>
-
-
     </div>
 
 @endsection
