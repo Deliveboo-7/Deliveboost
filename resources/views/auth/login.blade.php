@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="loginCard card-border">
-                <div class="card-header text-left  mb-0">{{ __('Login') }}
+                <div class="card-header text-left  mb-0 text-uppercase">{{ __('Login') }}
                 
                     <hr class="ml-0">
                 </div>

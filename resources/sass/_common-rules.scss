@@ -24,38 +24,57 @@ main {
 }
 
 .card-border {
-    border:solid 1px $lightgrey;
+    border: solid 1px $lightgrey;
     border-radius: 3px;
 }
 
-// ------------  USER INTERACTION --------------
-.btn-gold{
-
-    border: solid 1px $lightgrey;
-    background-color: $header;
+.card-header {
+    padding: 1.25rem;
+    font-size: 1.5rem;
     color: $gold;
-    padding: 5px;
+    background-color: $body;
+    border: none;   
+}
 
-        &:hover{
+
+// ------------  USER INTERACTION --------------
+.btn-gold {
+
+    border: solid 1px $lightgrey  !important;
+    background-color: $header !important;
+    color: $gold !important;
+    padding: 5px !important;
+
+        &:hover {
             background-color: $lightgrey;
-            color:$silver;               
+            color: $silver;               
         }           
 }
 
 form {
 
     label {
-        color:$silver;
+        color: $silver;
     }
-    input{
+    input,
+    textarea,
+    select {
         border: none;
-        background-color: $silver;
-            &:focus{
-                border:solid 2px $gold;
-                outline:none;
+        background-color: $silver !important;
+            &:focus {
+                border: solid 2px $gold !important;
+                outline: none;
             }
     }
 }
+/*
+.form-control {
+    background-color: $gold !important;
+    color: $body !important;
+}
+*/
+
+
 
 // ------------  TEXT --------------
 
@@ -69,5 +88,24 @@ form {
 }
 
 .text-gold{
-    color:$gold;
+    color: $gold;
+}
+
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
 }

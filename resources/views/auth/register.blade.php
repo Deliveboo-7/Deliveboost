@@ -2,9 +2,16 @@
 
 @section('content')
 <div class="container registerContainer col-md-10 col-md-12 ">
+
+
     <div class="row justify-content-center ">
+
+    
+
+
         <div  class="col-sm-8 col-md-6">
-            <div class="card">
+            <div class="card my-5">
+
                 <div class="card-header text-left">{{ __('Company Info') }}
                     <hr class="ml-0">
                 </div>
@@ -17,10 +24,10 @@
 
                         {{-- -------------- COMPANY NAME ---------------- --}}
                         <div class="form-group row">
-                            <label for="company_name" class=" col-xl-2 offset-xl-0 col-form-label text-xl-right">{{ __('Company Name') }}</label>
+                            <label for="company_name" class="regCompName col-xl-2 offset-xl-0 col-form-label text-xl-right">{{ __('Company Name') }}</label>
 
                             <div class=" col-xl-8">
-                                <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus>
+                                <input id="company_name" type="text" class="form-control cazzpinput @error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus>
 
                                 @error('company_name')
                                     <span class="invalid-feedback" role="alert">

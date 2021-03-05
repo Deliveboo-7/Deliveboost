@@ -1,52 +1,63 @@
 .card-headerRegister{
-    padding:.5rem;
-    font-size:1.5rem;
+    padding: .5rem;
+    font-size: 1.5rem;
     color: $gold;
     background-color: $body;
-    border:none;
-    margin-bottom: 10px;
+    border: none;
+    margin-bottom: 40px;
 }
 
 .registerContainer {
-    border:none;
-    height:calc(100vh - 80px);
+    border: none;
+   // height: calc(100vh - 80px);
     background-color: $body;
+
+    .regHR{     
+        width: 100%;
+        border-width: 1px;
+        border-color: $gold !important;
+    }
+
+
+
+    .col-form-label {
+        color: $gold;
+        padding: 0 15px;
+    }
+    
+    .card{
+    
+        background-color: $body;
+       // margin-top: 20%;
+     //   transform: translateY(-20%);
+            hr{
+                // margin: 0 auto;
+                width: 100%;
+    
+                border-width: 1px;
+                border-color: $lightgrey;
+            }
+    }
+    
+    .card-body input{
+        background-color: $silver;
+    }
+    
+    .registerBtn {
+        color: $gold;
+    }
+    
+    #opening_hours{
+        resize: none;
+    }
+    
 }
 /*
 .label{
     margin:0;
 }
 */
-.col-form-label{
-    color: $gold;
-    padding: 0 15px;
-}
 
-.card{
-
-    background-color: $body;
-    margin-top: 20%;
-    transform: translateY(-20%);
-        hr{
-            // margin: 0 auto;
-            width: 100%;
-
-            border-width: 1px;
-            border-color:$lightgrey;
-        }
-}
-
-.card-body input{
-    background-color: $silver;
-}
-
-.registerBtn {
-    color:$gold;
-}
-
-#opening_hours{
-    resize: none;
-}
 // div, label{
 
 //     min-height: 30px;
