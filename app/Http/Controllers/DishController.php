@@ -17,7 +17,7 @@ class DishController extends Controller
 
         $dishes = Dish::all();
 
-        return view ('pages.dishes-index', compact('dishes')); 
+        return view ('pages.dishes-index', compact('dishes'));
 
     }
 
@@ -29,7 +29,7 @@ class DishController extends Controller
 
 
     public function store(Request $request){
-    
+
         $data = $request -> all();
 
         $validatedData = $request -> validate([
@@ -39,7 +39,7 @@ class DishController extends Controller
             'visible' => 'required',
             ]);
 
-    
+
         $data['price'] *= 100;
 
         $loggedUser = Auth::user();
@@ -49,7 +49,7 @@ class DishController extends Controller
 
         return redirect() -> route('dashboard');
 
-        
+
     }
 
     // ----------------------- EDIT -------------------
@@ -62,7 +62,7 @@ class DishController extends Controller
 
         if($dish -> user_id === $loggedUser -> id ){
 
-            return view('dishes-edit', compact('dish'));
+            return view('pages.dishes-edit', compact('dish'));
 
         } else {
 
@@ -98,6 +98,6 @@ class DishController extends Controller
             return redirect() -> route('pages.dashboard');
 
         }
-    
+
     }
 }
