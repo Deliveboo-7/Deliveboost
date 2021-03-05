@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Dish;
 use App\Typology;
 use App\User;
-use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
@@ -20,5 +18,9 @@ class PublicController extends Controller
 
         return view('pages.menu-index', compact('restaurant'));
 
+    }
+
+    public function checkout() {
+        return view('pages.checkout');
     }
 }

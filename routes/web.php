@@ -16,26 +16,28 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Homepage
+// PUBLIC
 Route::get('/', 'PublicController@index') -> name('homepage');
+Route::get('/menu/restaurant/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
+Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
 
-Route::get('/home', 'HomeController@index')->name('dashboard'); //va a dashboard
-Route::get('/myfoods', 'DishController@index')->name('dishes-index');
-Route::get('/test/create', 'DishController@create')->name('dishes-create');
-Route::post('/test/store', 'DishController@store')->name('dishes-store');
-Route::get('/test/edit/{id}', 'DishController@edit')->name('dishes-edit');
-Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update');
+// ADMIN RESTAURANT
+Route::prefix('my-restaurant')->group(function () {
 
+//    /admin/dashboard -> Elenco piatti aggiunti dal ristorante
+    Route::get('/dashboard', 'RestaurantController@index') -> name('dashboard'); //va a dashboard
 
-//Route::get('/menu', function() {
-//   $restaurant = \App\User::findOrfail(11);
-//   $dishes = $restaurant -> dishes() -> get();
-//   return view('pages.menu-index', compact('restaurant', 'dishes'));
-//}) -> name('restaurant-menu');
+//    /admin/myfoods -> Elenco piatti aggiunti dal ristorante
+    Route::get('/dishes', 'DishController@index') -> name('dishes-index');
 
-Route::get('/restaurant/menu/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
+//    /dish/create -> Form per aggiungere un piatto e salvarlo
+    Route::get('/dish/create', 'DishController@create') -> name('dishes-create');
+    Route::post('/dish/store', 'DishController@store') -> name('dishes-store');
 
+//    /dish/create -> Form per aggiungere un piatto e salvarlo
+    Route::get('/dish/edit/{id}', 'DishController@edit') -> name('dishes-edit');
+    Route::post('/dish/update/{id}', 'DishController@update') -> name('dishes-update');
 
-Route::get('/checkout', function(){
-    return view('pages.checkout');
 });
+
+

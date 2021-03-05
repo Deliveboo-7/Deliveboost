@@ -17,32 +17,34 @@
 
                 @foreach ($restaurant -> dishes as $dish)
 
-                    <div class="row card listDish mt-4 offset-1 col-10">
-                        <div class="card-header dish-header " id="heading-{{$dish -> id}}">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false">
-                                    <span class="item">
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                        {{$dish -> name}}
-                                    </span>
-                                    <div>
-                                        <span class="price">
-                                            {{$dish -> price / 100}} €
+                    @if($dish -> visible === 1)
+                        <div class="row card listDish mt-4 offset-1 col-10">
+                            <div class="card-header dish-header " id="heading-{{$dish -> id}}">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false">
+                                        <span class="item">
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            {{$dish -> name}}
                                         </span>
-                                        <div class="addToOrder">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <div>
+                                            <span class="price">
+                                                {{$dish -> price / 100}} €
+                                            </span>
+                                            <div class="addToOrder">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </div>
                                         </div>
-                                    </div>
-                                </button>
-                            </h2>
-                        </div>
+                                    </button>
+                                </h2>
+                            </div>
 
-                        <div id="collapse-{{$dish -> id}}" class="collapse col-12" aria-labelledby="heading-{{$dish -> id}}" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="desc">{{$dish -> desc}}</div>
+                            <div id="collapse-{{$dish -> id}}" class="collapse col-12" aria-labelledby="heading-{{$dish -> id}}" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="desc">{{$dish -> desc}}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
 
                 @endforeach
 

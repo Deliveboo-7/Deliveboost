@@ -37,14 +37,6 @@
 
         </section>
 
-{{--        <section  class="homeRestourants row">--}}
-{{--<!--     py-5 px-3    -->--}}
-{{--            <h2 class="col-sm-10 offset-sm-1">--}}
-{{--                Select the types of food you prefer, and find the restaurants that have them all!--}}
-{{--            </h2>--}}
-
-{{--        </section>--}}
-
         <section class="container p-0" v-if="restaurants.length >= 1">
             <div class="btn-gold m-0 deleteSearch" @click="deleteFilter()">DELETE FILTER</div>
             <h3 class="text-center w-100" v-if="loading">LOADING</h3>
