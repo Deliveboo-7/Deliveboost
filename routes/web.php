@@ -36,3 +36,6 @@ Route::get('/menu', function() {
 Route::get('/restaurant/menu/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 
 
+Route::get('/checkout', function(){
+    return view('pages.checkout');
+});
