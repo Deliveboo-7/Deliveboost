@@ -1,26 +1,26 @@
 .dashboard {
     min-height: calc(100vh - 40px);
-    h5, span {
-        color: $gold;
+    span {
+        color: $silver;
     }
 }
 
 .restCover {
     position: relative;   
-    color: $gold;
+    // color: $gold;
     h1 {
-        color: $gold;
+        color: $body;
         position: absolute;
-        top: 60%;
+        top: 35%;
         left: 0;
         text-align: center;
-        background-color: $body;
+        background-color: $silver;
         width: 100%;
-        font-size: 40px;
-        font-weight: bold;
+        font-size: 60px;
+        font-weight: lighter;
         text-transform: uppercase;
-        opacity: 0.8;
-        height: 50px;
+        opacity: 0.9;
+        height: 100px;
 
     }
     img {
@@ -32,7 +32,7 @@
     
 }
 .restProfile {
-    border: 1px $gold solid;
+    border: 1px $lightgray solid;
 
   //  background-color: orange;
     display: flex;
@@ -62,7 +62,8 @@
 
 .restButton {
   //  background-color: red;
-    border: 1px $gold solid;
+    border: 1px $lightgrey solid;
+    background-color: $lightgray;
     display: flex;
     justify-content: center;
     flex-direction: column;
