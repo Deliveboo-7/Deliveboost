@@ -4,12 +4,14 @@
 
 <div class="dashboard">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="restCover col-sm-12 d-flex justify-content-center align-items-center">
-                <img src="{{ asset('storage/images/cover_4.png') }}" alt="">
+    <div class="container-fluid containerPageMenu">
+        <div class="row no-gutters">
+            <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
 
-                <h1 class="companyName">{{Auth::user() -> company_name}}</h1>
+                <div class="align-middle restName text-uppercase">
+                    <h1>{{Auth::user() -> company_name}}</h1>
+                </div>
+
             </div>
 
         </div>

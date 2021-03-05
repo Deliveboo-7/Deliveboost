@@ -5,32 +5,9 @@
     }
 }
 
-.restCover {
-    position: relative;   
-    // color: $gold;
-    h1 {
-        color: $body;
-        position: absolute;
-        top: 35%;
-        left: 0;
-        text-align: center;
-        background-color: $silver;
-        width: 100%;
-        font-size: 60px;
-        font-weight: lighter;
-        text-transform: uppercase;
-        opacity: 0.9;
-        height: 100px;
-
-    }
-    img {
-        width: 100%;
-        height: auto;
-    }
+// .containerPageMenu .coverRist .restName -> r1-12-19 menu.scss
 
 
-    
-}
 .restProfile {
     border: 1px $lightgray solid;
 
