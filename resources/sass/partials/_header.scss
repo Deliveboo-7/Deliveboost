@@ -1,11 +1,9 @@
 .navbar .container-fluid{
-    
-    background-color:$header;
+    background-color: $header;
 }
 
 #navbarSupportedContent ul li a {
-
-    color:$gold;
+    color: $gold;
 }
 
 header{
@@ -17,12 +15,11 @@ header{
 }
 
 .navbar{
-    padding:0;
+    padding: 0;
 
     #navbarDropdown{
 
         .dropdown-menu{
-
             background-color: $lightgrey;
         }
 
@@ -43,7 +40,6 @@ header{
 }
 
 .navbar-toggler{
-
     color:$gold;
 }
 
@@ -56,10 +52,7 @@ nav button{
 }
 
 .navbar-toggler{
-
     border: none;
-
-
 }
 
 
