@@ -1,29 +1,30 @@
-.form-check-label {
-    color:$gold;
-}
-
-.loginCard {   
-    background-color: $body;
-    margin-top: 20%;       
-    hr{     
-        width: 100%;
-        border-width: 1px;
-        border-color:$lightgrey;
-    }
-}
-
-.card-header {
-    padding:1.25rem;
-    font-size:1.5rem;
-    color: $gold;
-    background-color: $body;
-    border:none;   
-}
 
 .loginContainer {
-    border:none;
-    height:calc(100vh - 80px);
+    border: none;
+    height: calc(100vh - 80px);
     background-color: $body;
+
+    .form-check-label {
+        color: $gold;
+    }
+    
+    .loginCard {   
+        background-color: $body;
+        margin-top: 20%;       
+        hr{     
+            width: 100%;
+            border-width: 1px;
+            border-color: $lightgrey;
+        }
+    }
+    /*
+    .card-header {
+        padding:1.25rem;
+        font-size:1.5rem;
+        color: $gold;
+        background-color: $body;
+        border:none;   
+    }*/
 }
 
 // div, label{

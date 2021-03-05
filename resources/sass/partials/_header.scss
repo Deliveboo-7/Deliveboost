@@ -6,15 +6,15 @@
     color: $gold;
 }
 
-header{
+header {
     position: fixed;
-    top:0;
-    left:0; 
+    top: 0;
+    left: 0; 
     width: 100%;
-    z-index:2;
+    z-index: 2;
 }
 
-.navbar{
+.navbar {
     padding: 0;
 
     #navbarDropdown{
@@ -24,14 +24,14 @@ header{
         }
 
         a {
-            color:$gold;
+            color: $gold;
             text-decoration: none;
 
             &:hover 
             {
-                color:$body; 
-                text-decoration:none; 
-                cursor:pointer;  
+                color: $body; 
+                text-decoration: none; 
+                cursor: pointer;  
             }
         }
         
