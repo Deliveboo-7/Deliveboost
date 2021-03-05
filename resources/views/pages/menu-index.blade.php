@@ -15,7 +15,7 @@
         <section class="row no-gutters">
             <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
-                @foreach ($dishes as $dish)
+                @foreach ($restaurant -> dishes as $dish)
 
                     <div class="row card listDish mt-4 offset-1 col-10">
                         <div class="card-header " id="heading-{{$dish -> id}}">
@@ -31,12 +31,12 @@
                                         </span>
                                         <div class="addToOrder">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </button>
                             </h2>
                         </div>
-                    
+
                         <div id="collapse-{{$dish -> id}}" class="collapse col-12" aria-labelledby="heading-{{$dish -> id}}" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="desc">{{$dish -> desc}}</div>
@@ -44,14 +44,14 @@
                         </div>
                     </div>
 
-                @endforeach                        
+                @endforeach
 
             </div> <!--fine accordion-->
 
             <!--SIDEBAR-->
             <div class="col-12 order-1 col-lg-5 order-lg-2 container-sidebar">
                 <div class="row no-gutters sidebar sticky-top p-2">
-                    
+
                     <div class="col-12 generalInfo pb-3 pt-3">
                         <div class="row detailsRest">
 
@@ -79,13 +79,13 @@
                                                 ,
                                             @endif
 
-                                        @endforeach     
+                                        @endforeach
                                     </span> <!--da inserire-->
                                 </div>
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Delivery:</span>
-                                    <span>2,50€</span> 
-                                </div> 
+                                    <span>2,50€</span>
+                                </div>
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Payment:</span>
                                     <span><i class="fas fa-money-bill-wave"></i>
@@ -95,7 +95,7 @@
                                         <i class="fa fa-credit-card" aria-hidden="true"></i>
                                         Credit Card
                                     </span>
-                                </div>            
+                                </div>
                             </div>
 
                             <!--right-->
@@ -103,9 +103,9 @@
                                 <div class="col-12">
                                     <span class="detailTitle">OPENING HOURS:</span>
                                     <p>{{$restaurant -> opening_info}}</p>
-                                </div>    
+                                </div>
                             </div>
-           
+
                         </div>
                     </div> <!--fine generalInfo-->
 
@@ -157,10 +157,10 @@
                             <span>Total: 20,50€ </span>
                         </button>
                     </div>
-                </div>    
+                </div>
             </div>
         </section>
-        
+
 
     </div>
 
