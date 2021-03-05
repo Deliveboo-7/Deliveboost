@@ -46,9 +46,9 @@
 {{--        </section>--}}
 
         <section class="container p-0" v-if="restaurants.length >= 1">
-            <div class="btn-gold m-0" @click="deleteFilter()">DELETE FILTER</div>
+            <div class="btn-gold m-0 deleteSearch" @click="deleteFilter()">DELETE FILTER</div>
             <h3 class="text-center w-100" v-if="loading">LOADING</h3>
-            <div class="row mb-3 text-white border border-danger pt-2 pb-2" v-for="restaurant in restaurants">
+            <div class="row my-3 text-white border-bottom py-2" v-for="restaurant in restaurants">
                 <div class="col-10">
                     @{{ restaurant.company_name }}
                 </div>

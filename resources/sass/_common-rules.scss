@@ -76,6 +76,9 @@ form {
 
 
 
+
+
+
 // ------------  TEXT --------------
 
 
@@ -92,12 +95,27 @@ form {
 }
 
 
+
+
+
+//ALTRO
+
+
+//select:hover,
+select:active,
+select:focus,
 textarea:hover, 
-input:hover, 
+input[type="text"]:hover, 
+input[type="text"]:active, 
+input[type="text"]:focus,
+input[type="email"]:hover, 
+input[type="email"]:active, 
+input[type="email"]:focus,
+input[type="password"]:hover, 
+input[type="password"]:active, 
+input[type="password"]:focus,
 textarea:active, 
-input:active, 
 textarea:focus, 
-input:focus,
 button:focus,
 button:active,
 button:hover,
@@ -109,3 +127,4 @@ label:focus,
     -webkit-appearance:none;
     box-shadow: none !important;
 }
+

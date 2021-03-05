@@ -80,26 +80,20 @@
                 </ul>
             </div>
 
-            <div class="restButton col-4 py-3">
+            <a href="#" class="restButton col-4 py-3">
                 <i class="fas fa-hamburger fa-7x"></i><br>
-                    <div>
-                    <span>MY FOODS</span>
-                </div>
-            </div>
-            <div class="restButton col-4 py-3">
+                <span>MY FOODS</span>
+            </a>
+            <a href="#" class="restButton col-4 py-3">
                 <i class="fas fa-clipboard fa-7x"></i><br>
-                <div>
-                    <span>MY ORDERS</span>
-                </div>
+                <span>MY ORDERS</span>
                 
                 
-            </div>
-            <div class="restButton col-4 py-3">
+            </a>
+            <a href="#" class="restButton col-4 py-3">
                 <i class="fas fa-chart-line fa-7x"></i><br>
-                <div>
-                    <span>MY STATS</span>
-                </div>
-            </div>
+                <span>MY STATS</span>
+            </a>
         </div>
 
     </div>
