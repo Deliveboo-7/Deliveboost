@@ -36,3 +36,6 @@ Route::post('/test/update/{id}', 'DishController@update')->name('dishes-update')
 Route::get('/restaurant/menu/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 
 
+Route::get('/checkout', function(){
+    return view('pages.checkout');
+});
