@@ -4,15 +4,15 @@
 
     <div class="container homeContainer min-vh-100">
 
-        <section class="homeJumbotron row d-flex justify-content-center py-5 px-3    ">
+        <section class="homeJumbotron row d-flex justify-content-center py-5 px-3">
 
-            <div class="d-flex justify-content-center col-lg-12">
+            <div class="d-flex justify-content-center align-items-center col-lg-12">
                 <h1 class="">DELIVEBO</h1>
                 <img  class="" src="{{ asset('storage/icons/logo.svg') }}"/>
                 <h1 class="">ST</h1>
             </div>
 
-            <h2 class="text-center col-lg-12">The luxuriest end fastest food delivery service</h2>
+            <h2 class="text-center text-light col-lg-12">The luxuriest end fastest food delivery service</h2>
         </section>
 
         <section  class="homeTypologies row">
@@ -64,9 +64,7 @@
 {{--                </ul>--}}
             </div>
         </section>
-        <div class="row">
-            <h3 class="col-12 text-center" v-if="restaurants.length == 0">Inizia o modifica la ricerca</h3>
-        </div>
+        
 
     </div>
 

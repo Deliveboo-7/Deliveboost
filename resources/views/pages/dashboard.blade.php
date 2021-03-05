@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="restCover col-sm-12 d-flex justify-content-center align-items-center">
-                <img src="https://www.radiolombardia.it/wp-content/uploads/2019/04/Food.jpg" alt="">
+                <img src="{{ asset('storage/images/cover_4.png') }}" alt="">
 
                 <h1 class="companyName">{{Auth::user() -> company_name}}</h1>
             </div>
@@ -23,12 +23,12 @@
             <div class="restProfile col-12">
                 <ul>
                     <li class="infoTitle">
-                        <h5>
+                        <h5 class="text-gold">
                             INFORMATIONS
                         </h5>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             MAIL: 
                         </span>
                         <span class="alignRight">
@@ -36,7 +36,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             ADDRESS: 
                         </span>
                         <span class="alignRight">
@@ -44,7 +44,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             VAT: 
                         </span>
                         <span class="alignRight">
@@ -52,7 +52,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             PHONE NUMBER: 
                         </span>
                         <span class="alignRight">
@@ -60,7 +60,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             WEBSITE: 
                         </span>
                         <span class="alignRight">
@@ -68,7 +68,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span>
+                        <span class="text-bold">
                             OPENING INFO: 
                         </span>
                         <span class="alignRight">

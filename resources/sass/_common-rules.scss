@@ -1,14 +1,8 @@
-
+// ------------  GENERAL --------------
 main {
     background-color: $body;
     height: 100vh;
     margin-top: 40px; 
-}
-
-.card-border{
-
-    border:solid 1px $lightgrey;
-    border-radius: 3px;
 }
 
 #app {
@@ -16,6 +10,17 @@ main {
     background-color: $body;
 
 }
+
+
+
+.card-border{
+
+    border:solid 1px $lightgrey;
+    border-radius: 3px;
+}
+
+
+// ------------  USER INTERACTION --------------
 
 .btn-gold{
 
@@ -46,4 +51,21 @@ form{
                 outline:none;
             }
     }
+}
+
+// ------------  TEXT --------------
+
+
+.text-light{
+    font-weight: lighter;
+}
+
+.text-bold{
+
+    font-weight: bold;
+}
+
+.text-gold{
+
+    color:$gold;
 }
