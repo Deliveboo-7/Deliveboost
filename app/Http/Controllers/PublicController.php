@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Typology;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class PublicController extends Controller
 {
@@ -15,8 +16,9 @@ class PublicController extends Controller
 
     public function getRestaurantMenu($id) {
         $restaurant = User::findOrFail($id);
+        $dishes = DB::table('dishes') -> where('user_id', $restaurant -> id) -> orderBy('name') -> get();
 
-        return view('pages.menu-index', compact('restaurant'));
+        return view('pages.menu-index', compact('dishes', 'restaurant'));
 
     }
 
