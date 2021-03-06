@@ -33,7 +33,7 @@ main {
     font-size: 1.5rem;
     color: $gold;
     background-color: $body;
-    border: none;   
+    border: none;
 }
 
 
@@ -44,11 +44,12 @@ main {
     background-color: $header !important;
     color: $gold !important;
     padding: 5px !important;
+    cursor: pointer;
 
         &:hover {
-            background-color: $lightgrey;
-            color: $silver;               
-        }           
+            background-color: $lightgrey !important;
+            color: $silver !important;
+        }
 }
 
 form {
@@ -111,18 +112,18 @@ form {
 //select:hover,
 select:active,
 select:focus,
-textarea:hover, 
-input[type="text"]:hover, 
-input[type="text"]:active, 
+textarea:hover,
+input[type="text"]:hover,
+input[type="text"]:active,
 input[type="text"]:focus,
-input[type="email"]:hover, 
-input[type="email"]:active, 
+input[type="email"]:hover,
+input[type="email"]:active,
 input[type="email"]:focus,
-input[type="password"]:hover, 
-input[type="password"]:active, 
+input[type="password"]:hover,
+input[type="password"]:active,
 input[type="password"]:focus,
-textarea:active, 
-textarea:focus, 
+textarea:active,
+textarea:focus,
 button:focus,
 button:active,
 button:hover,
