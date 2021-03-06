@@ -70,18 +70,18 @@
                                 </h2>                              
                             </div>
                             
-                            <div class="col  text-light restaurantName py-4">
+                            <div class="col text-light restaurantName py-4">
 
                                 @{{ restaurant.company_name }}
                                 <hr>  
 
                             </div>
 
-                            <div class="col- text-silver p-2 ">
+                            <div class="col text-silver p-2 ">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officia perferendis qui voluptatum illo! Temporibus minima atque tempore natus facere.</p>
                             </div>
 
-                            <div class="col  text-gold d-flex justify-content-between py-1">
+                            <div class="col text-gold d-flex justify-content-between py-1">
 
                                 <div class="col-4 text-silver d-flex justify-content-between align-items-center">
                                     <i class="fas fa-money-bill-wave mr-1 "></i>
