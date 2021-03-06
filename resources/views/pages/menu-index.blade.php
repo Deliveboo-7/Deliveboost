@@ -56,7 +56,7 @@
                         <div class="row detailsRest">
 
                             <!--left-->
-                            <div class="col-6">
+                            <div class="col-6 px-2">
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Address:</span>
                                     <span>{{$restaurant -> address}}</span>
