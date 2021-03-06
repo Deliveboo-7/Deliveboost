@@ -15,7 +15,8 @@ class DishController extends Controller
 
     public function index(){
 
-        $dishes = Dish::all();
+        $loggedUser = Auth::user();
+        $dishes = $loggedUser -> dishes() -> get();
 
         return view ('pages.dishes-index', compact('dishes'));
 
@@ -37,7 +38,7 @@ class DishController extends Controller
             'desc' => 'required|string|min:20',
             'price' => 'required',
             'visible' => 'required',
-            ]);
+        ]);
 
 
         $data['price'] *= 100;
@@ -47,7 +48,7 @@ class DishController extends Controller
         $newDish -> user() -> associate($loggedUser);
         $newDish -> save();
 
-        return redirect() -> route('dashboard');
+        return redirect() -> route('dishes-index') -> with('created', 'Dish created successfully!');
 
 
     }
@@ -66,7 +67,7 @@ class DishController extends Controller
 
         } else {
 
-            return redirect() -> route('pages.dashboard');
+            return redirect() -> route('dashboard');
 
         }
     }
@@ -91,12 +92,12 @@ class DishController extends Controller
             ]);
 
             $dish -> update($validatedData);
-            
-            return redirect() -> route('pages.dishes-index');
+
+            return redirect() -> route('dishes-index');
 
         } else {
 
-            return redirect() -> route('pages.dashboard');
+            return redirect() -> route('dashboard');
 
         }
 

@@ -63,6 +63,15 @@
     }
 }
 
+.deleteSearch {
+    text-align: center;
+}
+
+.deleteSearch:hover {
+    cursor: pointer;
+}
+
+
 @media (min-width: 576px) { 
 
     .homeJumbotron {

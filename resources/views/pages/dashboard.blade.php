@@ -31,7 +31,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            MAIL: 
+                            MAIL:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> email}}
@@ -39,7 +39,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            ADDRESS: 
+                            ADDRESS:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> address}}
@@ -47,7 +47,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            VAT: 
+                            VAT:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> vat}}
@@ -55,7 +55,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            PHONE NUMBER: 
+                            PHONE NUMBER:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> phone_number}}
@@ -63,7 +63,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            WEBSITE: 
+                            WEBSITE:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> website}}
@@ -71,7 +71,7 @@
                     </li>
                     <li class="d-flex justify-content-between">
                         <span class="text-bold">
-                            OPENING INFO: 
+                            OPENING INFO:
                         </span>
                         <span class="alignRight">
                             {{Auth::user() -> opening_info}}
@@ -80,30 +80,24 @@
                 </ul>
             </div>
 
-            <div class="restButton col-4 py-3">
+            <a href="{{ route('dishes-index') }}" class="restButton col-4 py-3">
                 <i class="fas fa-hamburger fa-7x"></i><br>
-                    <div>
-                    <span>MY FOODS</span>
-                </div>
-            </div>
-            <div class="restButton col-4 py-3">
+                <span>MY FOODS</span>
+            </a>
+            <a href="#" class="restButton col-4 py-3">
                 <i class="fas fa-clipboard fa-7x"></i><br>
-                <div>
-                    <span>MY ORDERS</span>
-                </div>
-                
-                
-            </div>
-            <div class="restButton col-4 py-3">
+                <span>MY ORDERS</span>
+
+
+            </a>
+            <a href="#" class="restButton col-4 py-3">
                 <i class="fas fa-chart-line fa-7x"></i><br>
-                <div>
-                    <span>MY STATS</span>
-                </div>
-            </div>
+                <span>MY STATS</span>
+            </a>
         </div>
 
     </div>
-    
+
 </div>
 
 @endsection

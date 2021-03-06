@@ -9,7 +9,7 @@
 
             </div>
             
-                <div class="card-header text-left">{{ __('Change Meal details') }}
+                <div class="card-header text-left">{{ __('Change Dish Details') }}
                     <hr class="ml-0">
                 </div>
 

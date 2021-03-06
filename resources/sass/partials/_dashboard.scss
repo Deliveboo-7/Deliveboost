@@ -4,6 +4,8 @@
     span {
         color: $silver;
     }
+
+    
 }
 
 // .containerPageMenu .coverRist .restName -> r1-12-19 menu.scss
@@ -46,16 +48,18 @@
     /* align-content: center; */
     align-items: center;
     min-height: 100%;
+
     i {
         color: $gold;
+        padding-bottom: 2%;
     }
-    div {
-        padding-top: 5%;
-    }
+    text-decoration: none;
 }
 .restButton:hover {
     background-color: #444444;
     border: 1px solid $gold;
     cursor: pointer;
+    text-decoration: none;
+
 }
 

@@ -54,7 +54,7 @@ new Vue({
         },
         getRestaurantMenu(id) {
             // location.href = '/restaurant/menu/' + id;
-            return `restaurant/menu/${id}`
+            return `menu/restaurant/${id}`
         },
 
         deleteFilter() {
