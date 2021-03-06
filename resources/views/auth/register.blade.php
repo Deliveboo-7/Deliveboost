@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container registerContainer col-md-10 col-md-12 ">
+<div class="container registerContainer col-md-12">
 
 
     <div class="row justify-content-center ">
-
-    
-
-
         <div  class="col-sm-8 col-md-6">
             <div class="card my-5">
 
@@ -16,8 +12,6 @@
                     <hr class="ml-0">
                 </div>
                 
-                
-
                 <div class="card-body">
                     <form  method="POST" action="{{ route('register') }}">
                         @csrf
