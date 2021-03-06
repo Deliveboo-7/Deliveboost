@@ -12,6 +12,12 @@
 
             </div>
 
+            @if (session('created'))
+                <div class="btn-gold mt-2 mb-2 text-center test-open">
+                    {{ session('created') }}
+                </div>
+            @endif
+
             <div class="row">
                 <button class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
                     <a href="{{ route('dishes-create') }}">Inserisci nuovo piatto</a>
