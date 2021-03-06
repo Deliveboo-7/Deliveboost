@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'vat' => $data['vat'],
             'phone_number' => $data['phone_number'],
             'opening_info' => $data['opening_info'],
-            'website' =>'http://' .  $data['website'],
+            'website' => $data['website'],
 
 
         ]);
