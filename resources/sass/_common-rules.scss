@@ -67,6 +67,8 @@ form {
             }
     }
 }
+
+
 /*
 .form-control {
     background-color: $gold !important;
@@ -79,8 +81,9 @@ form {
 // ------------  TEXT --------------
 
 
-.text-light{
+.text-lighter{
     font-weight: lighter;
+    font-size: 1.5em;
 }
 
 .text-bold{
@@ -89,6 +92,10 @@ form {
 
 .text-gold{
     color: $gold;
+}
+
+.text-silver{
+    color: $silver;
 }
 
 
