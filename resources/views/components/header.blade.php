@@ -1,8 +1,8 @@
 <header>
 
-    <nav class=" navbar  navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class=" navbar p-0 navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand p-3" href="{{ url('/') }}">
                 {{-- {{ config('app.name', 'Laravel') }} --}}
                 <img src="{{ asset('storage/icons/logo.svg') }}" alt="logo" height="30px" width="30px">
             </a>
@@ -17,10 +17,10 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto text-gold">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
+                        <li class="">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
@@ -34,12 +34,12 @@
                                 {{ Auth::user()->company_name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
-                                <a class="dropdown-item" href="{{ route('dishes-index') }}">Dishes</a>
-                                <a class="dropdown-item" href="#">Orders</a>
-                                <a class="dropdown-item" href="#">Stats</a>
+                                <a class="dropdown-item my-2" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="dropdown-item my-2" href="{{ route('dishes-index') }}">Dishes</a>
+                                <a class="dropdown-item my-2" href="#">Orders</a>
+                                <a class="dropdown-item my-2" href="#">Stats</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
