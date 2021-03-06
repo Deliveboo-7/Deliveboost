@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Dish;
+use Illuminate\Support\Facades\DB;
 
 class DishController extends Controller
 {
@@ -15,8 +16,8 @@ class DishController extends Controller
 
     public function index(){
 
-        $loggedUser = Auth::user();
-        $dishes = $loggedUser -> dishes() -> get();
+        $loggedUserId = Auth::user() -> id;
+        $dishes = DB::table('dishes') -> where('user_id', $loggedUserId) -> orderBy('name') -> get();
 
         return view ('pages.dishes-index', compact('dishes'));
 
