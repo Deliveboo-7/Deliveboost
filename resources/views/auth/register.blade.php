@@ -11,7 +11,7 @@
                 <div class="card-header text-left">{{ __('Company Info') }}
                     <hr class="ml-0">
                 </div>
-                
+
                 <div class="card-body">
                     <form  method="POST" action="{{ route('register') }}">
                         @csrf
@@ -46,21 +46,21 @@
                             </div>
                         </div>
 
-                        
-                        
+
+
                         {{-- -------------- VAT  PHONE & OPENING ---------------- --}}
                         <div class="form-group row">
 
                             <div class="form-group col-xl-4 ">
-                                
+
                                 {{-- -------------- VAT ---------------- --}}
                                 <div class="form-group row ">
 
                                     <label for="vat" class="col-xl-6   col-form-label text-xl-right">{{ __('VAT') }}</label>
-                                    
+
                                     <div class="col-xl-6">
                                         <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" maxlength="11" autofocus>
-    
+
                                         @error('vat')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -96,9 +96,9 @@
                                     <label for="opening_info" class="col-xl-3 col-form-label text-xl-right">{{ __('Opening hours') }}</label>
 
                                     <div class="col-xl-6">
-                                    
-                                        <textarea 
-                                            id="opening_hours" name="opening_info" class="form-control @error('opening_info') is-invalid @enderror" 
+
+                                        <textarea
+                                            id="opening_hours" name="opening_info" class="form-control @error('opening_info') is-invalid @enderror"
                                             value="{{ old('opening_info') }}" required autocomplete="opening_info" autofocus cols="20" rows="4">
                                         </textarea>
 
@@ -114,13 +114,35 @@
 
                         </div>
 
+                        {{-- -------------- TYPOLOGIES ----------------  --}}
+                        <div class="form-group row">
+
+                            <label for="typologies[]" class="col-xl-2 offset-xl-0 col-form-label text-xl-right">{{ __('Typologies') }}</label>
+                            <div class=" col-xl-8 text-gold">
+
+                                @foreach($typologies as $typology)
+                                    <input type="checkbox" name="typologies[]" id="typologies[]" value="{{ $typology -> id }}" class="mx-5
+                                        @error('typologies') is-invalid @enderror"
+                                        {{ old('typologies') && in_array($typology -> id, old('typologies')) ? 'checked' : '' }}
+                                    >
+                                    {{ $typology -> name }}
+                                @endforeach
+
+                                @error('typologies')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         {{-- -------------- USER INFO ----------------  --}}
                         <div class="card-headerRegister text-left">{{ __('User Info') }}
-                        
+
                             <hr class="ml-0">
-                            
+
                         </div>
-                        
+
                         {{-- -------------- WEBSITE ----------------  --}}
                         <div class="form-group row mt-3">
                             <label for="website" class="col-xl-4 col-form-label text-xl-right">{{ __('Website') }}</label>
