@@ -1,11 +1,16 @@
-.titleMyFoods {
-    background-color: yellow;
-    height: 100px;
-}
+// .titleMyFoods {
+//     background-color: yellow;
+//     height: 100px;
+// }
 
 .addDish {
-    background-color: grey;
+ //   background-color: grey;
+    color: $gold;
 
+    a {
+        text-decoration: none;
+        color: $gold;
+    }
 }
 
 .listItem {

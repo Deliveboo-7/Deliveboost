@@ -38,6 +38,11 @@ Route::prefix('my-restaurant')->group(function () {
     Route::get('/dish/edit/{id}', 'DishController@edit') -> name('dishes-edit');
     Route::post('/dish/update/{id}', 'DishController@update') -> name('dishes-update');
 
+//    /admin/myorders -> Elenco ordini  del ristorante
+    Route::get('/orders', 'OrderController@index') -> name('orders-index');
+
+
+
 });
 
 

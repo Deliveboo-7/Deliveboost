@@ -2,15 +2,30 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <div class="mydishes">
+
+        <div class="container-fluid containerPageMenu">
+            <div class="row no-gutters">
+                <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
+    
+                    <div class="align-middle restName text-uppercase">
+                        <h1>{{Auth::user() -> company_name}} - My Dishes</h1>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
 
         <div class="container-fluid center">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="titleMyFoods col-sm-12 mb-4">
                     <h1>I miei piatti</h1>
                 </div>
 
-            </div>
+            </div> --}}
 
             @if (session('created'))
                 <div class="btn-gold mt-2 mb-2 text-center test-open">
@@ -19,7 +34,7 @@
             @endif
 
             <div class="row">
-                <button class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
+                <button class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4 btn-gold" >
                     <a href="{{ route('dishes-create') }}">Inserisci nuovo piatto</a>
                 </button>
             </div>
@@ -68,7 +83,7 @@
             </div>
 
             <div class="row">
-                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4">
+                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4 btn-gold">
                     Menu pubblico
                 </div>
             </div>
