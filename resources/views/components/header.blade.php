@@ -31,14 +31,14 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->company_name }}
+                                {{ Auth::user() -> company_name }}
                             </a>
 
                             <div class="dropdown-menu p-0 m-0 dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                 <a class="dropdown-item my-2" href="{{ route('dashboard') }}">Dashboard</a>
                                 <a class="dropdown-item my-2" href="{{ route('dishes-index') }}">Dishes</a>
-                                <a class="dropdown-item my-2" href="#">Orders</a>
+                                <a class="dropdown-item my-2" href="{{ route('orders-index') }}">Orders</a>
                                 <a class="dropdown-item my-2" href="#">Stats</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"

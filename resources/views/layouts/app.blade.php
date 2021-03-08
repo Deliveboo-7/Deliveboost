@@ -22,15 +22,17 @@
 
     <!-- Popper Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    
-    <!-- braintree-->
-    
-    
+
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
+    <!-- Load the required client component. -->
+    <script src="https://js.braintreegateway.com/web/3.73.1/js/client.min.js"></script>
+
+    <!-- Load Hosted Fields component. -->
+    <script src="https://js.braintreegateway.com/web/3.73.1/js/hosted-fields.min.js"></script>
     <!-- Animations -->
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
 <body>

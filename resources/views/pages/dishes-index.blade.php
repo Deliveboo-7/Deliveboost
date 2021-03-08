@@ -12,7 +12,7 @@
                     
                 </div>
 
-            </div>
+            </div> --}}
 
             @if (session('created'))
                 <div class="btn-gold mt-2 mb-2 text-center test-open">
@@ -110,7 +110,7 @@
             </div>
 
             <div class="row">
-                <div class="addDish text-center btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4">
+                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4 btn-gold">
                     Menu pubblico
                 </div>
             </div>

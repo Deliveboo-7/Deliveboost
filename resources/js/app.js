@@ -4,9 +4,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { forEach } = require('lodash');
+
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+import braintree from 'braintree-web';
 
 new Vue({
     el: '#app',
@@ -16,8 +20,11 @@ new Vue({
             typologiesIds : [],
             isActive: false,
             restaurants : [],
-            loading: false
+            loading: false,
 
+            hostedFieldInstance: false,
+            nonce: "",
+            error: "",
         }
     },
 
@@ -60,12 +67,89 @@ new Vue({
         deleteFilter() {
             this.restaurants = [];
             this.typologiesIds = [];
+        },
+
+        //CART
+
+        //CHECKOUT
+        payWithCreditCard() {
+            if(this.hostedFieldInstance)
+            {
+              this.hostedFieldInstance.tokenize()
+              .then(payload => {
+                  console.log(payload);
+                  this.nonce = payload.nonce;
+                  var form = document.querySelector('#payment-form');
+                  form.submit();
+                //   form.reset();
+              })
+              .catch(err => {
+                console.error(err);
+                if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
+                  err.message = 'Card details are invalid.';
+                  this.error = err.message;
+                }
+    
+                if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
+                  err.message = 'The fields are empty. Please enter your payment information. ';
+                  this.error = err.message;
+                }
+                  
+              })
+            }
         }
+
     },
 
     mounted() {
+        braintree.client.create({
+            //We’ll need an authorization key to use the Braintree SDK
+            authorization: "sandbox_hcrjf9fn_g26pkzj2tjhwqm7n"
+        })
+        .then(clientInstance => {
+            let options = {
+                client: clientInstance,
+                styles: {
+                    input: {
+                        'font-size': '14px',
+                        'font-family': 'Open Sans'
+                    }
+                },
+                fields: {
+                    number: {
+                        selector: '#creditCardNumber',
+                        placeholder: 'Enter Credit Card'
+                    },
+                    cvv: {
+                        selector: '#cvv',
+                        placeholder: 'Enter CVV'
+                    },
+                    expirationDate: {
+                        selector: '#expireDate',
+                        placeholder: '00 / 0000'
+                    }
+                }
+            }
 
-    }
+            return braintree.hostedFields.create(options)
+        })
+        .then(hostedFieldInstance => {
+            // @TODO - Use hostedFieldInstance to send data to Braintree
+            this.hostedFieldInstance = hostedFieldInstance;
+            console.log(hostedFieldInstance);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    },
+
+
+
+
+
+    
+    
 
 });
+
 
