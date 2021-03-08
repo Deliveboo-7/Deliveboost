@@ -1,24 +1,43 @@
-.titleMyFoods {
-    background-color: yellow;
-    height: 100px;
-}
+// .titleMyFoods {
+//     background-color: yellow;
+//     height: 100px;
+// }
 
-.addDish {
-    background-color: grey;
+// .addDish {
+//     background-color: grey;
 
-}
+// }
 
-.listItem {
-    border: 2px dotted black;
+// .listItem {
+//     border: 2px dotted black;
 
-}
+// }
 
-.listItem * {
-    text-align: center;
-    border: 1px solid red;
-}
+// .listItem * {
+//     text-align: center;
+//     border: 1px solid red;
+// }
 
-.details {
-    display: flex;
-    justify-content: space-around;
+// .details {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+.cover{
+    
+    background-color: pink;
+    height: 300px;
+    background-size: cover;
+    // background-image: url('/storage/images/cover_3.png');
+
+    .stripe{
+        background-color: royalblue;
+        max-height: 100px;
+        
+        
+       
+        // background-color: rgba($color: white, $alpha: .5);
+    }
+
+
 }

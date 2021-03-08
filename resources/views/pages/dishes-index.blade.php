@@ -2,12 +2,14 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    {{-- <div class=" debug container-fluid"> --}}
 
-        <div class="container-fluid center">
-            <div class="row">
-                <div class="titleMyFoods col-sm-12 mb-4">
-                    <h1>I miei piatti</h1>
+        <div class="  container-fluid ">
+            <div class="row cover ">
+                <div class=" col stripe text-uppercase d-flex flex-column justify-content-center ">
+                   
+                        <h1 class="">These are your dishes</h1>
+                    
                 </div>
 
             </div>
@@ -19,7 +21,7 @@
             @endif
 
             <div class="row">
-                <button class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
+                <button class="addDish btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
                     <a href="{{ route('dishes-create') }}">Inserisci nuovo piatto</a>
                 </button>
             </div>
@@ -28,7 +30,47 @@
 
                 @foreach ($dishes as $dish)
 
-                    <div class="row card listItem mb-4">
+
+                
+                <div class="  container text-silver my-3" >
+
+                <div class="row itemDish py-2 bordRad" style="min-height:150px">
+            
+                    <div class="col-8">
+                        <div class="row h-50 ">
+                            <div class="col-sm-12 text-gold bord-b py-3">{{$dish -> name}}</div>            
+                        </div>
+            
+                        <div class="row h-50 ">
+                            <div class="col-sm-12"><span> {{$dish -> desc}}</span></div>
+                        </div>    
+                    </div>
+            
+            
+                    <div class="col-4 clearfix">
+                        <div class="row h-50 text-center ">
+                            <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
+                            <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
+                        </div>
+                        <div class="row h-50 text-center">
+                            <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible{{$dish -> visible}}</div>
+                            <a href="{{ route('dishes-edit', $dish -> id) }}" 
+                                type="button" 
+                                class="col-sm-6 text-lighter text-gold py-3 btn-edit">
+                                    <i class="far fa-edit"></i>
+                                    Edit
+                            </a>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+
+
+   
+
+
+                    {{-- <div class="row card listItem mb-4">
                         <div class="card-header col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="heading-{{$dish -> id}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false">
@@ -61,20 +103,20 @@
                                 <a href="{{ route('dishes-edit', $dish -> id) }}" type="button" class="btn btn-dark edit">Edit</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 @endforeach
 
             </div>
 
             <div class="row">
-                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4">
+                <div class="addDish text-center btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4">
                     Menu pubblico
                 </div>
             </div>
 
         </div>
 
-    </div>
+    {{-- </div> --}}
 
 @endsection
