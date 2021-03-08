@@ -7,7 +7,7 @@ body  {
 main {
     background-color: $body;
     min-height: 100vh;
-    margin-top: 40px;
+    margin-top: 70px;
     overflow: hidden;
     padding-bottom: 200px;
 }
@@ -85,20 +85,20 @@ form {
 // ------------  TEXT --------------
 
 
-.text-lighter{
+.text-lighter {
     font-weight: lighter;
     // font-size: 1.5em;
 }
 
-.text-bold{
+.text-bold {
     font-weight: bold;
 }
 
-.text-gold{
+.text-gold {
     color: $gold;
 }
 
-.text-silver{
+.text-silver {
     color: $silver;
 }
 

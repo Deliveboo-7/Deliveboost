@@ -5,8 +5,11 @@ header {
     width: 100%;
     z-index: 2;
 
+
     .navbar .container-fluid{
-        background-color:$body;
+        background-color: $header;
+        height: 70px;
+
 
         .navbar-toggler{
             border: none;
@@ -17,7 +20,7 @@ header {
     }
 
     #navbarSupportedContent ul li a{
-        color:$gold;
+        color: $gold;
     }
     
     .dropdown-menu{
@@ -25,7 +28,7 @@ header {
         
             .dropdown-item {
             
-            color:$silver;
+            color: $silver;
             background-color: $lightgray;
             border-color: $body;
             border-style: solid ;
@@ -33,7 +36,7 @@ header {
 
             &:hover{
 
-                background-color:$lightgrey;
+                background-color: $lightgrey;
             }
             
         }

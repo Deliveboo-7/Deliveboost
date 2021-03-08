@@ -35,4 +35,12 @@ class PublicController extends Controller
 
         return view('pages.checkout');
     }
+
+    public function paySuccess() {
+        return view('pages.paySuccess');
+    }
+    public function payUnsuccess() {
+        return view('pages.payUnsuccess');
+    }
+
 }

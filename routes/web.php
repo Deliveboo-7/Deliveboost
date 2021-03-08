@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/', 'PublicController@index') -> name('homepage');
 Route::get('/menu/restaurant/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
+Route::get('/paySuccess', 'PublicController@paySuccess') -> name('paySuccess');
+Route::get('/payUnsuccess', 'PublicController@payUnsuccess') -> name('payUnsuccess');
 
 // ADMIN RESTAURANT
 Route::prefix('my-restaurant')->group(function () {
