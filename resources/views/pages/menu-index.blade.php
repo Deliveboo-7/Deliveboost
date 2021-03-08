@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid containerPageMenu">
+    <div class="container-fluid containerPageMenu " id="cart-anna">
         <section class=" row no-gutters">
             <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="align-middle restName text-uppercase">
@@ -19,9 +19,9 @@
 
                     @if($dish -> visible === 1)
                         <div class="row card listDish mt-4 offset-1 col-10">
-                            <div class="card-header dish-header " id="heading-{{$dish -> id}}">
+                            <div class="card-header dish-header " id="heading-{{$dish -> id}}" >
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left collapsed btn-dish" type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false">
+                                    <button class="btn btn-link btn-block text-left collapsed btn-dish"   type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false" >
                                         <span class="item">
                                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                             {{$dish -> name}}
@@ -111,43 +111,15 @@
                         </div>
                     </div> <!--fine generalInfo-->
 
-                    <div class="col-12 cart p-4 ">
+                    <div class="col-12 cart p-4 " >
                         <div class="dishesSelected d-none d-lg-block">
                             <h4>YOUR ORDER</h4>
 
                             <div class="itemsOrdered mb-2">
-                                <ul>
+                                <ul v-for="(item) in dishesSelected">
                                     <li class="d-flex justify-content-between pb-2">
-                                        <span>pizza margherita</span>
-                                        <span class="numbItem">5</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>pizza ciao</span>
-                                        <span class="numbItem">2</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>carbonara</span>
-                                        <span class="numbItem">4</span>
+                                        <span>@{{ item.name }}</span>
+                                        <span class="numbItem">1</span>
                                     </li>
                                 </ul>
                             </div>

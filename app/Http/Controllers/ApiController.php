@@ -56,4 +56,5 @@ class ApiController extends Controller
         return response() -> json(User::findOrFail($match));
 
     }
+
 }

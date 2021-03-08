@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/typology', 'ApiController@restaurantsByTypology') -> name('get-restaurant');
+
+

@@ -26,6 +26,12 @@
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
+    <!-- Load the required client component. -->
+    <script src="https://js.braintreegateway.com/web/3.73.1/js/client.min.js"></script>
+
+    <!-- Load Hosted Fields component. -->
+    <script src="https://js.braintreegateway.com/web/3.73.1/js/hosted-fields.min.js"></script>
+
 </head>
 <body>
     <div id="app">
