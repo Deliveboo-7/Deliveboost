@@ -31,10 +31,10 @@
 
             @endforeach
 
-            <h4 class="text-gold col-12 pb-3 flex">Typologies selected:</h4>
+            {{-- <h4 class="text-gold col-12 pb-3 flex">Typologies selected:</h4>
             <div class="text-gold col-12 pb-3 flex" v-for="typologiesId in typologiesIds"> 
                 @{{ typologiesId }} 
-            </div>
+            </div> --}}
 
         </section>
 

@@ -39,7 +39,7 @@
                                 <a class="dropdown-item my-2" href="{{ route('dashboard') }}">Dashboard</a>
                                 <a class="dropdown-item my-2" href="{{ route('dishes-index') }}">Dishes</a>
                                 <a class="dropdown-item my-2" href="{{ route('orders-index') }}">Orders</a>
-                                <a class="dropdown-item my-2" href="#">Stats</a>
+                                <a class="dropdown-item my-2" href="{{ route('statistics-index') }}">Stats</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

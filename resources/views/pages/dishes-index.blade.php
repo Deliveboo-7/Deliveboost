@@ -44,42 +44,40 @@
             <div class="dishesList accordion" id="accordion">
 
                 @foreach ($dishes as $dish)
-
-
                 
-                <div class="  container text-silver my-3" >
+                    <div class="  container text-silver my-3" >
 
-                <div class="row itemDish py-2 bordRad" style="min-height:150px">
-            
-                    <div class="col-8">
-                        <div class="row h-50 ">
-                            <div class="col-sm-12 text-gold bord-b py-3">{{$dish -> name}}</div>            
+                        <div class="row itemDish py-2 bordRad" style="min-height:150px">
+                    
+                            <div class="col-8">
+                                <div class="row h-50 ">
+                                    <div class="col-sm-12 text-gold bord-b py-3">{{$dish -> name}}</div>            
+                                </div>
+                    
+                                <div class="row h-50 ">
+                                    <div class="col-sm-12"><span> {{$dish -> desc}}</span></div>
+                                </div>    
+                            </div>
+                    
+                    
+                            <div class="col-4 clearfix">
+                                <div class="row h-50 text-center ">
+                                    <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
+                                    <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
+                                </div>
+                                <div class="row h-50 text-center">
+                                    <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible{{$dish -> visible}}</div>
+                                    <a href="{{ route('dishes-edit', $dish -> id) }}" 
+                                        type="button" 
+                                        class="col-sm-6 text-lighter text-gold py-3 btn-edit">
+                                            <i class="far fa-edit"></i>
+                                            Edit
+                                    </a>
+                                </div>
+                            </div>
+                    
                         </div>
-            
-                        <div class="row h-50 ">
-                            <div class="col-sm-12"><span> {{$dish -> desc}}</span></div>
-                        </div>    
                     </div>
-            
-            
-                    <div class="col-4 clearfix">
-                        <div class="row h-50 text-center ">
-                            <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
-                            <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
-                        </div>
-                        <div class="row h-50 text-center">
-                            <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible{{$dish -> visible}}</div>
-                            <a href="{{ route('dishes-edit', $dish -> id) }}" 
-                                type="button" 
-                                class="col-sm-6 text-lighter text-gold py-3 btn-edit">
-                                    <i class="far fa-edit"></i>
-                                    Edit
-                            </a>
-                        </div>
-                    </div>
-            
-                </div>
-            </div>
 
 
    
