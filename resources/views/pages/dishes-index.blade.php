@@ -4,11 +4,26 @@
 
     {{-- <div class=" debug container-fluid"> --}}
 
-        <div class="  container-fluid ">
-            <div class="row cover ">
+        <div class="container-fluid containerPageMenu">
+            <div class="row no-gutters">
+                <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
+    
+                    <div class="align-middle restName text-uppercase">
+                        <h1>{{Auth::user() -> company_name}} - These are your dishes</h1>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+
+        <div class="dishes-index  container-fluid ">
+            {{-- <div class="row cover ">
                 <div class=" col stripe text-uppercase d-flex flex-column justify-content-center ">
                    
-                        <h1 class="">These are your dishes</h1>
+                    <h1 class="">These are your dishes</h1>
                     
                 </div>
 
@@ -20,7 +35,7 @@
                 </div>
             @endif
 
-            <div class="row">
+            <div class="row pt-5">
                 <button class="addDish btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
                     <a href="{{ route('dishes-create') }}">Inserisci nuovo piatto</a>
                 </button>
@@ -109,11 +124,19 @@
 
             </div>
 
-            <div class="row">
-                <div class="addDish col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4 btn-gold">
+            {{-- <div class="row">
+                <div class="addDish btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4 ">
                     Menu pubblico
                 </div>
+            </div> --}}
+
+
+            <div class="row pt-4">
+                <button class="addDish btn-gold col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mb-4" >
+                    <a href="">Menu pubblico</a>
+                </button>
             </div>
+
 
         </div>
 

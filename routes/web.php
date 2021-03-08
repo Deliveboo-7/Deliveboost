@@ -43,6 +43,12 @@ Route::prefix('my-restaurant')->group(function () {
 //    /my-restaurant/myorders -> Elenco ordini  del ristorante
     Route::get('/orders', 'OrderController@index') -> name('orders-index');
 
+//    /my-restaurant/mystats -> Elenco stats  del ristorante
+ //   Route::get('/statistics', 'StatisticController@index') -> name('statistics-index');
+//    /my-restaurant/mystats -> Elenco stats  del ristorante
+    Route::get('/statistics', 'ChartController@index') -> name('statistics-index');
+
+
 
 
 });

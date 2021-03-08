@@ -41,3 +41,12 @@
 
 
 }
+
+.dishes-index {
+    button a {
+        color: $gold;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}

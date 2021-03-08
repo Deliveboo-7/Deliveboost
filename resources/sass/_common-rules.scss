@@ -6,7 +6,7 @@ body  {
 }
 main {
     background-color: $body;
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
     margin-top: 70px;
     overflow: hidden;
     padding-bottom: 200px;
@@ -101,6 +101,7 @@ form {
 .text-silver {
     color: $silver;
 }
+
 
 // ------------  DESIGN --------------
 
