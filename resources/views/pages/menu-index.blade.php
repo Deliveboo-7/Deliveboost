@@ -6,7 +6,7 @@
         <section class=" row no-gutters">
             <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="align-middle restName text-uppercase">
-                    <h1>{{$restaurant -> company_name}}</h1>
+                    <h1>{{ $restaurant -> company_name }}</h1>
                 </div>
             </div>
         </section>
@@ -15,7 +15,7 @@
         <section class="row no-gutters">
             <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
-                @foreach ($restaurant -> dishes as $dish)
+                @foreach ($dishes as $dish)
 
                     @if($dish -> visible === 1)
                         <div class="row card listDish mt-4 offset-1 col-10">
@@ -58,28 +58,24 @@
                         <div class="row detailsRest">
 
                             <!--left-->
-                            <div class="col-6">
+                            <div class="col-6 px-2">
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Address:</span>
-                                    <span>{{$restaurant -> address}}</span>
+                                    <span>{{ $restaurant -> address }}</span>
                                 </div>
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Website:</span>
-                                    <span>{{$restaurant -> website}}</span>
+                                    <span>{{ $restaurant -> website }}</span>
                                 </div>
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Phone:</span>
-                                    <span>{{$restaurant -> phone_number}}</span>
+                                    <span>{{ $restaurant -> phone_number }}</span>
                                 </div>
                                 <div class="col-12 detail">
                                     <span class="detailTitle">Typology:</span>
                                     <span>
                                         @foreach ($restaurant -> typologies as $typology)
-                                            {{$typology -> name}}
-
-                                            @if (!$loop->last)
-                                                ,
-                                            @endif
+                                            {{$typology -> name}}@if (!$loop->last), @endif
 
                                         @endforeach
                                     </span> <!--da inserire-->
@@ -104,7 +100,7 @@
                             <div class="col-6 opening">
                                 <div class="col-12">
                                     <span class="detailTitle">OPENING HOURS:</span>
-                                    <p>{{$restaurant -> opening_info}}</p>
+                                    <p>{{ $restaurant -> opening_info }}</p>
                                 </div>
                             </div>
 

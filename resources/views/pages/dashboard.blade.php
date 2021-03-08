@@ -84,7 +84,7 @@
                 <i class="fas fa-hamburger fa-7x"></i><br>
                 <span>MY FOODS</span>
             </a>
-            <a href="#" class="restButton col-4 py-3">
+            <a href="{{ route('orders-index') }}" class="restButton col-4 py-3">
                 <i class="fas fa-clipboard fa-7x"></i><br>
                 <span>MY ORDERS</span>
 

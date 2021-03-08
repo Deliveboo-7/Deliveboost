@@ -24,19 +24,24 @@ Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
 // ADMIN RESTAURANT
 Route::prefix('my-restaurant')->group(function () {
 
-//    /admin/dashboard -> Elenco piatti aggiunti dal ristorante
+//    /my-restaurant/dashboard -> Elenco piatti aggiunti dal ristorante
     Route::get('/dashboard', 'RestaurantController@index') -> name('dashboard'); //va a dashboard
 
-//    /admin/myfoods -> Elenco piatti aggiunti dal ristorante
+//    /my-restaurant/dishes -> Elenco piatti aggiunti dal ristorante
     Route::get('/dishes', 'DishController@index') -> name('dishes-index');
 
 //    /dish/create -> Form per aggiungere un piatto e salvarlo
     Route::get('/dish/create', 'DishController@create') -> name('dishes-create');
     Route::post('/dish/store', 'DishController@store') -> name('dishes-store');
 
-//    /dish/create -> Form per aggiungere un piatto e salvarlo
+//    /dish/edit -> Form per modificare un piatto e salvarlo
     Route::get('/dish/edit/{id}', 'DishController@edit') -> name('dishes-edit');
     Route::post('/dish/update/{id}', 'DishController@update') -> name('dishes-update');
+
+//    /my-restaurant/myorders -> Elenco ordini  del ristorante
+    Route::get('/orders', 'OrderController@index') -> name('orders-index');
+
+
 
 });
 

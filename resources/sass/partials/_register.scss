@@ -9,35 +9,24 @@
 
 .registerContainer {
     border: none;
-   // height: calc(100vh - 80px);
     background-color: $body;
 
-    .regHR{     
-        width: 100%;
-        border-width: 1px;
-        border-color: $gold !important;
-    }
-
-
-
-    .col-form-label {
-        color: $gold;
-        padding: 0 15px;
-    }
+        .col-form-label {
+            color: $gold;
+            padding: 0 15px;
+        }
     
-    .card{
-    
-        background-color: $body;
-       // margin-top: 20%;
-     //   transform: translateY(-20%);
-            hr{
-                // margin: 0 auto;
-                width: 100%;
-    
-                border-width: 1px;
-                border-color: $lightgrey;
-            }
-    }
+        .card{
+                
+            background-color: $body;
+            border: solid 1px $lightgrey;   
+                hr{
+                    
+                    width: 100%;
+                    border-width: 1px;
+                    border-color: $lightgrey;
+                }
+        }
     
     .card-body input{
         background-color: $silver;
@@ -58,12 +47,6 @@
 }
 */
 
-// div, label{
-
-//     min-height: 30px;
-//     background-color: rgb(54, 54, 54);
-//     border:solid 1px red;
-// }
 
 
 

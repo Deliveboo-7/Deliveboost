@@ -1,62 +1,41 @@
-.navbar .container-fluid{
-    background-color: $header;
-}
-
-#navbarSupportedContent ul li a {
-    color: $gold;
-}
-
 header {
     position: fixed;
     top: 0;
     left: 0; 
     width: 100%;
     z-index: 2;
-}
 
-.navbar {
-    padding: 0;
+    .navbar .container-fluid{
+        background-color:$body;
 
-    #navbarDropdown{
-
-        .dropdown-menu{
-            background-color: $lightgrey;
+        .navbar-toggler{
+            border: none;
         }
-
-        a {
-            color: $gold;
-            text-decoration: none;
-
-            &:hover 
-            {
-                color: $body; 
-                text-decoration: none; 
-                cursor: pointer;  
-            }
-        }
-        
+        // .navbar-brand{
+        //     padding:10px;
+        // }
     }
-    .dropdown-item {
-        background-color: $header;
-        border: 1px solid $gold;
+
+    #navbarSupportedContent ul li a{
+        color:$gold;
     }
     
+    .dropdown-menu{
+        background-color: $lightgray;
+        
+            .dropdown-item {
+            
+            color:$silver;
+            background-color: $lightgray;
+            border-color: $body;
+            border-style: solid ;
+            border-width: 0px 1px 1px 1px;
+
+            &:hover{
+
+                background-color:$lightgrey;
+            }
+            
+        }
+    }   
 }
-
-.navbar-toggler{
-    color:$gold;
-}
-
-nav button{
-    color:$gold;
-}
-
-.navbar-brand{
-    padding:5px 10px;
-}
-
-.navbar-toggler{
-    border: none;
-}
-
-

@@ -29,3 +29,23 @@
 
 
 
+
+.debug{
+
+    min-height: 30px;
+    background-color: rgb(54, 54, 54);
+    border:solid 1px red;
+    div, img,h1{
+    // min-height: 30px;
+    // background-color: rgb(54, 54, 54);
+    border:solid 1px red;
+
+    }
+    section{
+
+    min-height: 30px;
+    // background-color: rgb(149, 196, 240);
+    border:solid 1px red;
+    }
+ 
+}

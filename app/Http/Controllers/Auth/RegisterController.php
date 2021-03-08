@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Typology;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -55,12 +56,12 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'company_name' => ['required', 'string', 'min:10','max:100'],
             'address' => ['required', 'string','min:10','max:200'],
-            'vat' => ['required', 'string', 'min:11','max:11'],
-            'phone_number' => ['required', 'string','min:10','max:20'],
+            'vat' => ['required', 'numeric', 'min:11','max:11', 'unique:users'],
+            'phone_number' => ['required', 'numeric','min:10','max:20', 'unique:users'],
             'opening_info' => ['required', 'string'],
             'website' => ['required', 'string'],
-
-            ]);
+            'typologies' => ['required']
+        ]);
     }
 
     /**
@@ -72,8 +73,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-
-        return User::create([
+        $newUser = User::create([
 
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -82,11 +82,13 @@ class RegisterController extends Controller
             'vat' => $data['vat'],
             'phone_number' => $data['phone_number'],
             'opening_info' => $data['opening_info'],
-            'website' =>'http://' .  $data['website'],
-
-
+            'website' => $data['website'],
         ]);
 
+        $typologies = Typology::findOrFail($data['typologies']);
+        $newUser -> typologies() -> attach($typologies);
+
+        return $newUser;
 
     }
 }
