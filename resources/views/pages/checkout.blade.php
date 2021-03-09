@@ -13,7 +13,7 @@
 
     <div class=" row my-4 text-silver">
       <div class=" col-12 text-center text-lighter">
-          <span>Please check your order before checkout!</span>                
+          <span>Please check your order before checkout!</span>
       </div>
     </div>
 
@@ -23,9 +23,9 @@
         <label for="qty" class="col-1 "> @{{item.quantity}}  </label>
         <div @click="removeQty(item)" class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
     </div>
-    
 
-    
+
+
         <div class="row">
             <div class="checkoutList col-md-8  col-lg-6">
 
@@ -39,7 +39,7 @@
                             </div>
                             <div class="alert alert-danger" v-if="error" v-show="!nonce">
                               @{{ error }}
-                            </div>  
+                            </div>
                             <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/success')}}">
                                 @csrf
                                 @method('POST')
@@ -60,7 +60,7 @@
                                 <label for="amount">Amount</label>
                                 <div class="input-group">
                                   <div class="input-group-prepend"><span class="input-group-text">€</span></div>
-                                  <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount" :value="finalPrice/100" readonly>
+                                  <input type="text" id="amount" name="amount" class="form-control" placeholder="Enter Amount" :value="finalPrice/100" >
                                 </div>
                               </div>
                               <hr />
@@ -93,12 +93,12 @@
 </div>
 
 
-        
+
 
     </div>
-</div> 
-            
-        </div>    
+</div>
+
+        </div>
     </div>
 @endsection
 
