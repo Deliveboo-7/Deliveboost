@@ -47,7 +47,7 @@
 
                 @foreach ($orders as $order)
 
-                    <div class="row card cardContainer backColorBody borderGold">
+                    <div class="row cardContainer backColorBody borderGold">
                         <div class="card-header card orderCard col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="heading-{{$order -> id}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link btn-block text-left collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse-{{$order -> id}}" aria-controls="collapse-{{$order -> id}}" aria-expanded="false">
