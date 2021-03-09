@@ -9,16 +9,17 @@
 //     min-height: 30px;
 //     border:solid 1px red;
 // }
-
-.card-header {
-    background-color: $body;
-        
+.dishes-create {
+    .card-header {
+        background-color: $body;
+            
         hr {
             width: 100%;
             border-width: 1px;
             border-color: $lightgrey;
         }
-}
+    }
+    }
 /*
 select option {
     background-color: green;
