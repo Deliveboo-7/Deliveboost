@@ -103,11 +103,6 @@ new Vue({
     },
 
     mounted() {
-<<<<<<< HEAD
-
-        
-        braintree.client.create( {
-=======
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
         this.restaurantID = window.location.href.split('/').pop();
@@ -122,7 +117,6 @@ new Vue({
         }
 
         braintree.client.create({
->>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
             //We’ll need an authorization key to use the Braintree SDK
             authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })

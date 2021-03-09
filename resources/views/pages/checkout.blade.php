@@ -77,10 +77,7 @@
                 
                 
 
-<<<<<<< HEAD
                 <h1>YOUR CART</h1>
-=======
->>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
             </div>
         </div>
     </section>

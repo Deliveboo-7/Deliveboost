@@ -58,14 +58,11 @@ class ApiController extends Controller
 
     }
 
-<<<<<<< HEAD
-=======
     public function getDishes(Request $request) {
         $data = $request -> all();
         $dishes = DB::table('dishes') -> where('user_id', $data[0]) -> get();
         return response() -> json($dishes);
 
     }
->>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
 
 }
