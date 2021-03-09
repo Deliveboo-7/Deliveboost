@@ -1,12 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth; // importo AUTH per poter utilizzare i dettagli utente loggato
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\OrderMail;
 
 use App\Typology;
 use App\User;
 use Braintree;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+
+
+
 
 
 class PublicController extends Controller
@@ -25,6 +33,7 @@ class PublicController extends Controller
 
     }
 
+    //CHECKOUT AND PAYMENT
     public function checkout() {
 
         return view('pages.checkout');
@@ -38,6 +47,12 @@ class PublicController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
         ]);
+
+        $data = $request -> all();
+
+        // $validateData = $request -> validate([
+            
+        // ]);
     
         // dd($gateway);
         
@@ -58,6 +73,11 @@ class PublicController extends Controller
     
         if ($result -> success) {
             $transaction = $result->transaction;
+
+            //ORDER MAIL
+            Mail::to(Auth::user() -> email)
+            ->send(new OrderMail('ciao'));
+
     
             return view('pages.success', compact('transaction'));
     
@@ -72,8 +92,12 @@ class PublicController extends Controller
     
             
         }
-    
+
+        
     }
+
+    
+
     public function paySuccess() {
         return view('pages.paySuccess');
     }

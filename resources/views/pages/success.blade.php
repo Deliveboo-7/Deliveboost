@@ -1,6 +1,5 @@
-<h1>Succesfull!!!!!!!</h1>
+@extends('layouts.app')
 
-<h2>AMOUNT: {{$transaction -> amount}}</h2>
-<h2>RESULT: {{$transaction -> status}}</h2>
-
-<h2>{{$transaction -> id}}</h2>
+@section('content')
+    <h1>Succesfull!!</h1>
+@endsection
