@@ -32,8 +32,8 @@
             @endforeach
 
             {{-- <h4 class="text-gold col-12 pb-3 flex">Typologies selected:</h4>
-            <div class="text-gold col-12 pb-3 flex" v-for="typologiesId in typologiesIds"> 
-                @{{ typologiesId }} 
+            <div class="text-gold col-12 pb-3 flex" v-for="typologiesId in typologiesIds">
+                @{{ typologiesId }}
             </div> --}}
 
         </section>
@@ -61,7 +61,7 @@
                                     <i class="far fa-star"></i>
                                 </h2>
                             </div>
-                            
+
                             <div class="col text-light restaurantName py-4">
 
                             <div class="col  text-light restaurantName py-4">
@@ -96,7 +96,7 @@
 
                             <div class="col text-center my-2">
                                 <hr>
-                                <a :href="getRestaurantMenu(restaurant.id)" class="btn-gold">MENU</a>
+                                <a :href="'{{url('menu/restaurant')}}'+ '/' + restaurant.id" class="btn-gold">MENU</a>
                             </div>
 
                         </div>

@@ -15,6 +15,13 @@
         <section class="row no-gutters">
             <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
+                <ul>
+                    <li v-for="dish in dishes" class="text-gold" >
+                        [@{{ dish.id }}] @{{ dish.name }}
+                    </li>
+                </ul>
+
+
                 @foreach ($dishes as $dish)
 
                     @if($dish -> visible === 1)
@@ -112,12 +119,12 @@
                             <h4>YOUR ORDER</h4>
 
                             <div class="itemsOrdered mb-2">
-                                <ul v-for="(item) in dishesSelected">
-                                    <li class="d-flex justify-content-between pb-2">
-                                        <span>@{{ item.name }}</span>
-                                        <span class="numbItem">1</span>
-                                    </li>
-                                </ul>
+{{--                                <ul v-for="(item) in dishesSelected">--}}
+{{--                                    <li class="d-flex justify-content-between pb-2">--}}
+{{--                                        <span>@{{ item.name }}</span>--}}
+{{--                                        <span class="numbItem">1</span>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
                             </div>
 
                         </div>
