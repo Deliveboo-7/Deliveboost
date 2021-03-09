@@ -54,6 +54,25 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+            {{-- 
+                https://welcm.uk/blog/getting-started-with-charts-in-laravel-7 
+                https://www.chartjs.org/docs/latest/charts/bar.html
+                https://laravel.com/docs/7.x/collections#method-pluck
+                https://therichpost.com/laravel-chartjs-with-dynamic-data-working-example/
+                
+                --}}
         
         
             <script type="application/javascript">
