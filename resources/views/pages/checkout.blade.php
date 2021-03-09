@@ -17,24 +17,13 @@
       </div>
     </div>
 
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
+    <div class="row py-2 my-3 orderItem text-gold px-2" v-for="item in checkout">
+        <div class="col-6  offset-1 col-md-7 offset-md-1">[@{{item.name}}] - @{{item.name}}</div>
         <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
+        <label for="qty" class="col-1 ">   </label>
         <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
     </div>
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
-    </div>
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
-    </div>
+    
 
     
         <div class="row">
