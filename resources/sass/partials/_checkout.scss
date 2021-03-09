@@ -1,3 +1,30 @@
+
+.coverCheckout{
+    
+    //debug
+    height: 300px;
+    background-size:cover;
+    background-image: url('/storage/images/cover_2.png');
+    
+    .restName{
+        background-color: $silver;
+        opacity: 0.7;
+        height: 100px;
+        color: black;
+        width: 100%;
+        text-align: center;
+        
+        h1{
+            position: relative;
+            font-size: 6em;
+            font-weight: lighter;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+        
+    }
+}
+
 .orderItem{
 
     font-size:1em;
@@ -14,32 +41,6 @@
     
     }
 }
-
-.coverCheckout{
-
-    //debug
-    height: 300px;
-    background-size:cover;
-    background-image: url('/storage/images/cover_2.png');
-
-    .restName{
-        background-color: $silver;
-        opacity: 0.7;
-        height: 100px;
-        color: black;
-        width: 100%;
-        text-align: center;
-
-        h1{
-            position: relative;
-            font-size: 6em;
-            font-weight: lighter;
-            top:50%;
-            transform: translate(0,-50%);
-        }
-    }
-}
-
 .itemDish{
 
     background-color: $lightgray;
@@ -78,7 +79,11 @@
 
 }
 
+.paymentForm{
 
+    background-color:$body;
+    border:1px solid $lightgray;
+}
 
 
 
