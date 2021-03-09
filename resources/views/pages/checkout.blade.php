@@ -19,9 +19,9 @@
 
     <div class="row py-2 my-3 orderItem text-gold px-2" v-for="item in checkout">
         <div class="col-6  offset-1 col-md-7 offset-md-1">[@{{item.name}}] - @{{item.name}}</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <label for="qty" class="col-1 ">   </label>
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
+        <div @click="addQty(item)" class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
+        <label for="qty" class="col-1 "> @{{item.quantity}}  </label>
+        <div @click="removeQty(item)" class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
     </div>
     
 
@@ -60,7 +60,7 @@
                                 <label for="amount">Amount</label>
                                 <div class="input-group">
                                   <div class="input-group-prepend"><span class="input-group-text">€</span></div>
-                                  <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount">
+                                  <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount" :value="finalPrice/100" readonly>
                                 </div>
                               </div>
                               <hr />
@@ -88,25 +88,12 @@
                     </div>
                 </div>
 
-                
-                
-
-                <h1>YOUR CART</h1>
             </div>
         </div>
 </div>
 
 
-        <div class="col-4 clearfix">
-            <div class="row h-50 text-center ">
-                <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
-                <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
-            </div>
-            <div class="row h-50 text-center">
-                <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible</div>
-                <div class="col-sm-6 text-lighter py-3"><i class="far fa-edit"></i>Edit</div>
-            </div>
-        </div>
+        
 
     </div>
 </div> 
