@@ -11,51 +11,16 @@
             </div>
         </section>
 
-        <!--ACCORDION-->
         <section class="row no-gutters">
             <div class="col-12 order-2 col-lg-7 order-lg-1 menuList accordion" id="accordion">
 
                 <ul>
                     <li v-for="dish in dishes" class="text-gold" >
-                        [@{{ dish.id }}] @{{ dish.name }}
+                        [@{{ dish.id }}] @{{ dish.name }}  - @{{ dish.price/100 }} € 
+                        <i class="fas fa-plus" @click="addDish(dish)"></i>
                     </li>
                 </ul>
-
-
-                @foreach ($dishes as $dish)
-
-                    @if($dish -> visible === 1)
-                        <div class="row card listDish mt-4 offset-1 col-10">
-                            <div class="card-header dish-header " id="heading-{{$dish -> id}}" >
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left collapsed btn-dish"   type="button" data-toggle="collapse" data-target="#collapse-{{$dish -> id}}"  aria-controls="collapse-{{$dish -> id}}" aria-expanded="false" >
-                                        <span class="item">
-                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            {{$dish -> name}}
-                                        </span>
-                                        <div>
-                                            <span class="price">
-                                                {{$dish -> price / 100}} €
-                                            </span>
-                                            <div class="addToOrder">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </h2>
-                            </div>
-
-                            <div id="collapse-{{$dish -> id}}" class="collapse col-12" aria-labelledby="heading-{{$dish -> id}}" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="desc">{{$dish -> desc}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-
-                @endforeach
-
-            </div> <!--fine accordion-->
+            </div>
 
             <!--SIDEBAR-->
             <div class="col-12 order-1 col-lg-5 order-lg-2 container-sidebar">
@@ -119,19 +84,28 @@
                             <h4>YOUR ORDER</h4>
 
                             <div class="itemsOrdered mb-2">
-{{--                                <ul v-for="(item) in dishesSelected">--}}
-{{--                                    <li class="d-flex justify-content-between pb-2">--}}
-{{--                                        <span>@{{ item.name }}</span>--}}
-{{--                                        <span class="numbItem">1</span>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
+
+                                <ul v-if="cart.length === 0">
+                                    <li >
+                                        vuoto
+                                    </li>
+                                </ul>
+
+                                <ul v-else>
+                                   <li v-for="item in cart" class="d-flex justify-content-between pb-2">
+                                       
+                                       <span >[@{{ item.id }}] @{{ item.name }} --> @{{ item.quantity}}</span>
+                                       
+                                   </li>
+                               </ul>
+
                             </div>
 
                         </div>
                         <button type="button" class="btn btn-checkout btn-lg btn-block d-flex justify-content-around">
                             <span class="d-block d-lg-none">Items: ...</span>
-                            <span>CHECKOUT</span>
-                            <span>Total: 20,50€ </span>
+                            <a href="{{ route('checkout') }}" @click="saveCart()"><span>CHECKOUT</span> </a>
+                            <label> @{{ finalPrice/100 }} </label>
                         </button>
                     </div>
                 </div>
