@@ -66,6 +66,13 @@
                                   <input type="text" id="address" class="form-control" placeholder="">
                                 </div>
                               </div>
+                              <div class="form-group">
+                                <label for="item">Item</label>
+                                <div class="input-group">
+                                  <input type="text" id="item" class="form-control" placeholder="">
+                                </div>
+                              </div>
+                
                               <!--inserire items carrello-->
                               <div class="form-group">
                                 <label for="amount">Amount</label>
