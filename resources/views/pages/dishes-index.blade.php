@@ -9,7 +9,8 @@
                 <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
     
                     <div class="align-middle restName text-uppercase">
-                        <h1>{{Auth::user() -> company_name}} - These are your dishes</h1>
+                        <h1>my dishes</h1>
+                        {{-- {{Auth::user() -> company_name}} -  --}}
                     </div>
     
                 </div>

@@ -20,7 +20,7 @@ class OrderController extends Controller
 
         $loggedUserId = Auth::user() -> id;
 
-        $orders = DB::table('users')
+/*        $orders = DB::table('users')
                 -> join('dishes', 'users.id', '=', 'dishes.user_id')
                 -> join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
                 -> join('orders', 'orders.id', '=', 'dish_order.order_id')
@@ -28,7 +28,7 @@ class OrderController extends Controller
                 -> where('user_id', $loggedUserId)
 //                -> groupBy('orders.id')
                 -> get();
-
+*/
 //        dd($orders);
 
 //        DB::raw('COUNT(dishes.id) as dishes') - NON CANCELLARE
@@ -53,7 +53,8 @@ class OrderController extends Controller
 //            }
 //
 //        }
-
+    //riga 57 temporanea - modifica rispetto a versione del 8/marzo è l'order by date
+        $orders = DB::table('orders') -> orderBy('date') -> get();
         return view ('pages.orders-index', compact('orders'));
 
     }
