@@ -17,12 +17,12 @@
 
                 <ul>
                     <li v-for="dish in dishes" class="text-gold" >
-                        [@{{ dish.id }}] @{{ dish.name }}
+                        [@{{ dish.id }}] @{{ dish.name }}  <i class="fas fa-plus" @click="addDish(dish)"></i>
                     </li>
                 </ul>
 
 
-                @foreach ($dishes as $dish)
+                {{-- @foreach ($dishes as $dish)
 
                     @if($dish -> visible === 1)
                         <div class="row card listDish mt-4 offset-1 col-10">
@@ -53,7 +53,7 @@
                         </div>
                     @endif
 
-                @endforeach
+                @endforeach --}}
 
             </div> <!--fine accordion-->
 
@@ -119,18 +119,27 @@
                             <h4>YOUR ORDER</h4>
 
                             <div class="itemsOrdered mb-2">
-{{--                                <ul v-for="(item) in dishesSelected">--}}
-{{--                                    <li class="d-flex justify-content-between pb-2">--}}
-{{--                                        <span>@{{ item.name }}</span>--}}
-{{--                                        <span class="numbItem">1</span>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
+
+                                <ul v-if="cart.length === 0">
+                                    <li >
+                                        vuoto
+                                    </li>
+                                </ul>
+
+                                <ul v-else>
+                                   <li v-for="item in cart" class="d-flex justify-content-between pb-2">
+                                       
+                                       <span >[@{{ item.id }}] @{{ item.name }}</span>
+                                       
+                                   </li>
+                               </ul>
+
                             </div>
 
                         </div>
                         <button type="button" class="btn btn-checkout btn-lg btn-block d-flex justify-content-around">
                             <span class="d-block d-lg-none">Items: ...</span>
-                            <span>CHECKOUT</span>
+                            <a href="{{ route('checkout') }}" @click="saveCart()"><span>CHECKOUT</span> </a>
                             <span>Total: 20,50€ </span>
                         </button>
                     </div>

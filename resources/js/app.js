@@ -20,6 +20,8 @@ new Vue({
             restaurants : [],
             loading: false,
             dishes : [],
+            cart:[],
+            checkout:[],
             restaurantID : null,
 
             hostedFieldInstance: false,
@@ -29,6 +31,7 @@ new Vue({
     },
 
     methods: {
+        
         getData(id) {
 
             // Se l'array degli id delle tipologie contiene già l'id
@@ -69,6 +72,23 @@ new Vue({
             this.typologiesIds = [];
         },
 
+        addDish(dish){
+
+            this.cart.push(dish);
+
+            console.log('click preso')
+
+        },
+
+        saveCart() {
+            const parsed = JSON.stringify(this.cart);
+            localStorage.setItem('checkout', parsed);
+            this.cart = [];
+        },
+
+
+        
+
         //CART
 
         // //CHECKOUT
@@ -83,6 +103,8 @@ new Vue({
                   var form = document.querySelector('#payment-form');
                   form.submit();
                 //   form.reset();
+                // inserire qui svuotamento array checkout
+                //FAR PARTIRE EMAIL
               })
               .catch(err => {
                 console.error(err);
@@ -103,6 +125,14 @@ new Vue({
     },
 
     mounted() {
+
+
+         if(localStorage.getItem('checkout')) {
+            
+        //     localStorage.removeItem('cart');
+            this.checkout = JSON.parse(localStorage.getItem('checkout'));
+        
+         }
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
         this.restaurantID = window.location.href.split('/').pop();
