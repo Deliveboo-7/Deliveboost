@@ -19,6 +19,7 @@
 
             @foreach ($typologies as $typology)
 
+                {{-- <div class="provaTypNames col-12 text-gold" @click="getName({{ $typology -> name }})">PROVA</div> --}}
                 <div class="homeTypo col-12 pb-3 col-sm-6 pb-sm-4 col-lg-3" @click="getData({{ $typology -> id }})">
 
                     <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt="">
@@ -29,6 +30,11 @@
                 </div>
 
             @endforeach
+
+            {{-- <h4 class="text-gold col-12 pb-3 flex">Typologies selected:</h4>
+            <div class="text-gold col-12 pb-3 flex" v-for="typologiesId in typologiesIds">
+                @{{ typologiesId }}
+            </div> --}}
 
         </section>
 
@@ -55,7 +61,7 @@
                                     <i class="far fa-star"></i>
                                 </h2>
                             </div>
-                            
+
                             <div class="col text-light restaurantName py-4">
 
                             <div class="col  text-light restaurantName py-4">
@@ -90,7 +96,7 @@
 
                             <div class="col text-center my-2">
                                 <hr>
-                                <a :href="getRestaurantMenu(restaurant.id)" class="btn-gold">MENU</a>
+                                <a :href="'{{url('menu/restaurant')}}'+ '/' + restaurant.id" class="btn-gold">MENU</a>
                             </div>
 
                         </div>

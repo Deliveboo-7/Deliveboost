@@ -19,6 +19,8 @@ new Vue({
             isActive: false,
             restaurants : [],
             loading: false,
+            dishes : [],
+            restaurantID : null,
 
             hostedFieldInstance: false,
             nonce: "",
@@ -58,7 +60,7 @@ new Vue({
             })
         },
         getRestaurantMenu(id) {
-            // location.href = '/restaurant/menu/' + id;
+
             return `menu/restaurant/${id}`
         },
 
@@ -88,12 +90,12 @@ new Vue({
                   err.message = 'Card details are invalid.';
                   this.error = err.message;
                 }
-    
+
                 if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
                   err.message = 'The fields are empty. Please enter your payment information. ';
                   this.error = err.message;
                 }
-                  
+
               })
             }
         }
@@ -101,9 +103,26 @@ new Vue({
     },
 
     mounted() {
+<<<<<<< HEAD
 
         
         braintree.client.create( {
+=======
+        // http://localhost:8000/menu/restaurant/1
+        // this.restaurantID = parseInt(window.location.href.slice(38));
+        this.restaurantID = window.location.href.split('/').pop();
+
+        if (this.restaurantID !== '') {
+
+            axios.get('/api/dishes', { params: this.restaurantID })
+                .then(res => {
+                    console.log(res.data)
+                    this.dishes = res.data;
+                })
+        }
+
+        braintree.client.create({
+>>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
             //We’ll need an authorization key to use the Braintree SDK
             authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })
@@ -143,7 +162,18 @@ new Vue({
         .catch(err => {
             console.log(err);
         });
+<<<<<<< HEAD
      },
+=======
+    },
+
+
+
+
+
+
+
+>>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
 
 });
 

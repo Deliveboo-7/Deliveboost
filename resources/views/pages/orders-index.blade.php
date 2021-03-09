@@ -7,17 +7,17 @@
         <div class="container-fluid containerPageMenu">
             <div class="row no-gutters">
                 <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
-    
+
                     <div class="align-middle restName text-uppercase">
                         <h1>{{Auth::user() -> company_name}} - My Orders</h1>
                     </div>
-    
+
                 </div>
-    
+
             </div>
-    
+
         </div>
-    
+
 
         <div class="container-fluid center">
             {{-- <div class="row">
@@ -48,7 +48,8 @@
                         <div class="card-header col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="heading-{{$order -> id}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse-{{$order -> id}}"  aria-controls="collapse-{{$order -> id}}" aria-expanded="false">
-                                    order id : {{$order -> id}}
+                                    order id : {{$order -> id}} -
+{{--                                    dishes: {{ $order -> dishes }}--}}
                                 </button>
                             </h2>
                         </div>

@@ -3,27 +3,50 @@
 //     height: 100px;
 // }
 
-.addDish {
- //   background-color: grey;
-    color: $gold;
+// .addDish {
+//     background-color: grey;
 
-    a {
-        text-decoration: none;
+// }
+
+// .listItem {
+//     border: 2px dotted black;
+
+// }
+
+// .listItem * {
+//     text-align: center;
+//     border: 1px solid red;
+// }
+
+// .details {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+.cover{
+    
+    background-color: pink;
+    height: 300px;
+    background-size: cover;
+    // background-image: url('/storage/images/cover_3.png');
+
+    .stripe{
+        background-color: royalblue;
+        max-height: 100px;
+        
+        
+       
+        // background-color: rgba($color: white, $alpha: .5);
+    }
+
+
+}
+
+.dishes-index {
+    button a {
         color: $gold;
     }
-}
-
-.listItem {
-    border: 2px dotted black;
-
-}
-
-.listItem * {
-    text-align: center;
-    border: 1px solid red;
-}
-
-.details {
-    display: flex;
-    justify-content: space-around;
+    a:hover {
+        text-decoration: none;
+    }
 }

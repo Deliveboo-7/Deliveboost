@@ -30,6 +30,7 @@ class PublicController extends Controller
         return view('pages.checkout');
     }
 
+<<<<<<< HEAD
     public function payment(Request $request){
 
         $gateway = new Braintree\Gateway([
@@ -74,4 +75,13 @@ class PublicController extends Controller
         }
     
     }
+=======
+    public function paySuccess() {
+        return view('pages.paySuccess');
+    }
+    public function payUnsuccess() {
+        return view('pages.payUnsuccess');
+    }
+
+>>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
 }
