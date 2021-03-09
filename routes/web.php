@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Auth::routes();
 Route::get('/', 'PublicController@index') -> name('homepage');
 Route::get('/menu/restaurant/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
+Route::post('/success', 'PublicController@payment') -> name('payment');
 
 // ADMIN RESTAURANT
 Route::prefix('my-restaurant')->group(function () {
@@ -44,5 +46,9 @@ Route::prefix('my-restaurant')->group(function () {
 
 
 });
+
+
+
+
 
 

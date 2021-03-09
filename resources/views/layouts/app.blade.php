@@ -31,6 +31,8 @@
 
     <!-- Load Hosted Fields component. -->
     <script src="https://js.braintreegateway.com/web/3.73.1/js/hosted-fields.min.js"></script>
+
+    
     <!-- Animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -51,6 +53,8 @@
     </div>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 </body>
 </html>

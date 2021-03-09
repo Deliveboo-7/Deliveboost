@@ -6,15 +6,7 @@
     <section class=" row no-gutters">
         <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
             <div class="align-middle restName text-uppercase">
-<<<<<<< HEAD
                 <h1>YOUR CHECKOUT</h1>
-            </div>
-        </div>
-    </section>
-    <section class=" row no-gutters">
-        <div class=" col-12 d-flex flex-row align-items-center justify-content-center">
-            <div class="align-middle text-light text-uppercase">
-                <h2>Please check your order before checkout!</h2>
             </div>
         </div>
     </section>
@@ -22,13 +14,6 @@
     <section class="container my-4">
         <div class="row">
             <div class="checkoutList col-md-8  col-lg-6">
-
-                <div class="row my-4">
-                    <div class="orderItem text-left px-2 col-md-6"> Pizza margherita #1</div>
-                    <div class="text-center px-0 col-md-1 offset-md-2"><i class="fas fa-plus"></i></div>
-                    <input type="text" name="QTY" class="form px-0 col-md-2 ">
-                    <div class="text-center  px-0 col-md-1"><i class="fas fa-minus"></i></div>
-                </div>
 
                 <div class="container">
                     <div class="col-12 ">
@@ -41,8 +26,9 @@
                             <div class="alert alert-danger" v-if="error" v-show="!nonce">
                               @{{ error }}
                             </div>  
-                            <form id="payment-form"  action="#" v-show="!nonce">
-                                
+                            <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/success')}}">
+                                @csrf
+                                @method('POST')
                               <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <div class="input-group">
@@ -60,7 +46,7 @@
                                 <label for="amount">Amount</label>
                                 <div class="input-group">
                                   <div class="input-group-prepend"><span class="input-group-text">€</span></div>
-                                  <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
+                                  <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount">
                                 </div>
                               </div>
                               <hr />
@@ -80,7 +66,8 @@
                                   </div>
                                 </div>
                               </div>
-                              <button type="submit" class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Confirm and Pay</button>
+                              <input id="nonce" name="payment_method_nonce" type="hidden" />
+                              <button type="submit" class="btn btn-primary btn-block"  @click.prevent="payWithCreditCard()">Confirm and Pay</button>
                             </form>
                           </div>
                       </div>
@@ -90,9 +77,7 @@
                 
                 
 
-=======
                 <h1>YOUR CART</h1>
->>>>>>> 9d6226f7e2b806830726597cb400889ed768377d
             </div>
         </div>
     </section>

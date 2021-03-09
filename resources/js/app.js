@@ -10,8 +10,6 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import braintree from 'braintree-web';
-
 new Vue({
     el: '#app',
 
@@ -71,7 +69,7 @@ new Vue({
 
         //CART
 
-        //CHECKOUT
+        // //CHECKOUT
         payWithCreditCard() {
             if(this.hostedFieldInstance)
             {
@@ -79,6 +77,7 @@ new Vue({
               .then(payload => {
                   console.log(payload);
                   this.nonce = payload.nonce;
+                  document.querySelector('#nonce').value = payload.nonce;
                   var form = document.querySelector('#payment-form');
                   form.submit();
                 //   form.reset();
@@ -102,11 +101,14 @@ new Vue({
     },
 
     mounted() {
-        braintree.client.create({
+
+        
+        braintree.client.create( {
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: "sandbox_hcrjf9fn_g26pkzj2tjhwqm7n"
+            authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })
         .then(clientInstance => {
+            console.log('clientInst',clientInstance);
             let options = {
                 client: clientInstance,
                 styles: {
@@ -141,15 +143,9 @@ new Vue({
         .catch(err => {
             console.log(err);
         });
-    },
-
-
-
-
-
-    
-    
+     },
 
 });
+
 
 
