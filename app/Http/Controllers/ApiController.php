@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Typology;
 use App\User;
 use Illuminate\Http\Request;
@@ -54,6 +55,13 @@ class ApiController extends Controller
 
 //        Ritorno un json con gli utenti presi tramite gli id nell'array match
         return response() -> json(User::findOrFail($match));
+
+    }
+
+    public function getDishes(Request $request) {
+        $data = $request -> all();
+        $dishes = DB::table('dishes') -> where('user_id', $data[0]) -> get();
+        return response() -> json($dishes);
 
     }
 

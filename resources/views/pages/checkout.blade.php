@@ -51,8 +51,9 @@
                             <div class="alert alert-danger" v-if="error" v-show="!nonce">
                               @{{ error }}
                             </div>  
-                            <form id="payment-form"  action="#" v-show="!nonce">
-                                
+                            <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/success')}}">
+                                @csrf
+                                @method('POST')
                               <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <div class="input-group">
@@ -70,7 +71,7 @@
                                 <label for="amount">Amount</label>
                                 <div class="input-group">
                                   <div class="input-group-prepend"><span class="input-group-text">€</span></div>
-                                  <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
+                                  <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount">
                                 </div>
                               </div>
                               <hr />
@@ -90,17 +91,38 @@
                                   </div>
                                 </div>
                               </div>
-                              <button type="submit" class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Confirm and Pay</button>
+                              <input id="nonce" name="payment_method_nonce" type="hidden" />
+                              <button type="submit" class="btn btn-primary btn-block"  @click.prevent="payWithCreditCard()">Confirm and Pay</button>
                             </form>
                           </div>
                       </div>
                     </div>
                 </div>
 
+                
+                
+
+                <h1>YOUR CART</h1>
             </div>
         </div>
 </div>
 
 
+        <div class="col-4 clearfix">
+            <div class="row h-50 text-center ">
+                <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
+                <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
+            </div>
+            <div class="row h-50 text-center">
+                <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible</div>
+                <div class="col-sm-6 text-lighter py-3"><i class="far fa-edit"></i>Edit</div>
+            </div>
+        </div>
+
+    </div>
+</div> 
+            
+        </div>    
+    </div>
 @endsection
 

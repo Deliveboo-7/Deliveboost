@@ -10,8 +10,6 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import braintree from 'braintree-web';
-
 new Vue({
     el: '#app',
 
@@ -21,6 +19,8 @@ new Vue({
             isActive: false,
             restaurants : [],
             loading: false,
+            dishes : [],
+            restaurantID : null,
 
             hostedFieldInstance: false,
             nonce: "",
@@ -60,7 +60,7 @@ new Vue({
             })
         },
         getRestaurantMenu(id) {
-            // location.href = '/restaurant/menu/' + id;
+
             return `menu/restaurant/${id}`
         },
 
@@ -71,7 +71,7 @@ new Vue({
 
         //CART
 
-        //CHECKOUT
+        // //CHECKOUT
         payWithCreditCard() {
             if(this.hostedFieldInstance)
             {
@@ -79,6 +79,7 @@ new Vue({
               .then(payload => {
                   console.log(payload);
                   this.nonce = payload.nonce;
+                  document.querySelector('#nonce').value = payload.nonce;
                   var form = document.querySelector('#payment-form');
                   form.submit();
                 //   form.reset();
@@ -89,12 +90,12 @@ new Vue({
                   err.message = 'Card details are invalid.';
                   this.error = err.message;
                 }
-    
+
                 if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
                   err.message = 'The fields are empty. Please enter your payment information. ';
                   this.error = err.message;
                 }
-                  
+
               })
             }
         }
@@ -102,11 +103,25 @@ new Vue({
     },
 
     mounted() {
+        // http://localhost:8000/menu/restaurant/1
+        // this.restaurantID = parseInt(window.location.href.slice(38));
+        this.restaurantID = window.location.href.split('/').pop();
+
+        if (this.restaurantID !== '') {
+
+            axios.get('/api/dishes', { params: this.restaurantID })
+                .then(res => {
+                    console.log(res.data)
+                    this.dishes = res.data;
+                })
+        }
+
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: "sandbox_hcrjf9fn_g26pkzj2tjhwqm7n"
+            authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })
         .then(clientInstance => {
+            console.log('clientInst',clientInstance);
             let options = {
                 client: clientInstance,
                 styles: {
@@ -141,15 +156,20 @@ new Vue({
         .catch(err => {
             console.log(err);
         });
+<<<<<<< HEAD
+     },
+=======
     },
 
 
 
 
 
-    
-    
+
+
+>>>>>>> 131b3a57ea6b984286d01c64a84425f6933c532a
 
 });
+
 
 
