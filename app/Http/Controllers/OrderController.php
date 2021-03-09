@@ -19,17 +19,43 @@ class OrderController extends Controller
     public function index(){
 
         $loggedUserId = Auth::user() -> id;
+    //    dd($loggedUserId);
 
-/*        $orders = DB::table('users')
+        $orders = DB::table('users')
                 -> join('dishes', 'users.id', '=', 'dishes.user_id')
+                // fino a qua con il dd ci stampa tutti i piatti, unendogli le info dell'user
                 -> join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
-                -> join('orders', 'orders.id', '=', 'dish_order.order_id')
-//                -> select('orders.*')
-                -> where('user_id', $loggedUserId)
-//                -> groupBy('orders.id')
+                
+       //        -> join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
+               -> join('orders', 'orders.id', '=', 'dish_order.order_id')
+               -> select('orders.*' )
+        //       -> groupBy('orders.id')
+         //        -> select('orders.*' )
+                     -> where('user_id', $loggedUserId)   // metteere un numero a caso per simulare un id con degli ordini
+                  -> groupBy('orders.id')
+                //   
+          //     -> orderBy('dish_id')
                 -> get();
-*/
-//        dd($orders);
+
+            // #################################
+            // $test = Auth::user();
+            // $dishes = $test -> dishes;
+
+            // $orders = [];
+
+            // for ($i=0; $i < count($dishes); $i++) { 
+            //     $orders[] = $dishes[$i] -> orders;
+            //     // dd($dishes[$i] -> orders);
+
+            //     foreach ($dishes[$i] -> orders as $value) {
+            //         dd($value -> dishes);
+            //     }
+            // }
+
+            // $dishes_2 = Dish::findOrFail($dishes);
+        // dd(array_unique($orders));
+
+
 
 //        DB::raw('COUNT(dishes.id) as dishes') - NON CANCELLARE
 
@@ -54,7 +80,9 @@ class OrderController extends Controller
 //
 //        }
     //riga 57 temporanea - modifica rispetto a versione del 8/marzo è l'order by date
-        $orders = DB::table('orders') -> orderBy('date') -> get();
+  //      $orders = DB::table('orders') -> orderBy('date') -> get();
+
+  //  dd($orders);
         return view ('pages.orders-index', compact('orders'));
 
     }
