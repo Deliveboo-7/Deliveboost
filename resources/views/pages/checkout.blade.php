@@ -11,7 +11,32 @@
         </div>
     </section>
 
-    <section class="container my-4">
+    <div class=" row my-4 text-silver">
+      <div class=" col-12 text-center text-lighter">
+          <span>Please check your order before checkout!</span>                
+      </div>
+    </div>
+
+    <div class="row py-2 my-3 orderItem text-gold px-2 ">
+        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
+        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
+        <input type="text" name="qty" class="col-1 ">
+        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
+    </div>
+    <div class="row py-2 my-3 orderItem text-gold px-2 ">
+        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
+        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
+        <input type="text" name="qty" class="col-1 ">
+        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
+    </div>
+    <div class="row py-2 my-3 orderItem text-gold px-2 ">
+        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
+        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
+        <input type="text" name="qty" class="col-1 ">
+        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
+    </div>
+
+    
         <div class="row">
             <div class="checkoutList col-md-8  col-lg-6">
 
@@ -80,54 +105,7 @@
                 <h1>YOUR CART</h1>
             </div>
         </div>
-    </section>
 </div>
-
-<div class="container ">
-
-    <div class=" row my-4 text-silver">
-        <div class=" col-12 text-center text-lighter">
-            <span>Please check your order before checkout!</span>                
-        </div>
-    </div>
-
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
-    </div>
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
-    </div>
-    <div class="row py-2 my-3 orderItem text-gold px-2 ">
-        <div class="col-6  offset-1 col-md-7 offset-md-1"> Pizza margherita #1</div>
-        <div class=" cmdCheckout text-center col-1  "><i class="fas fa-plus "></i></div>
-        <input type="text" name="qty" class="col-1 ">
-        <div class="cmdCheckout text-center col-1  "><i class="fas fa-minus"></i></div>
-    </div>
-
-    
-</div>
-
-{{-- 
-<div class="  container text-silver" >
-
-
-    <div class="row itemDish py-2 bordRad" style="min-height:150px">
-
-        <div class="col-8">
-            <div class="row h-50 ">
-                <div class="col-sm-12 text-gold bord-b py-3">Pizza ai frutti di mare</div>            
-            </div>
-
-            <div class="row h-50 ">
-                <div class="col-sm-12"><span> pomororo, mozzarella, acciughe, vongole</span></div>
-            </div>    
-        </div>
 
 
         <div class="col-4 clearfix">
@@ -142,7 +120,7 @@
         </div>
 
     </div>
-</div> --}}
+</div> 
             
         </div>    
     </div>
