@@ -100,7 +100,7 @@ new Vue({
         addQty(dish){
 
             dish.quantity++;
-            this.finalPrice += dish.price
+            this.finalPrice += dish.price;
             localStorage.setItem('finalPrice',this.finalPrice);
 
         },
@@ -109,7 +109,7 @@ new Vue({
 
             dish.quantity--;
             // this.finalPrice *= 100 ;
-            this.finalPrice -= dish.price
+            this.finalPrice -= dish.price;
             localStorage.setItem('finalPrice',this.finalPrice);
 
         },
@@ -154,7 +154,7 @@ new Vue({
 
         if(localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
             
-            this.finalPrice = localStorage.getItem('finalPrice');
+            this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
         
