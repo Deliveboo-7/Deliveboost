@@ -21,6 +21,7 @@ new Vue({
             loading: false,
             dishes : [],
             cart:[],
+            finalPrice:0,
             checkout:[],
             restaurantID : null,
 
@@ -54,7 +55,7 @@ new Vue({
             this.loading = true;
             axios.get('/api/typology',
                 {
-                   params
+                    params
                 })
                 .then(res => {
                     this.restaurants = res.data;
@@ -74,20 +75,44 @@ new Vue({
 
         addDish(dish){
 
-            this.cart.push(dish);
+            if (!this.cart.includes(dish)) {
 
-            console.log('click preso')
+                dish.quantity = 1;
+                this.cart.push(dish);
 
+            }else{
+
+                dish.quantity++;
+            }
+            
+            this.finalPrice += dish.price;       
+            localStorage.setItem('finalPrice',this.finalPrice);
         },
+        
 
         saveCart() {
             const parsed = JSON.stringify(this.cart);
             localStorage.setItem('checkout', parsed);
             this.cart = [];
+            this.finalPrice = 0;
         },
 
+        addQty(dish){
 
-        
+            dish.quantity++;
+            this.finalPrice += dish.price
+            localStorage.setItem('finalPrice',this.finalPrice);
+
+        },
+
+        removeQty(dish){
+
+            dish.quantity--;
+            // this.finalPrice *= 100 ;
+            this.finalPrice -= dish.price
+            localStorage.setItem('finalPrice',this.finalPrice);
+
+        },
 
         //CART
 
@@ -95,44 +120,45 @@ new Vue({
         payWithCreditCard() {
             if(this.hostedFieldInstance)
             {
-              this.hostedFieldInstance.tokenize()
-              .then(payload => {
-                  console.log(payload);
-                  this.nonce = payload.nonce;
-                  document.querySelector('#nonce').value = payload.nonce;
-                  var form = document.querySelector('#payment-form');
-                  form.submit();
-                //   form.reset();
+                this.hostedFieldInstance.tokenize()
+                    .then(payload => {
+                        console.log(payload);
+                        this.nonce = payload.nonce;
+                        document.querySelector('#nonce').value = payload.nonce;
+                        var form = document.querySelector('#payment-form');
+                        form.submit();
+                    //   form.reset();
+
+                localStorage.removeItem('checkout');
                 // inserire qui svuotamento array checkout
                 //FAR PARTIRE EMAIL
-              })
-              .catch(err => {
-                console.error(err);
-                if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
-                  err.message = 'Card details are invalid.';
-                  this.error = err.message;
-                }
+                })
+                .catch(err => {
+                    console.error(err);
+                    if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
+                        err.message = 'Card details are invalid.';
+                        this.error = err.message;
+                    }
 
-                if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
-                  err.message = 'The fields are empty. Please enter your payment information. ';
-                  this.error = err.message;
-                }
+                    if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
+                        err.message = 'The fields are empty. Please enter your payment information. ';
+                        this.error = err.message;
+                    }
 
-              })
+                })
             }
         }
-
     },
 
     mounted() {
 
-
-         if(localStorage.getItem('checkout')) {
+        if(localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
             
-        //     localStorage.removeItem('cart');
+            this.finalPrice = localStorage.getItem('finalPrice');
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
+            localStorage.removeItem('checkout');
         
-         }
+        }
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
         this.restaurantID = window.location.href.split('/').pop();
