@@ -24,6 +24,7 @@ new Vue({
             finalPrice:0,
             checkout:[],
             restaurantID : null,
+            selectedRestaurant : 0,
 
             hostedFieldInstance: false,
             nonce: "",
@@ -66,6 +67,10 @@ new Vue({
         getRestaurantMenu(id) {
 
             return `menu/restaurant/${id}`
+        },
+
+        selectRestaurant(id) {
+            localStorage.setItem('selectedRestaurant', id);
         },
 
         deleteFilter() {
@@ -157,8 +162,13 @@ new Vue({
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
-
         }
+
+        if(localStorage.getItem('selectedRestaurant')) {
+
+            this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        }
+
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
         this.restaurantID = window.location.href.split('/').pop();
@@ -174,7 +184,7 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: ''
+            authorization: 'sandbox_q7jvzd97_5s4rk7vnhjrppnd7'
         })
         .then(clientInstance => {
             console.log('clientInst',clientInstance);
