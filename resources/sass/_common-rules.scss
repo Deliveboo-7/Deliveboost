@@ -54,6 +54,8 @@ main {
         }
 }
 
+
+
 form {
 
     label {
@@ -133,6 +135,24 @@ html h1 {
 .bordRad{
 
     border-radius: 3px;
+}
+
+.tab-border-l{
+
+    border-left: solid 1px $lightgray;;
+}
+
+.tab-border-b{
+
+    border-bottom: solid 1px $lightgray;;
+}
+
+.tab-border-lbr{
+
+    border-color: $lightgray;
+    border-style: solid ;
+    border-width: 0px 1px 1px 1px;
+
 }
 
 .backColorBody {
