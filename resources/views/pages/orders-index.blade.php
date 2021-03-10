@@ -47,14 +47,14 @@
 
                 @foreach ($orders as $order)
 
-                
+
 
                     <div class="row cardContainer backColorBody borderGold">
-                        <div class="card-header card orderCard col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="heading-{{$order -> order_id}}">
+                        <div class="card-header card orderCard col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="heading-{{$order -> code}}">
                             <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse-{{$order -> order_id}}" aria-controls="collapse-{{$order -> order_id}}" aria-expanded="false">
+                                <button class="btn btn-link btn-block text-left collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse-{{$order -> code}}" aria-controls="collapse-{{$order -> code}}" aria-expanded="false">
                                     <span>
-                                        ORDER ID : {{$order -> order_id}}
+                                        ORDER ID : {{$order -> code}}
                                     {{--        dishes: {{ $order -> dishes }}--}}
                                     </span>
                                     <span>
@@ -64,7 +64,7 @@
                             </h2>
                         </div>
 
-                        <div id="collapse-{{$order -> order_id}}" class="orderInfo orderCard collapse card col-md-8 offset-md-2 col-lg-6 offset-lg-3" aria-labelledby="heading-{{$order -> order_id}}" data-parent="#accordion">
+                        <div id="collapse-{{$order -> code}}" class="orderInfo orderCard collapse card col-md-8 offset-md-2 col-lg-6 offset-lg-3" aria-labelledby="heading-{{$order -> code}}" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="details row" >
                                     <div class="col-12">
@@ -118,17 +118,10 @@
 
                                     <div class="col-12">
                                         <h5>
-                                            Dish
+                                            Dishes
                                         </h5>
                                         <div>
-                                            id piatto {{$order -> id}} <br>
-                                            
-                                           name {{$order -> name}} <br>
-                                           desc  {{$order -> desc}} <br>
-                                           price   {{$order -> price/100}}
-
-
-                                            
+                                            {{ $order -> dishes }}
                                         </div>
                                     </div>
 

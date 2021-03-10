@@ -25,6 +25,7 @@ new Vue({
             finalPrice:0,
             checkout:[],
             restaurantID : null,
+            selectedRestaurant : 0,
 
             hostedFieldInstance: false,
             nonce: "",
@@ -33,7 +34,7 @@ new Vue({
     },
 
     methods: {
-        
+
         getData(id) {
 
             // Se l'array degli id delle tipologie contiene già l'id
@@ -69,6 +70,10 @@ new Vue({
             return `menu/restaurant/${id}`
         },
 
+        selectRestaurant(id) {
+            localStorage.setItem('selectedRestaurant', id);
+        },
+
         deleteFilter() {
             this.restaurants = [];
             this.typologiesIds = [];
@@ -88,11 +93,11 @@ new Vue({
                 dish.quantity++;
                 this.totalItems++
             }
-            
-            this.finalPrice += dish.price;       
+
+            this.finalPrice += dish.price;
             localStorage.setItem('finalPrice',this.finalPrice);
         },
-        
+
 
         saveCart() {
             const parsed = JSON.stringify(this.cart);
@@ -157,12 +162,18 @@ new Vue({
     mounted() {
 
         if(localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
-            
+
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
-        
+            localStorage.removeItem('finalPrice');
         }
+
+        if(localStorage.getItem('selectedRestaurant')) {
+
+            this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        }
+
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
         this.restaurantID = window.location.href.split('/').pop();

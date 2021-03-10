@@ -96,7 +96,9 @@
 
                             <div class="col text-center my-2">
                                 <hr>
-                                <a :href="'{{url('menu/restaurant')}}'+ '/' + restaurant.id" class="btn-gold">MENU</a>
+{{--                                <a :href="'{{url('menu/restaurant')}}'+ '/' + restaurant.id" class="btn-gold">MENU</a>--}}
+                                <a :href="getRestaurantMenu(restaurant.id)" class="btn-gold" @click="selectRestaurant(restaurant.id)">MENU</a>
+
                             </div>
 
                         </div>
