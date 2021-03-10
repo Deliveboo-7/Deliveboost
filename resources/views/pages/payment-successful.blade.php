@@ -12,8 +12,8 @@
 
                 <div class="card-body d-flex justify-content-between">
 
-                    <h4 class="text-gold">Unsuccessful</h4>
-                    <div><i class="far fa-times-circle fa-2x text-gold"></i></div>
+                    <h4 class="text-gold">payment-successful</h4>
+                    <div><i class="far fa-check-circle fa-2x text-gold"></i></div>
                 </div>
             </div>
         </div>
