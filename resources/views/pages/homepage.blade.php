@@ -40,7 +40,7 @@
 
 
         <div class="row">
-           <div class="col-2 offset-5">
+           <div class="col-4 offset-4 col-md-2 offset-md-5">
                 <div class="btn-gold text-center m-0" @click="deleteFilter()">RESET SEARCH</div>
            </div>
         </div>
