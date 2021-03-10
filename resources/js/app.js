@@ -21,6 +21,7 @@ new Vue({
             loading: false,
             dishes : [],
             cart:[],
+            totalItems:0,
             finalPrice:0,
             checkout:[],
             restaurantID : null,
@@ -79,10 +80,13 @@ new Vue({
 
                 dish.quantity = 1;
                 this.cart.push(dish);
+                this.totalItems++
+
 
             }else{
 
                 dish.quantity++;
+                this.totalItems++
             }
             
             this.finalPrice += dish.price;       
