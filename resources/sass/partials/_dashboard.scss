@@ -40,14 +40,21 @@
 
 .restButton {
   //  background-color: red;
-    border: 1px $lightgrey solid;
-    background-color: $lightgray;
+    border: 1px $lightgray solid;
+    background-color: $lightgray_alpha;
     display: flex;
     justify-content: center;
     flex-direction: column;
     /* align-content: center; */
     align-items: center;
     min-height: 100%;
+        &:hover{
+            background-color: $lightgray;
+            border: 1px solid $gold;
+            cursor: pointer;
+            text-decoration: none;
+
+        }
 
     i {
         color: $gold;
@@ -55,11 +62,5 @@
     }
     text-decoration: none;
 }
-.restButton:hover {
-    background-color: #444444;
-    border: 1px solid $gold;
-    cursor: pointer;
-    text-decoration: none;
 
-}
 

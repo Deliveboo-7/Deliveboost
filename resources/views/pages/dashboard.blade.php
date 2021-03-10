@@ -80,18 +80,18 @@
                 </ul>
             </div>
 
-            <a href="{{ route('dishes-index') }}" class="restButton col-4 py-3">
-                <i class="fas fa-hamburger fa-7x"></i><br>
+            <a href="{{ route('dishes-index') }}" class="restButton col-2 offset-2 py-3 my-4">
+                <i class="fas fa-hamburger fa-5x"></i><br>
                 <span>MY FOODS</span>
             </a>
-            <a href="{{ route('orders-index') }}" class="restButton col-4 py-3">
-                <i class="fas fa-clipboard fa-7x"></i><br>
+            <a href="{{ route('orders-index') }}" class="restButton col-2 offset-1 py-3 my-4">
+                <i class="fas fa-clipboard fa-5x"></i><br>
                 <span>MY ORDERS</span>
 
 
             </a>
-            <a href="#" class="restButton col-4 py-3">
-                <i class="fas fa-chart-line fa-7x"></i><br>
+            <a href="#" class="restButton col-2 offset-1 py-3 my-4">
+                <i class="fas fa-chart-line fa-5x"></i><br>
                 <span>MY STATS</span>
             </a>
         </div>
