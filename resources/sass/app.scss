@@ -52,3 +52,26 @@
     }
  
 }
+
+
+// ------- SCROLLBAR----  
+
+/* width */
+::-webkit-scrollbar {
+width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: $lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background:$lightgrey;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: $gold;
+}
