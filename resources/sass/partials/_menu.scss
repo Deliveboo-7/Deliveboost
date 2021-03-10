@@ -81,7 +81,7 @@
 //SIDEBAR
 
 .container-sidebar{
-    padding: 0 40px 0 40px !important;
+    // padding: 0 40px 0 40px !important;
 }
 
 .sidebar{
@@ -93,7 +93,7 @@
 
         .detailsRest{
 
-            font-size: 13px;
+            font-size: 12px;
 
            .detail{
                 padding: 5px 0;
@@ -104,9 +104,9 @@
                 border: none;
             }
 
-            .detailTitle{
-                color: $gold;
-            }
+            // .detailTitle{
+            //     color: $gold;
+            // }
 
             .opening{
                 border-left: 1px solid $lightgrey;
@@ -115,6 +115,7 @@
             span{
                 padding-right: 10px;
             }
+            
         }
     }
     
@@ -136,6 +137,9 @@
 
             .numbItem{
                 color: $gold;
+            }
+            li{
+                list-style: none;
             }
         }
 
