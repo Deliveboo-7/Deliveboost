@@ -185,7 +185,7 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: 'sandbox_q7jvzd97_5s4rk7vnhjrppnd7'
+            authorization: ''
         })
         .then(clientInstance => {
             console.log('clientInst',clientInstance);
