@@ -1,13 +1,13 @@
-.containerPageMenu{
-    padding-left: 0 !important;
-    padding-right:0 !important;
-    background-color:$body;
-    color: white;
+// .containerPageMenu{
+//     padding-left: 0 !important;
+//     padding-right:0 !important;
+//     background-color:$body;
+//     color: white;
 
-    li{
-        list-style: none;
-    }
-}
+//     li{
+//         list-style: none;
+//     }
+// }
 //***************************************************//
 .coverRist{
 
@@ -34,119 +34,159 @@
     }
 }
 
-//ACCORDION
-.menuList{
-    //debug
-    min-height: 100px;
-    color: black;
+// //ACCORDION
+// .menuList{
+//     //debug
+//     min-height: 100px;
+//     color: black;
 
-    .listDish{
-        background-color: $silver;
-        padding: 0 ;
-        border: none;
+//     .listDish{
+//         background-color: $silver;
+//         padding: 0 ;
+//         border: none;
 
 
-        .dish-header{
+//         .dish-header{
 
-            padding:0;
+//             padding:0;
             
-            .btn-dish{
-                display: flex;
-                justify-content: space-between;
-                text-decoration: none !important;
-                color: $gold !important;
-                background-color: $lightgray;
-                padding-left: 20px;
-                padding-right: 20px;
+//             .btn-dish{
+//                 display: flex;
+//                 justify-content: space-between;
+//                 text-decoration: none !important;
+//                 color: $gold !important;
+//                 background-color: $lightgray;
+//                 padding-left: 20px;
+//                 padding-right: 20px;
 
-                .item{
-                    i{
-                        padding-right: 15px;
-                    }
-                }
+//                 .item{
+//                     i{
+//                         padding-right: 15px;
+//                     }
+//                 }
 
-                .addToOrder{
-                    display: inline;
-                    border: 1px solid $gold;
-                    padding: 4px 7px;
-                    border-radius: 5px;
-                    margin-left: 20px;
-                }
-            }
-        }
-    }
+//                 .addToOrder{
+//                     display: inline;
+//                     border: 1px solid $gold;
+//                     padding: 4px 7px;
+//                     border-radius: 5px;
+//                     margin-left: 20px;
+//                 }
+//             }
+//         }
+//     }
    
-}
+// }
 
 //SIDEBAR
 
-.container-sidebar{
-    // padding: 0 40px 0 40px !important;
-}
+// .container-sidebar{
+//     // padding: 0 40px 0 40px !important;
+// }
 
 .sidebar{
-    width:100%;
+    // width:100%;
 
-    .generalInfo{
+    // .generalInfo{
 
-        border-bottom: 1px solid $lightgrey;
+    //     border-bottom: 1px solid $lightgrey;
 
-        .detailsRest{
+    //     .detailsRest{
 
-            font-size: 12px;
+    //         font-size: 12px;
 
-           .detail{
-                padding: 5px 0;
-                border-bottom: 1px solid $lightgrey;
-            }
+    //        .detail{
+    //             // padding: 5px 0;
+    //             border-bottom: 1px solid $lightgrey;
+    //         }
 
-            .detail:last-child {
-                border: none;
-            }
+    //         .detail:last-child {
+    //             border: none;
+    //         }
 
-            // .detailTitle{
-            //     color: $gold;
-            // }
+    //         // .detailTitle{
+    //         //     color: $gold;
+    //         // }
 
-            .opening{
-                border-left: 1px solid $lightgrey;
-            }
+    //         .opening{
+    //             border-left: 1px solid $lightgrey;
+    //         }
 
-            span{
-                padding-right: 10px;
-            }
+    //         span{
+    //             padding-right: 10px;
+    //         }
             
-        }
-    }
+    //     }
+    // }
     
-    .cart{
-        //debug
-        // min-height: 100px;
-        width:100%;
+    // .cart{
+    //     //debug
+    //     // min-height: 100px;
+    //     width:100%;
 
-        h4{
-            text-align: center;
-            color: $gold;
+    //     h4{
+    //         text-align: center;
+    //         color: $gold;
+    //     }
+
+    //     .itemsOrdered{
+
+    //         padding: 20px 50px;
+    //         max-height: 150px;
+    //         overflow-y: auto;
+
+    //         .numbItem{
+    //             color: $gold;
+    //         }
+    //         li{
+    //             list-style: none;
+    //         }
+    //     }
+    // }
+}
+.itemsOrdered{
+
+    max-height: 150px;
+    overflow-y: auto;
+        li{
+            list-style: none;
+        }
+        ul{
+            padding:0;
+        }
+}
+
+ 
+
+// --------BOTTONE ORO PER CHECKOUT ---------
+
+.btn-checkout{
+    background-color: $gold;
+    color:black;
+    text-decoration: none;
+        a{
+            
+            color:$body;
+        } 
+
+        &:hover{
+            background-color: $lightgray;
+            cursor: pointer;
+            color:$silver;
+                a{
+                    text-decoration: none;
+                    color:$silver;
+                }
         }
 
-        .itemsOrdered{
+}
 
-            padding: 20px 50px;
-            max-height: 150px;
-            overflow-y: auto;
-
-            .numbItem{
-                color: $gold;
-            }
-            li{
-                list-style: none;
-            }
-        }
-
-        .btn-checkout{
-            background-color: $gold;
-            color:black;
-        }
+// ---------COMANDI PER CAMBIARE QUANTITA ---------
+.cmdCheckout{
+    
+    &:hover{
+        background-color: $lightgrey;
+        cursor: pointer;
     }
 }
 
@@ -157,24 +197,23 @@
         margin-bottom: 100px;
     }
 
-    .container-sidebar{
-        padding: 0 60px 0 60px;
+    // .container-sidebar{
+    //     padding: 0 60px 0 60px;
 
-        .cart{
-            position: fixed;
-            bottom:0;
-            left:0;
-            z-index: 500;
-            padding: 0 !important;
+    //     .cart{
+    //         position: fixed;
+    //         bottom:0;
+    //         left:0;
+    //         z-index: 500;
+    //         padding: 0 !important;
 
-            .btn-checkout{
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-        }
-    }
+    //         .btn-checkout{
+    //             border-bottom-left-radius: 0;
+    //             border-bottom-right-radius: 0;
+    //         }
+    //     }
+    // }
     
     
 }
-
 
