@@ -75,12 +75,12 @@
                     <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver orderItem"> </div>
                     <input type="text" name="items[]" class="form-control" placeholder="" :value="item.name" readonly>
                     <div @click="removeQty(item)" class="btn-gold t text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
-                    <input type="text" id="itemName" class="form-control" placeholder="" :value="item.quantity" readonly>
+                    <input type="text" name="qty[]" class="form-control" placeholder="" :value="item.quantity" readonly>
                     {{-- <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label> --}}
                     <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>  
                   </div>
                   <label for="amount" class="text-gold my-2">Amount:</label>
-                  <input for="amount" class=" col-4 text-right my-2" :value="finalPrice/100" readonly> 
+                  <input for="amount" name="amount" class=" col-4 text-right my-2" :value="finalPrice/100" readonly> 
                 </div>
   
   

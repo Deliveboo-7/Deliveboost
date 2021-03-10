@@ -55,9 +55,13 @@ class PublicController extends Controller
         // ]);
     
         // dd($gateway);
+        // dd($data);
         
         $amount = $request -> input('amount');
         $nonce = $request -> input('payment_method_nonce');
+        $dishes = collect($data['items']);
+        $cartList = $dishes -> zip($data['qty']);
+        // dd($cartList -> toArray());
     
         //TRANSACTION VERIFICATION
     
@@ -69,17 +73,17 @@ class PublicController extends Controller
             ]
         ]);
         
-        // dd($nonce);
+        // dd($result);
     
         if ($result -> success) {
             $transaction = $result->transaction;
-
+            // dd($cartList);
             //ORDER MAIL
             Mail::to(Auth::user() -> email)
-            ->send(new OrderMail('ciao'));
+            ->send(new OrderMail($cartList -> toArray()));
 
     
-            return view('pages.success', compact('transaction'));
+            return view('pages.success', compact('transaction', 'cartList'));
     
         } else {
     

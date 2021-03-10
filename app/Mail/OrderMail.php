@@ -11,16 +11,16 @@ class OrderMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $textString;
+    public $cartList;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($textString)
+    public function __construct($cartList)
     {
-        $this -> textString = $textString;
+        $this -> cartList = $cartList;
     }
 
     /**
