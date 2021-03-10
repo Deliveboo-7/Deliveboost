@@ -32,7 +32,7 @@ new Vue({
     },
 
     methods: {
-        
+
         getData(id) {
 
             // Se l'array degli id delle tipologie contiene già l'id
@@ -84,11 +84,11 @@ new Vue({
 
                 dish.quantity++;
             }
-            
-            this.finalPrice += dish.price;       
+
+            this.finalPrice += dish.price;
             localStorage.setItem('finalPrice',this.finalPrice);
         },
-        
+
 
         saveCart() {
             const parsed = JSON.stringify(this.cart);
@@ -153,11 +153,11 @@ new Vue({
     mounted() {
 
         if(localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
-            
+
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
-        
+
         }
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
@@ -174,7 +174,7 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
+            authorization: ''
         })
         .then(clientInstance => {
             console.log('clientInst',clientInstance);
