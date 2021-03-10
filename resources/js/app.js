@@ -162,6 +162,7 @@ new Vue({
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
+            localStorage.removeItem('finalPrice');
         }
 
         if(localStorage.getItem('selectedRestaurant')) {
@@ -184,7 +185,7 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: ''
+            authorization: 'sandbox_q7jvzd97_5s4rk7vnhjrppnd7'
         })
         .then(clientInstance => {
             console.log('clientInst',clientInstance);
