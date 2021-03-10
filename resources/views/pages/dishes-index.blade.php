@@ -63,8 +63,8 @@
                     
                             <div class="col-4 clearfix">
                                 <div class="row h-50 text-center ">
-                                    <div class="col-sm-6 bord-r bord-b py-3 "><h5> 5.50 €</h5></div>
-                                    <div class="col-sm-6  bord-b py-3 text-lighter"> giapponese</div>
+                                    <div class="col-sm-6 bord-r bord-b py-3 "><h5>{{$dish -> price}} €</h5></div>
+                                    <div class="col-sm-6  bord-b py-3 text-lighter"> italian</div>
                                 </div>
                                 <div class="row h-50 text-center">
                                     <div class="col-sm-6 bord-r text-lighter py-3"><i class="far fa-check-square"></i>Visible{{$dish -> visible}}</div>
