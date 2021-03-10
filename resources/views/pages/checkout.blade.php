@@ -26,12 +26,11 @@
   {{-- -------------------------- CHECKOUT LIST ------------------------- --}}
 
 <div class="container ">
-  <div class="row orderItem py-2 my-3  px-2" v-for="item in checkout">
-    <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver">[@{{item.id}}] - @{{item.name}}</div>
+  <div class="row py-2 my-3 px-2" v-for="item in checkout">
+    <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver orderItem"> @{{item.name}}</div>
     <div @click="removeQty(item)" class="cmdCheckout text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
-    <label for="qty" class="col-1 text-center text-silver"> @{{item.quantity}}  </label>
-    <div @click="addQty(item)" class=" cmdCheckout  text-gold text-center col-1  "><i class="fas fa-plus "></i></div>
-    
+    <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label>
+    <div @click="addQty(item)" class=" cmdCheckout  text-gold text-center col-1  "><i class="fas fa-plus "></i></div>  
   </div>
 </div>
 

@@ -20,27 +20,27 @@
             font-weight: lighter;
             top:50%;
             transform: translate(0,-50%);
-        }
-        
+        }        
     }
 }
 
 .orderItem{
 
     font-size:1em;
-    color:$gold;
+    // color:$gold;
     border-color: $lightgray;
     border-style: solid ;
     border-width: 0px 1px 1px 1px;
-    
-    .cmdCheckout{
+}
 
-        &:hover{
-            background-color: $lightgrey;
-        }
-    
+.cmdCheckout{
+
+    &:hover{
+        background-color: $lightgrey;
+        cursor: pointer;
     }
 }
+
 .itemDish{
 
     background-color: $lightgray;
@@ -73,10 +73,8 @@
                 &:hover{
                     color:$silver;
                     background-color: $lightgrey;
-                }
-            
+                }            
         }
-
 }
 
 .paymentForm{
