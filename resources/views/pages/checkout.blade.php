@@ -16,7 +16,7 @@
 
     <div class=" row my-4 text-silver">
       <div class=" col-12 text-center text-lighter">
-          <span class="">Please check your order before checkout!</span>     
+          <span style="font-size: 1.5em">Please check your order before checkout!</span>     
       </div>
     </div>
 </div>
@@ -28,17 +28,18 @@
 <div class="container ">
   <div class="row py-2 my-3 px-2" v-for="item in checkout">
     <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver orderItem"> @{{item.name}}</div>
-    <div @click="removeQty(item)" class="cmdCheckout text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
+    <div @click="removeQty(item)" class="btn-gold t text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
     <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label>
-    <div @click="addQty(item)" class=" cmdCheckout  text-gold text-center col-1  "><i class="fas fa-plus "></i></div>  
+    <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>  
   </div>
 </div>
 
 
 
+
   {{-- --------------------------PAYMENT FORM------------------------- --}}
 
-<div class="container ">
+<div class="container">
   <div class="row">
     <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
       <div class="card paymentForm">
