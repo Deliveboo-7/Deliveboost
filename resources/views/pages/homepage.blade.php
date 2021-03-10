@@ -20,7 +20,7 @@
             @foreach ($typologies as $typology)
 
                 {{-- <div class="provaTypNames col-12 text-gold" @click="getName({{ $typology -> name }})">PROVA</div> --}}
-                <div class="homeTypo col-12 pb-3 col-sm-6 pb-sm-4 col-lg-3" @click="getData({{ $typology -> id }})">
+                <div class="homeTypo col-6 pb-4 col-lg-3" @click="getData({{ $typology -> id }})">
 
                     <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt="">
                     <div class="homeTypName">

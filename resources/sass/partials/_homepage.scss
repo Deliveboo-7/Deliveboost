@@ -74,6 +74,11 @@
     cursor: pointer;
 }
 
+.homeTypologies div {
+    width: calc(100%/2);
+    height: auto;
+}
+
 
 @media (min-width: 576px) { 
 
@@ -89,10 +94,6 @@
         //     width: auto;
         // }
     
-    }
-    .homeTypologies div {
-        width: calc(100%/2);
-        height: auto;
     }
 
 }
