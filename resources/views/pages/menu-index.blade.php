@@ -17,11 +17,11 @@
 
 {{-- --------------------------RESTAURANT DISH LIST ------------------------- --}}
 
-<div class="container">
+<div class="container"> 
 
     <div class="row mt-4">
         <div class="col-12 order-2 col-lg-5 order-lg-1 p-2">
-            <div v-for="dish in dishes" class="row text-silver my-2 py-2 tab-border-lbr">
+            <div v-for="dish in dishes" class="row text-silver my-2 p-2 tab-border-lbr">
 
                 <div class="col-7">
                     @{{ dish.name }}
@@ -43,7 +43,7 @@
         <div class="col-12 order-1 col-lg-6 offset-lg-1  order-lg-2 tab-border-b p-2">
             <div class="row">
                 <div class="col-12">
-                    <div class="row">
+                    <div class="row p-0">
                         <!-- ------ left ------ -->
                         <div class="col-6">
                             <div class="col-12 p-2">
@@ -105,6 +105,17 @@
 
                 <div class="itemsOrdered">
 
+                    <div class="d-flex justify-content-between text-gold tab-border-b my-2">
+
+                            
+                        <div class="inline">Item </div>
+                        <div class="inline">
+                            <span class="mx-3">€ </span>
+                            <span class="mx-3">Qty </span>                              
+                        </div>
+
+                    </div>
+
                     <ul v-if="cart.length === 0">
                         <li class="text-silver text-center">
                             Your cart is empty.
@@ -112,25 +123,27 @@
                     </ul>
 
                     <ul v-else>
+
+                        
                         <li v-for="item in cart" class="d-flex justify-content-between text-silver tab-border-b">
 
                             <div class="inline"> @{{ item.name }}</div>
                             <div class="inline">
-                                <span class="mx-3">€ @{{ item.price/100}}</span>
-                                <span class="mx-3">Qty: @{{ item.quantity}}</span>                              
+                                <span class="mr-5"> @{{ item.price/100}}</span>
+                                <span class="mr-2"> @{{ item.quantity}}</span>                              
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="row text-silver m-0 py-2 tab-border-b">
+            <div class="row text-silver tab-border-b p-1">
 
-                <div class="col-9">
+                <div class="col-10 ">
                     Items in cart:
                 </div>
 
-                <div class="col-1   text-right">
+                <div class="col-2  text-right">
                     @{{ totalItems }}
                 </div>
             </div>
