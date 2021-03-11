@@ -1,14 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container dishes-create">
-    <div class="row justify-content-center">
-        <div class="col-sm-12 col-md-12 col-lg-12 px-0">
-            
-            <div class="create_cover col-sm-12 mb-4">
 
+{{-- -------------------------- COVER IMAGE AND TITLE ------------------------- --}}
+
+<div class="container-fluid px-0 " id="cover-create">
+    <section class=" row no-gutters">
+        <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
+            <div class="title text-uppercase">
+                <h1>creation</h1>
             </div>
-            
+        </div>
+    </section>
+</div>
+
+
+
+<div class="container mt-5 ">
+    <div class="row justify-content-center ">
+        <div class="col-sm-12 col-md-12 col-lg-12 px-0 cr-ed-title">
+
                 <div class="card-header text-left">{{ __('Create New Meal') }}
                     <hr class="ml-0">
                 </div>

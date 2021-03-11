@@ -1,0 +1,27 @@
+
+#cover-create{
+    background-image: url('/storage/images/cover_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#cover-edit{
+    background-image: url('/storage/images/cover_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.cr-ed-title {
+    .card-header {
+        background-color: $body;
+            
+        hr {
+            width: 100%;
+            border-width: 1px;
+            border-color: $lightgrey;
+        }
+    }
+}
+
+

@@ -21,6 +21,7 @@ new Vue({
             loading: false,
             dishes : [],
             cart:[],
+            totalItems:0,
             finalPrice:0,
             checkout:[],
             restaurantID : null,
@@ -89,6 +90,8 @@ new Vue({
 
                 dish.quantity = 1;
                 this.cart.push(dish);
+                this.totalItems++
+
 
                 this.selectedDishes.push(dish.id);
                 // const parsed = JSON.stringify(this.selectedDishes);
@@ -97,6 +100,7 @@ new Vue({
             }else{
 
                 dish.quantity++;
+                this.totalItems++
             }
 
             this.finalPrice += dish.price;
@@ -177,6 +181,7 @@ new Vue({
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
+            localStorage.removeItem('finalPrice');
         }
 
         if(localStorage.getItem('selectedRestaurant')) {
