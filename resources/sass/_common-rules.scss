@@ -95,21 +95,21 @@ html h1 {
 @media (min-width: 576px) {
     html h1 {
         font-size: 2.5em !important;
-    }  
+    }
 }
 @media (min-width: 768px) {
     html h1 {
         font-size: 3em !important;
-    }  
+    }
 }
 @media (min-width: 992px) {
     html h1 {
         font-size: 4em !important;
-    }  
+    }
 }
 
 
-  
+
 
 
 .text-lighter {
@@ -192,3 +192,7 @@ label:focus,
     box-shadow: none !important;
 }
 
+
+.gold-border {
+    border: 1px solid $gold;
+}

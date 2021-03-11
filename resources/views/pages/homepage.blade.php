@@ -54,11 +54,9 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-4 animate__animated animate__zoomIn animate__fast" v-for="restaurant in restaurants" >
 
                         <div class="restaurantCard row d-flex flex-column align-items-center justify-content-center text-center p-2 mx-1  ">
-                            <div class="col text-gold py-4">
+                            <div class="col py-4">
                                 <h2>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                    <i class="fa-star" v-for="(star, i) in 3" :class="i+1 <= restaurant.vote_average ? 'text-gold fas' : 'far text-gold'"></i>
                                 </h2>
                             </div>
 

@@ -16,6 +16,7 @@ $factory->define(User::class, function (Faker $faker) {
         'phone_number' => "392-" . rand(1234567, 9876543),
         'opening_info' => $faker -> sentence(),
         'website' => $faker -> url,
+        'vote_average' => $faker -> numberBetween(1, 3),
         'remember_token' => Str::random(10),
     ];
 });
