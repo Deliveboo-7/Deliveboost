@@ -176,7 +176,7 @@ new Vue({
 
         // http://localhost:8000/menu/restaurant/1
         // this.restaurantID = parseInt(window.location.href.slice(38));
-        this.restaurantID = window.location.href.split('/').pop();
+        this.restaurantID = localStorage.getItem('selectedRestaurant');
 
         if (this.restaurantID !== '') {
 
