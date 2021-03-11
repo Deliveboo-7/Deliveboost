@@ -1,4 +1,4 @@
-
+/*
         
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -132,4 +132,4 @@ var chart = new Chart(ctx, {
     }
 }); 
 
-
+*/
