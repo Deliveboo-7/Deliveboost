@@ -22,7 +22,7 @@
                 {{-- <div class="provaTypNames col-12 text-gold" @click="getName({{ $typology -> name }})">PROVA</div> --}}
                 <div class="homeTypo col-6 pb-4 col-lg-3" @click="getData({{ $typology -> id }})">
 
-                    <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt="">
+                    <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt="" :class="typologiesIds.includes({{ $typology -> id }}) ? 'typologySelected' : ''">
                     <div class="homeTypName">
                         {{ $typology -> name }}
                     </div>
