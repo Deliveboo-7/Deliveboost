@@ -1,21 +1,25 @@
 .statisticsContainer {
-    .prova {
-        background-color: purple !important;
-    }
+
     margin-top: 70px !important;
     padding-bottom: 200px;
     min-height: calc(100vh - 70px);
     background-color: $body;
-
-    canvas {
-        background-color: $gold;
-    }
-
     @media (min-width: 768px) {
         padding-bottom: 100px;
     
     }
-    .container {
-        background-color: $silver;
+
+    .prova {
+        background-color: purple;
     }
+
+
+    canvas {
+        //border: $gold 5px solid;
+        background-color: $body;
+    }
+
+    // .container-fluid {
+    //     background-color: $silver;
+    // }
 }

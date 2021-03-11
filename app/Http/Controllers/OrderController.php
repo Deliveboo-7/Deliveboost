@@ -154,13 +154,47 @@ class OrderController extends Controller
             $chart->labels = (array_keys($groups));
             $chart->dataset = (array_values($groups));
             $chart->colours = $colours;
-        return view('pages.statistics-index', compact('chart'));
+        //return view('pages.statistics-index', compact('chart'));
 
         //var dates = chart.dates;
         //var data = chart.data;
 
+        
+        //___________________________________________________________
+        //___________________________________________________________
+        //___________________________________________________________
+        //___________________________________________________________
 
+
+
+
+    
+
+
+        //$loggedUserIdM = Auth::user() -> id;
+        $groupsMonth = DB::table('users')
+        -> join('dishes', 'users.id', '=', 'dishes.user_id')
+        -> join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
+        -> join('orders', 'orders.id', '=', 'dish_order.order_id')
+        -> select(DB::raw('SUM(orders.total_price / 100) as income'), DB::raw('MONTH(orders.date) as month'))
+        -> groupBy('month')
+        -> where('user_id', 12 ) // $loggedUserIdM   //   12
+        ->pluck('income', 'month')->all();
+        for ($i=0; $i<=count($groupsMonth); $i++) {
+            $coloursMonth[] = 'green';          
+        }
+
+        $chartMonth = new Chart;
+            $chartMonth->labels = (array_keys($groupsMonth));
+            $chartMonth->dataset = (array_values($groupsMonth));
+            $chartMonth->colours = $coloursMonth;
+        return view('pages.statistics-index', compact('chart', 'chartMonth'));
+
+        
     }
+
+
+    
 
 }
     //     $orders = DB::table('users')

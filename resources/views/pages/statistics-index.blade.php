@@ -51,8 +51,13 @@
                 {{-- <p class="prova">PROVA CHART.JS</p>       
                 <canvas id="myChart" class="rounded shadow"></canvas> --}}
 
-                <h2 class="prova py-3"> uso i dati total_price della tabella orders sull'asseY e la data dell'ordine sull'asseX.</h2>
-                <canvas id="userChart" class="rounded shadow"></canvas>
+                <h2 class="prova py-3"> Year</h2>
+                <canvas id="userChartYear" class="rounded shadow"></canvas>
+
+
+                <h2 class="prova py-3"> Month </h2>
+                <canvas id="userChartMonth" class="rounded shadow"></canvas>
+
     
                 {{-- <p class="prova pt-5">tabella di prova. si vede che prende i dati total_price della tabella orders.</p>
                 <canvas id="userChart2" class="rounded shadow"></canvas> --}}
@@ -80,45 +85,75 @@
             console.log('Hello Stats');
 
 
-            var ctx = document.getElementById('userChart').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
+
+            var chartYear = {
                 type: 'line',
-                // The data for our dataset
                 data: {
                     labels:  {!!json_encode($chart->labels)!!} ,
-    
                     datasets: [
                         {
                             label: 'ogni barra è un ordine ricevuto dell utente loggato',
                             backgroundColor: {!! json_encode($chart->colours)!!} ,
                             data:  {!! json_encode($chart->dataset)!!} ,
-                            backgroundColor: 'red',
-                            pointBackgroundColor: 'blue',
+                            backgroundColor: 'rgba(192,192,192,0.1))',
+                            pointBackgroundColor: 'rgba(218,165,32,0.6',
                             pointRadius: 6
                         },
                     ]
                 },
-                // Configuration options go here
                 options: {
                     scales: {
                         yAxes: [{
                             display: true,
                             ticks: {
-                  //              suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-                                // OR //
-                                beginAtZero: true   // minimum value will be 0.
-                                
+                                beginAtZero: true
                             }
                         }]
                     }
                 }
-            });  
-            
-            
-
+            }  
             //------------------------------------------
+            var chartMonth = {
+                type: 'line',
+                data: {
+                    labels:  {!!json_encode($chartMonth->labels)!!} ,
+    
+                    datasets: [
+                        {
+                            label: 'Month',
+                            backgroundColor: {!! json_encode($chartMonth->colours)!!} ,
+                            data:  {!! json_encode($chartMonth->dataset)!!} ,
+                            backgroundColor: 'blue',
+                            pointBackgroundColor: 'rgba(218,165,32,0.6',
+                            pointRadius: 6
+                        },
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true   
+                            }
+                        }]
+                    }
+                }
 
+
+            }
+            //--------------------------
+            var ctxYear = document.getElementById('userChartYear').getContext('2d');
+            new Chart(ctxYear, chartYear);  
+            //--------------------------
+
+
+            var ctxMonth = document.getElementById('userChartMonth').getContext('2d');
+            new Chart(ctxMonth, chartMonth);  
+
+            
+            
+            
 
             /*
 
