@@ -83,6 +83,7 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'opening_info' => $data['opening_info'],
             'website' => $data['website'],
+            'vote_average' => rand(1,3)
         ]);
 
         $typologies = Typology::findOrFail($data['typologies']);

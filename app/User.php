@@ -24,6 +24,7 @@ class User extends Authenticatable
         'phone_number',
         'opening_info',
         'website',
+        'vote_average'
     ];
 
     /**
