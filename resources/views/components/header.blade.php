@@ -30,18 +30,18 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-right pr-3 border-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user() -> company_name }}
                             </a>
 
-                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right text-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item my-2" href="{{ route('dashboard') }}">Dashboard</a>
-                                <a class="dropdown-item my-2" href="{{ route('dishes-index') }}">Dishes</a>
-                                <a class="dropdown-item my-2" href="{{ route('orders-index') }}">Orders</a>
-                                <a class="dropdown-item my-2" href="{{ route('statistics-index') }}">Stats</a>
+                                <a class="dropdown-item my-2 border-left-0 border-right-0" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="dropdown-item my-2 border-left-0 border-right-0" href="{{ route('dishes-index') }}">Dishes</a>
+                                <a class="dropdown-item my-2 border-left-0 border-right-0" href="{{ route('orders-index') }}">Orders</a>
+                                <a class="dropdown-item my-2 border-left-0 border-right-0" href="{{ route('statistics-index') }}">Stats</a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item border-left-0 border-right-0" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
