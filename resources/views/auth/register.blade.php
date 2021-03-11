@@ -123,7 +123,7 @@
                                 @foreach($typologies as $typology)
 
                                     <div class="col-6 col-md-4 col-lg-3 font-italic text-silver" >
-                                        <input type="checkbox" name="typologies[]" id="typologies[]" value="{{ $typology -> id }}" class="mx-2 
+                                        <input type="checkbox" name="typologies[]" id="typologies[]" value="{{ $typology -> id }}" class="mx-2
                                             @error('typologies') is-invalid @enderror"
                                             {{ old('typologies') && in_array($typology -> id, old('typologies')) ? 'checked' : '' }}
                                         >
