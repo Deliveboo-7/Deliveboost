@@ -21,9 +21,8 @@ Auth::routes();
 Route::get('/', 'PublicController@index') -> name('homepage');
 Route::get('/menu/restaurant/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
-Route::post('/success', 'PublicController@payment') -> name('payment');
-Route::get('/payment-successful', 'PublicController@paymentSuccessful') -> name('payment-successful');
-Route::get('/payment-unsuccessful', 'PublicController@paymentUnsuccessful') -> name('payment-unsuccessful');
+Route::post('/payment-result', 'PublicController@payment') -> name('payment-result');
+// Route::post('/payment-unsuccessful', 'PublicController@payment') -> name('payment-unsuccessful');
 
 // ADMIN RESTAURANT
 Route::prefix('my-restaurant')->group(function () {

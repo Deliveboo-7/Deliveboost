@@ -21,7 +21,7 @@
                             <label for="company_name" class="regCompName col-xl-2 offset-xl-0 col-form-label text-xl-right">{{ __('Company Name') }}</label>
 
                             <div class=" col-xl-8">
-                                <input id="company_name" type="text" class="form-control cazzpinput @error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus>
+                                <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" required autocomplete="company_name" autofocus>
 
                                 @error('company_name')
                                     <span class="invalid-feedback" role="alert">

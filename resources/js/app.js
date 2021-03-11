@@ -21,14 +21,20 @@ new Vue({
             loading: false,
             dishes : [],
             cart:[],
+            totalItems:0,
             finalPrice:0,
             checkout:[],
             restaurantID : null,
             selectedRestaurant : 0,
+            selectedDishes: [],
 
             hostedFieldInstance: false,
             nonce: "",
             error: "",
+            customerName: '',
+            address: '',
+            phone: ''
+            
         }
     },
 
@@ -84,10 +90,17 @@ new Vue({
 
                 dish.quantity = 1;
                 this.cart.push(dish);
+                this.totalItems++
+
+
+                this.selectedDishes.push(dish.id);
+                // const parsed = JSON.stringify(this.selectedDishes);
+                localStorage.setItem('selectedDishes', this.selectedDishes);
 
             }else{
 
                 dish.quantity++;
+                this.totalItems++
             }
 
             this.finalPrice += dish.price;
@@ -123,34 +136,40 @@ new Vue({
 
         // //CHECKOUT
         payWithCreditCard() {
-            if(this.hostedFieldInstance)
+            
+            if(this.hostedFieldInstance 
+                && this.customerName != '' 
+                && this.address != ''
+                && this.phone != '')
             {
                 this.hostedFieldInstance.tokenize()
                     .then(payload => {
-                        console.log(payload);
+                        
                         this.nonce = payload.nonce;
                         document.querySelector('#nonce').value = payload.nonce;
                         var form = document.querySelector('#payment-form');
+
                         form.submit();
-                    //   form.reset();
 
-                localStorage.removeItem('checkout');
-                // inserire qui svuotamento array checkout
-                //FAR PARTIRE EMAIL
-                })
-                .catch(err => {
-                    console.error(err);
-                    if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
-                        err.message = 'Card details are invalid.';
-                        this.error = err.message;
-                    }
+                        // svuotamento array checkout
+                        localStorage.removeItem('checkout');
 
-                    if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
-                        err.message = 'The fields are empty. Please enter your payment information. ';
-                        this.error = err.message;
-                    }
+                    })
+                    .catch(err => {
+                        console.error('errore',err);
+                        if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
+                            err.message = 'Card details are invalid.';
+                            this.error = err.message;
+                        }
 
-                })
+                        if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
+                            err.message = 'The fields are empty. Please enter your payment information. ';
+                            this.error = err.message;
+                        }
+                    
+                    })
+            }else{
+               alert('Some fields are empty!'); 
             }
         }
     },
@@ -162,11 +181,17 @@ new Vue({
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
             localStorage.removeItem('checkout');
+            localStorage.removeItem('finalPrice');
         }
 
         if(localStorage.getItem('selectedRestaurant')) {
 
             this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        }
+
+        if(localStorage.getItem('selectedDishes')) {
+
+            this.selectedDishes = localStorage.getItem('selectedDishes');
         }
 
         // http://localhost:8000/menu/restaurant/1
@@ -184,10 +209,10 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: ''
+            authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })
         .then(clientInstance => {
-            console.log('clientInst',clientInstance);
+
             let options = {
                 client: clientInstance,
                 styles: {
@@ -215,9 +240,10 @@ new Vue({
             return braintree.hostedFields.create(options)
         })
         .then(hostedFieldInstance => {
-            // @TODO - Use hostedFieldInstance to send data to Braintree
+
+            // Use hostedFieldInstance to send data to Braintree
             this.hostedFieldInstance = hostedFieldInstance;
-            console.log(hostedFieldInstance);
+
         })
         .catch(err => {
             console.log(err);

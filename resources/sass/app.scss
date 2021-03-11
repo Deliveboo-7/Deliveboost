@@ -22,7 +22,7 @@
 @import 'partials/register';
 @import 'partials/header';
 @import 'partials/footer';
-@import 'partials/create';
+@import 'partials/create-edit';
 @import 'partials/card-restaurant';
 @import 'partials/checkout';
 @import 'partials/payment-outcome';
@@ -46,7 +46,7 @@
     }
     section{
 
-    min-height: 30px;
+    // min-height: 30px;
     // background-color: rgb(149, 196, 240);
     border:solid 1px red;
     }

@@ -19,6 +19,7 @@ main {
 
 }
 
+
 #app {
     background-color: $body;
 }
@@ -39,6 +40,34 @@ main {
 
 
 
+// ------------ COVER--------------
+
+.cover{
+
+    //debug
+    height: 300px;
+    
+  
+    
+    
+    .title{
+        background-color: $silver;
+        opacity: 0.7;
+        height: 100px;
+        color:$body;
+        width: 100%;
+        text-align: center;
+
+        h1{
+            position: relative;
+            font-size: 2em;//se lo cambio non cambia un cazzo
+            font-weight:300;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+    }
+}
+
 // ------------  USER INTERACTION --------------
 .btn-gold {
 
@@ -47,6 +76,10 @@ main {
     color: $gold !important;
     padding: 5px !important;
     cursor: pointer;
+        a{
+            color: $gold !important; 
+            text-decoration: none!important;
+        }
 
         &:hover {
             background-color: $lightgrey !important;
@@ -54,17 +87,26 @@ main {
         }
 }
 
+
+
 form {
+
+    
 
     label {
         color: $silver;
     }
-    input,
-    textarea,
-    select {
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"]
+    // textarea[type="text"]
+    
+        {
         border: none;
-        background-color: $silver !important;
+        color: $silver;
+        background-color: $lightgray !important;
             &:focus {
+                color:$silver;
                 border: solid 2px $gold !important;
                 outline: none;
             }
@@ -126,6 +168,9 @@ html h1 {
 .text-silver {
     color: $silver;
 }
+.text-lightgrey {
+    color:$lightgrey;
+}
 
 
 // ------------  DESIGN --------------
@@ -133,6 +178,30 @@ html h1 {
 .bordRad{
 
     border-radius: 3px;
+}
+
+
+.bord-b{
+
+    border-bottom: solid 1px $lightgrey;
+
+}
+.bord-r{
+
+    border-right: solid 1px $lightgrey;
+}
+
+.bord-l{
+
+    border-left: solid 1px $lightgrey;
+}
+
+.bord-lbr{
+
+    border-color: $lightgray;
+    border-style: solid ;
+    border-width: 0px 1px 1px 1px;
+
 }
 
 .backColorBody {

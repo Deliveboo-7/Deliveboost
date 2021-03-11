@@ -4,19 +4,17 @@
 
     <div class="myorders">
 
-        <div class="container-fluid containerPageMenu">
-            <div class="row no-gutters">
-                <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
+        {{-- -------------------------- COVER IMAGE AND TITLE ------------------------- --}}
 
-                    <div class="align-middle restName text-uppercase">
-                        <h1>my orders</h1>
-                    </div>
-
+    <div class="container-fluid px-0 " id="cover-orders">
+        <section class=" row no-gutters">
+            <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
+                <div class="title text-uppercase">
+                    <h1>ORDERS</h1>
                 </div>
-
             </div>
-
-        </div>
+        </section>
+    </div>
 
 
         <div class="container center">
