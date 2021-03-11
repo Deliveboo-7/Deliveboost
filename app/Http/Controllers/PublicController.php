@@ -10,8 +10,11 @@ use App\Mail\OrderMail;
 
 use App\Typology;
 use App\User;
+use App\Order;
+use App\Dish;
 use Braintree;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 
 
@@ -36,6 +39,8 @@ class PublicController extends Controller
     //CHECKOUT AND PAYMENT
     public function checkout() {
 
+        $orders = Order::all();
+        $dishes = Dish::all();
         return view('pages.checkout');
     }
 
@@ -50,21 +55,25 @@ class PublicController extends Controller
 
         $data = $request -> all();
 
-        // $validateData = $request -> validate([
+        $validateData = $request -> validate([
             
-        // ]);
+            'customer_name' => 'required|string|max:30',
+            'customer_address' => 'required|string',
+            'customer_phone' => 'required',
+            'total_price' => 'required'
+
+        ]);
     
-        // dd($gateway);
         // dd($data);
+        $amount = $data['total_price'];
         
-        $amount = $request -> input('amount');
         $nonce = $request -> input('payment_method_nonce');
+        // dd($data['items']);   
+        // DATA FOR EMAIL
         $dishes = collect($data['items']);
         $cartList = $dishes -> zip($data['qty']);
-        // dd($cartList -> toArray());
-    
-        //TRANSACTION VERIFICATION
-    
+        
+        //ADDING FORM FIELDS TO BRAINTREE
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
@@ -73,20 +82,35 @@ class PublicController extends Controller
             ]
         ]);
         
-        // dd($result);
-    
+        //TRANSACTION VERIFICATION
         if ($result -> success) {
+
             $transaction = $result->transaction;
-            // dd($cartList);
-            //ORDER MAIL
-            Mail::to(Auth::user() -> email)
-            ->send(new OrderMail($cartList -> toArray()));
+    
+            //DATA NEW ORDER
+            $data['code'] = $transaction -> id;
+            $data['status'] = $transaction -> status;
+            $data['date']= $transaction -> createdAt;
+            $data['total_price'] *= 100;
+
+            $newOrder = Order::create($data);
+            
+            $dishesId = explode(',', $data['dishes']);
+            $dishes = Dish::findOrFail($dishesId);
+            $newOrder -> dishes() -> attach($dishes);
+
+            //CONFIRMATION ORDER MAIL
+            $restaurant = User::findOrFail($data['selectedRestaurant']);
+            $email = $restaurant -> email;
+            $restName = $restaurant -> company_name;
+   
+            Mail::to($email)
+            ->send(new OrderMail($cartList -> toArray(), $email, $restName));
 
     
-            return view('pages.success', compact('transaction', 'cartList'));
+            return view('pages.payment-successful', compact('transaction'));
     
         } else {
-    
             
             $errorString = "";
     
@@ -94,19 +118,9 @@ class PublicController extends Controller
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
     
-            
+            return view('pages.payment-unsuccessful', compact('errorString'));
         }
-
         
-    }
-
-    
-
-    public function paySuccess() {
-        return view('pages.paySuccess');
-    }
-    public function payUnsuccess() {
-        return view('pages.payUnsuccess');
     }
 
 }

@@ -9,8 +9,10 @@
 <body>
     
     <div class="container">
-        <h1>New mail for: {{Auth::user() -> company_name}}</h1>
-
+        {{-- {{dd(get_defined_vars())}} --}}
+        <h1>New mail for: {{$email}}</h1>
+        <h1>Name: {{$restName}}</h1>
+        
         <h2>Good news! You have just received a new order!</h2>
 
         

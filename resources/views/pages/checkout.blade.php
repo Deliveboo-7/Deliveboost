@@ -58,30 +58,39 @@
               @{{ error }}
             </div>
 
-            <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/success')}}">
+            <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/payment-result')}}">
                 @csrf
                 @method('POST')
 
-                <label for="name" class="text-gold">Your Name</label>
-                <input type="text" id="name" class="form-control" placeholder="">
+                <label for="customer_name" class="text-gold">Your Name</label>
+                <input type="text" id="customer_name" name="customer_name" v-model="customerName" class="form-control" placeholder="">
 
-                <label for="address" class="text-gold mt-2">Address for delivery</label>
-                <input type="text" id="address" class="form-control" placeholder="">
+                <label for="customer_address" class="text-gold mt-2">Address for delivery</label>
+                <input type="text" id="customer_address" name="customer_address" v-model="address" class="form-control" placeholder="">
 
+                <label for="customer_phone" class="text-gold mt-2">Phone number</label>
+                <input type="text" id="customer_phone" name="customer_phone" v-model="phone" class="form-control" placeholder="">
 
+                <input id="code" name="code" hidden>
+
+                <input id="status" name="status" hidden>
+
+                <input id="date" name="date" hidden>
+
+                <input type="text" name="dishes" hidden :value="selectedDishes">
 
                 <div class="my-3">
 
-                      <div class="row py-2 my-3 px-2" v-for="item in checkout">
-                            <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver orderItem"> </div>
-                            <input type="text" name="items[]" class="form-control" placeholder="" :value="item.name" readonly>
-                            <div @click="removeQty(item)" class="btn-gold t text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
-                            <input type="text" name="qty[]" class="form-control" placeholder="" :value="item.quantity" readonly>
-                            {{-- <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label> --}}
-                            <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>
-                      </div>
-                            <label for="amount" class="text-gold my-2">Amount:</label>
-                            <input for="amount" name="amount" class=" col-4 text-right my-2" :value="finalPrice/100" readonly>
+                    <div class="row py-2 my-3 px-2" v-for="item in checkout">
+                        <div class="col-6 offset-2 col-sm-4 offset-sm-2 text-silver orderItem"> </div>
+                        <input type="text" name="items[]" class="form-control" placeholder="" :value="item.name" readonly>
+                        <div @click="removeQty(item)" class="btn-gold t text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
+                        <input type="text" name="qty[]" class="form-control" placeholder="" :value="item.quantity" readonly>
+                        {{-- <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label> --}}
+                        <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>
+                    </div>
+                    <label for="total_price" class="text-gold my-2">Amount:</label>
+                    <input name="total_price" class=" col-4 text-right my-2" :value="finalPrice/100" readonly>
                 </div>
 
                 <input type="text" name="selectedRestaurant" :value="selectedRestaurant" hidden>
@@ -89,17 +98,17 @@
                 <div id="creditCardNumber" class="form-control"></div>
 
                 <div class="row my-2">
-                  <div class="col-6">
+                    <div class="col-6">
                     <label class="text-gold">Expire Date</label>
                     <div id="expireDate" class="form-control"></div>
-                  </div>
-                  <div class="col-6">
+                    </div>
+                    <div class="col-6">
                     <label class="text-gold">CVV</label>
                     <div id="cvv" class="form-control"></div>
-                  </div>
+                    </div>
                 </div>
 
-              <input id="nonce" name="payment_method_nonce" type="hidden"/>
+              <input id="nonce" name="payment_method_nonce" hidden>
               <button type="submit" class="btn-gold btn-block mt-4"  @click.prevent="payWithCreditCard()">Confirm and Pay</button>
             </form>
           </div>
