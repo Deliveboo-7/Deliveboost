@@ -31,7 +31,7 @@ new Vue({
             hostedFieldInstance: false,
             nonce: "",
             error: "",
-            typologySelected : 'typologySelected'
+            typologySelected : 'typologySelected',
             customerName: '',
             address: '',
             phone: ''
@@ -138,37 +138,43 @@ new Vue({
         // //CHECKOUT
         payWithCreditCard() {
 
-            if(this.hostedFieldInstance
-                && this.customerName != ''
-                && this.address != ''
-                && this.phone != '')
-            {
-                this.hostedFieldInstance.tokenize()
-                    .then(payload => {
+            if (this.checkout.length > 0) {
 
-                        this.nonce = payload.nonce;
-                        document.querySelector('#nonce').value = payload.nonce;
-                        var form = document.querySelector('#payment-form');
+                if(this.hostedFieldInstance
+                    && this.customerName != ''
+                    && this.address != ''
+                    && this.phone != '')
+                {
+                    this.hostedFieldInstance.tokenize()
+                        .then(payload => {
 
-                        form.submit();
+                            this.nonce = payload.nonce;
+                            document.querySelector('#nonce').value = payload.nonce;
+                            var form = document.querySelector('#payment-form');
 
-                        // svuotamento array checkout
-                        localStorage.removeItem('checkout');
+                            form.submit();
 
-                    })
-                    .catch(err => {
-                        console.error('errore',err);
-                        if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
-                            err.message = 'Card details are invalid.';
+                            // svuotamento array checkout
+                            localStorage.removeItem('checkout');
+
+                        })
+                        .catch(err => {
+                            console.error('errore',err);
+                            if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
+                                err.message = 'Card details are invalid.';
+                                this.error = err.message;
+                            }
+
+                        if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
+                            err.message = 'The fields are empty. Please enter your payment information. ';
                             this.error = err.message;
                         }
 
-                    if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
-                        err.message = 'The fields are empty. Please enter your payment information. ';
-                        this.error = err.message;
-                    }
+                    })
+                }
 
-                })
+            } else {
+                this.error = "Your cart is empty";
             }
         }
     },
