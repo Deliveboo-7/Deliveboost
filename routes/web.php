@@ -47,7 +47,9 @@ Route::prefix('my-restaurant')->group(function () {
 //    /my-restaurant/mystats -> Elenco stats  del ristorante
  //   Route::get('/statistics', 'StatisticController@index') -> name('statistics-index');
 //    /my-restaurant/mystats -> Elenco stats  del ristorante
-    Route::get('/statistics', 'ChartController@index') -> name('statistics-index');
+ //   Route::get('/statistics', 'ChartController@index') -> name('statistics-index');
+    Route::get('/statistics', 'OrderController@chartIndex') -> name('statistics-index');
+
 
 
 

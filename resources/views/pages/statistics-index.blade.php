@@ -39,167 +39,184 @@
     @include('components.header')
 
     <div class="container-fluid statisticsContainer">
-        
-        <div class="container pt-3">
-            <p class="prova">PROVA CHART.JS</p>       
-            <canvas id="myChart" class="rounded shadow"></canvas>
-            <p class="prova pt-5">tabella di prova. si vede che prende i dati total_price della tabella orders.</p>
-            <canvas id="userChart" class="rounded shadow"></canvas>
+        <div class="row jumbostats">        
+            <h2 class="jumbostats col-4 offset-4 text-gold py-3"> 
+                My Stats
+            </h2>
+        </div>
 
-            <p class="prova pt-5">tabella di prova. si vede che prende i dati total_price della tabella orders.</p>
-            <canvas id="userChart2" class="rounded shadow"></canvas>
+        <div class="row chartRow">
 
-        
-            {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
-            {{-- 
-                https://welcm.uk/blog/getting-started-with-charts-in-laravel-7 
-                https://www.chartjs.org/docs/latest/charts/bar.html
-                https://laravel.com/docs/7.x/collections#method-pluck
-                https://therichpost.com/laravel-chartjs-with-dynamic-data-working-example/
+            <div class="col-12 col-md-8 offset-md-2 pt-3">
+                {{-- <p class="prova">PROVA CHART.JS</p>       
+                <canvas id="myChart" class="rounded shadow"></canvas> --}}
+
+                <h2 class="prova py-3"> Year</h2>
+                <canvas id="userChartYear" class="rounded shadow"></canvas>
+
+
+                <h2 class="prova py-3"> Month </h2>
+                <canvas id="userChartMonth" class="rounded shadow"></canvas>
+
+    
+                {{-- <p class="prova pt-5">tabella di prova. si vede che prende i dati total_price della tabella orders.</p>
+                <canvas id="userChart2" class="rounded shadow"></canvas> --}}
+            
+                {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --}}
+    
+                {{--  https://welcm.uk/blog/getting-started-with-charts-in-laravel-7 
+                    https://www.chartjs.org/docs/latest/charts/bar.html
+                    https://laravel.com/docs/7.x/collections#method-pluck
+                    https://therichpost.com/laravel-chartjs-with-dynamic-data-working-example/  --}}
+            
+            
                 
-                --}}
-        
-        
-            <script type="application/javascript">
-        
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var chart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'line',
-            
-                    // The data for our dataset
-                    data: {
-                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'ueueu'],
-                        datasets: [{
-                            label: 'My First dataset',
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'red',
-                            data: [0, 60, 15, 2, 20, 30, 45, 30]
-                        }]
-                    },
-            
-                    // Configuration options go here
-                    options: {}
-                });
-        
-                //------------------------------------------------------------------------------------
-            
-                var ctx = document.getElementById('userChart').getContext('2d');
-                var chart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'bar',
-                    // The data for our dataset
-                    data: {
-                        labels:  {!!json_encode($chart->labels)!!} ,
-                    //    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        
-                        datasets: [
-                            {
-                                label: 'PROVA PROVA total_price tabella orders',
-                                backgroundColor: {!! json_encode($chart->colours)!!} ,
-                                data:  {!! json_encode($chart->dataset)!!} ,
-                            },
-                        ]
-                    },
-                    // Configuration options go here
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    callback: function(value) {if (value % 1 === 0) {return value;}}
-                                },
-                                scaleLabel: {
-                                    display: false
-                                }
-                            }]
-                        },
-                        legend: {
-                            labels: {
-                                // This more specific font property overrides the global property
-                                fontColor: '#122C4B',
-                                fontFamily: "'Muli', sans-serif",
-                                padding: 25,
-                                boxWidth: 25,
-                                fontSize: 14,
-                            }
-                        },
-                        layout: {
-                            padding: {
-                                left: 10,
-                                right: 10,
-                                top: 0,
-                                bottom: 10
-                            }
-                        }
-                    }
-                });  
-                
-                
-
-                //------------------------------------------
-
-
-
-
-
-                var ctx = document.getElementById('userChart2').getContext('2d');
-                var chart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'bar',
-                    // The data for our dataset
-                    data: {
-                        labels:  {!!json_encode($chart->labels)!!} ,
-                    //    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        
-                        datasets: [
-                            {
-                                label: 'PROVA PROVA total_price tabella orders',
-                                backgroundColor: {!! json_encode($chart->colours)!!} ,
-                                data:  {!! json_encode($chart->dataset)!!} ,
-                            },
-                        ]
-                    },
-                    // Configuration options go here
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    callback: function(value) {if (value % 1 === 0) {return value;}}
-                                },
-                                scaleLabel: {
-                                    display: false
-                                }
-                            }]
-                        },
-                        legend: {
-                            labels: {
-                                // This more specific font property overrides the global property
-                                fontColor: '#122C4B',
-                                fontFamily: "'Muli', sans-serif",
-                                padding: 25,
-                                boxWidth: 25,
-                                fontSize: 14,
-                            }
-                        },
-                        layout: {
-                            padding: {
-                                left: 10,
-                                right: 10,
-                                top: 0,
-                                bottom: 10
-                            }
-                        }
-                    }
-                }); 
-            
-            </script>
+            </div>
+    
             
         </div>
+        
+
+        <script type="application/javascript">
+        
+            console.log('Hello Stats');
+
+
+
+            var chartYear = {
+                type: 'line',
+                data: {
+                    labels:  {!!json_encode($chart->labels)!!} ,
+                    datasets: [
+                        {
+                            label: 'ogni barra è un ordine ricevuto dell utente loggato',
+                            backgroundColor: {!! json_encode($chart->colours)!!} ,
+                            data:  {!! json_encode($chart->dataset)!!} ,
+                            backgroundColor: 'rgba(192,192,192,0.1))',
+                            pointBackgroundColor: 'rgba(218,165,32,0.6',
+                            pointRadius: 6
+                        },
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            }  
+            //------------------------------------------
+            var chartMonth = {
+                type: 'line',
+                data: {
+                    labels:  {!!json_encode($chartMonth->labels)!!} ,
+    
+                    datasets: [
+                        {
+                            label: 'Month',
+                            backgroundColor: {!! json_encode($chartMonth->colours)!!} ,
+                            data:  {!! json_encode($chartMonth->dataset)!!} ,
+                            backgroundColor: 'blue',
+                            pointBackgroundColor: 'rgba(218,165,32,0.6',
+                            pointRadius: 6
+                        },
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true   
+                            }
+                        }]
+                    }
+                }
+
+
+            }
+            //--------------------------
+            var ctxYear = document.getElementById('userChartYear').getContext('2d');
+            new Chart(ctxYear, chartYear);  
+            //--------------------------
+
+
+            var ctxMonth = document.getElementById('userChartMonth').getContext('2d');
+            new Chart(ctxMonth, chartMonth);  
+
+            
+            
+            
+
+            /*
+
+
+            var ctx = document.getElementById('userChart2').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+                // The data for our dataset
+                data: {
+                    labels:  {!!json_encode($chart->labels)!!} ,
+                //    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    
+                    datasets: [
+                        {
+                            label: 'PROVA PROVA total_price tabella orders',
+                            backgroundColor: {!! json_encode($chart->colours)!!} ,
+                            data:  {!! json_encode($chart->dataset)!!} ,
+                        },
+                    ]
+                },
+                // Configuration options go here
+                options: {
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                            time: {
+                            unit: 'month'
+                            }
+                        }],
+                        // yAxes: [{
+                        //     ticks: {
+                        //         beginAtZero: true,
+                        //         callback: function(value) {if (value % 1 === 0) {return value;}}
+                        //     },
+                        //     scaleLabel: {
+                        //         display: false
+                        //     }
+                        // }]
+                    },
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            fontColor: '#122C4B',
+                            fontFamily: "'Muli', sans-serif",
+                            padding: 25,
+                            boxWidth: 25,
+                            fontSize: 14,
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 0,
+                            bottom: 10
+                        }
+                    }
+                }
+            }); 
+            */
+        </script>
+
     
     </div>
 
@@ -244,8 +261,9 @@
 
     @include('components.footer')
 
-    <script src="{{ asset('js/app.js') }}"></script> 
+    {{-- <script src="{{ asset('js/app.js') }}"></script>  --}}
     {{-- serve? --}}
+    
     
 </body>
 </html>
