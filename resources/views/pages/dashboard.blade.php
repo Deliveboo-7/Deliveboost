@@ -2,14 +2,14 @@
 
 @section('content')
 
-<div class="dashboard">
+{{-- <div class="dashboard"> --}}
 
-    <div class="container-fluid containerPageMenu">
+    <div class="container-fluid p-0" id="cover-dashboard">
         <div class="row no-gutters">
-            <div class="coverRist col-12 d-flex flex-row align-items-center justify-content-center">
+            <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
 
-                <div class="align-middle restName text-uppercase">
-                    <h1>{{Auth::user() -> company_name}}</h1>
+                <div class="title text-uppercase">
+                    <h1> {{Auth::user() -> company_name}}</h1>
                 </div>
 
             </div>
@@ -19,18 +19,18 @@
     </div>
 
 
-    <div class="container restInfoButtons my-5">
+    <div class="container my-5">
 
-        <div class="row">
-            <div class="restProfile col-12">
-                <ul>
-                    <li class="infoTitle">
-                        <h5 class="text-gold">
-                            INFORMATIONS
-                        </h5>
-                    </li>
+        <div class="row text-silver">
+            <div class="col-12 col-md-8 offset-md-2 dashboard-title bord-b py-3">
+                <h3 class="text-gold">
+                    Restaurant Details
+                </h3>
+                <hr>
+                <ul class="p-0">
+                
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             MAIL:
                         </span>
                         <span class="alignRight">
@@ -38,7 +38,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             ADDRESS:
                         </span>
                         <span class="alignRight">
@@ -46,7 +46,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             VAT:
                         </span>
                         <span class="alignRight">
@@ -54,7 +54,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             PHONE NUMBER:
                         </span>
                         <span class="alignRight">
@@ -62,7 +62,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             WEBSITE:
                         </span>
                         <span class="alignRight">
@@ -70,7 +70,7 @@
                         </span>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <span class="text-bold">
+                        <span class="text-gold">
                             OPENING INFO:
                         </span>
                         <span class="alignRight">
@@ -79,26 +79,42 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row my-2">
 
-            <a href="{{ route('dishes-index') }}" class="restButton col-2 offset-2 py-3 my-4">
-                <i class="fas fa-hamburger fa-5x"></i><br>
-                <span>MY FOODS</span>
-            </a>
-            <a href="{{ route('orders-index') }}" class="restButton col-2 offset-1 py-3 my-4">
-                <i class="fas fa-clipboard fa-5x"></i><br>
-                <span>MY ORDERS</span>
+            <div class="col-4 col-sm-4   p-2 ">
+                <div class="row p-2 btn-dash m-0">
+                    <a href="{{ route('dishes-index') }}" class=" col-12  p-0">      
+                    
+                        <img src="{{ asset('storage/icons/food.svg') }}" alt="orders" >
+                    
+                    </a>
+                    <h5 class="text-silver text-lighter text-center  col-12  my-1 p-0"> FOODS</h5>
+                </div>  
+            </div>
 
+            <div class="col-4 col-sm-4  p-2 ">
+                <div class="row p-2 m-0 btn-dash">
+                    <a href="{{ route('orders-index') }}" class=" col-12  p-0">      
+                        <img src="{{ asset('storage/icons/orders.svg') }}" alt="orders" >
+                    </a>
+                    <h5 class="text-silver text-lighter text-center  col-12 my-1 p-0"> ORDERS</h5>
+                </div>  
+            </div>
 
-            </a>
-            <a href="#" class="restButton col-2 offset-1 py-3 my-4">
-                <i class="fas fa-chart-line fa-5x"></i><br>
-                <span>MY STATS</span>
-            </a>
+            <div class="col-4 col-sm-4    p-2 ">
+                <div class="row p-2 m-0 btn-dash">
+                    <a href="{{ route('statistics-index') }}" class=" col-12 p-0">      
+                        <img src="{{ asset('storage/icons/stats.svg') }}" alt="orders" >
+                    </a>
+                    <h5 class="text-silver text-lighter col-12 my-1 p-0"> STATS</h5>
+                </div>  
+            </div>
+
         </div>
 
-    </div>
-
-</div>
 
 @endsection
+
+
 

@@ -4,19 +4,19 @@ header {
     left: 0; 
     width: 100%;
     z-index: 2;
+    
 
 
     .navbar .container-fluid{
         background-color: $header;
-        // height: 70px;
+        height: 70px;
+        border-bottom: 1px solid $lightgray;
 
 
         .navbar-toggler{
             border: none;
         }
-        // .navbar-brand{
-        //     padding:10px;
-        // }
+
     }
 
     #navbarSupportedContent ul li a{

@@ -1,52 +1,16 @@
-// .titleMyFoods {
-//     background-color: yellow;
-//     height: 100px;
-// }
 
-// .addDish {
-//     background-color: grey;
-
-// }
-
-// .listItem {
-//     border: 2px dotted black;
-
-// }
-
-// .listItem * {
-//     text-align: center;
-//     border: 1px solid red;
-// }
-
-// .details {
-//     display: flex;
-//     justify-content: space-around;
-// }
-
-.cover{
-    
-    background-color: pink;
-    height: 300px;
+#cover-dishes{
+    background-image: url('/storage/images/cover_5.png');
     background-size: cover;
-    // background-image: url('/storage/images/cover_3.png');
-
-    .stripe{
-        background-color: royalblue;
-        max-height: 100px;
-        
-        
-       
-        // background-color: rgba($color: white, $alpha: .5);
-    }
-
-
+    background-repeat: no-repeat;
 }
+// .dishes-index {
+//     button a {
+//         color: $gold;
+//     }
+//     a:hover {
+//         text-decoration: none;
+//         color: $silver;
 
-.dishes-index {
-    button a {
-        color: $gold;
-    }
-    a:hover {
-        text-decoration: none;
-    }
-}
+//     }
+// }
