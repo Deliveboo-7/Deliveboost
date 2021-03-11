@@ -74,16 +74,14 @@
                             <div class="col text-gold d-flex justify-content-between py-1">
 
                                 <div class="col-4 text-silver d-flex justify-content-between align-items-center">
-                                    <i class="fas fa-money-bill-wave mr-1 "></i>
+                                    <i class="far fa-money-bill-alt"></i>
                                     <i class="fa fa-credit-card mx-1" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center">
 
                                     <i class="fas fa-euro-sign"></i>
-                                    <i class="fas fa-euro-sign"></i>
-                                    <i class="fas fa-euro-sign"></i>
-
+                                    
                                 </div>
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center ">

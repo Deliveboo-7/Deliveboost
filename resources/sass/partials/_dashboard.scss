@@ -1,66 +1,130 @@
-.dashboard {
-  //  min-height: calc(100vh - 40px);
-    margin-bottom: 40px;
-    span {
-        color: $silver;
-    }
+// .dashboard {
+//   //  min-height: calc(100vh - 40px);
+//     margin-bottom: 40px;
+//     span {
+//         color: $silver;
+//     }
 
-    
+// }
+
+#cover-dashboard{
+    background-image: url('/storage/images/cover_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-// .containerPageMenu .coverRist .restName -> r1-12-19 menu.scss
-
-
 .restProfile {
-    border: 1px $lightgray solid;
+    // border: 1px $lightgray solid;
 
   //  background-color: orange;
-    display: flex;
-    justify-content: space-around;
+    // display: flex;
+    // justify-content: center;
     ul {
-        width: 100%;
+        // width: 100%;
 
         list-style: none;
         li {
             width: 100%;
             padding-bottom: 1%;
-            span {
-                width: 100%;
-            }
+            // span {
+            //     width: 100%;
+            // }
         }
-        .infoTitle {
-            padding-top: 2%;
-        }
+        // .infoTitle {
+        //     padding-top: 2%;
+        // }
     }
-    .alignRight {
-        text-align: right;
-    }
+    // .alignRight {
+    //     text-align: right;
+    // }
     
 }
 
-.restButton {
-  //  background-color: red;
-    border: 1px $lightgray solid;
-    background-color: $lightgray_alpha;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-content: center; */
-    align-items: center;
-    min-height: 100%;
-        &:hover{
-            background-color: $lightgray;
-            border: 1px solid $gold;
-            cursor: pointer;
-            text-decoration: none;
 
-        }
-
-    i {
-        color: $gold;
-        padding-bottom: 2%;
-    }
-    text-decoration: none;
+hr {
+    width: 100%;
+    border-width: 1px;
+    border-color: $lightgrey;
 }
 
 
+.btn-dash{
+    background-color: $lightgray;
+    text-align: center;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    // align-content: center;
+    text-decoration: none;
+        img{
+
+          max-width: 100px;
+            height: auto;
+        }
+        h5{
+            font-size: 1em;
+        }
+
+        &:hover{
+                        background-color: $lightgrey;
+                        // border: 1px solid $lightgrey;
+                        cursor: pointer;
+                        text-decoration: none;
+            
+                    }
+}
+
+
+
+
+// .restButton {
+//   //  background-color: red;
+//     border: 1px $lightgray solid;
+//     background-color: $lightgray_alpha;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     /* align-content: center; */
+//     align-items: center;
+//     min-height: 100%;
+//         &:hover{
+//             background-color: $lightgray;
+//             border: 1px solid $gold;
+//             cursor: pointer;
+//             text-decoration: none;
+
+//         }
+
+//     i {
+//         color: $gold;
+//         padding-bottom: 2%;
+//     }
+//     text-decoration: none;
+// }
+
+
+@media (max-width: 577px) { 
+
+    .btn-dash {
+       
+        img {
+            height: 60px;
+            width: 60px;
+        }
+    
+    }
+
+}
+
+@media (min-width: 578px) and (max-width: 992px) { 
+
+    .btn-dash {
+       
+        img {
+            height: 80px;
+            width: 80px;
+        }
+    
+    }
+
+}

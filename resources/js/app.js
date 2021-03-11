@@ -26,11 +26,16 @@ new Vue({
             checkout:[],
             restaurantID : null,
             selectedRestaurant : 0,
+            selectedDishes: [],
 
             hostedFieldInstance: false,
             nonce: "",
             error: "",
             typologySelected : 'typologySelected'
+            customerName: '',
+            address: '',
+            phone: ''
+
         }
     },
 
@@ -89,6 +94,10 @@ new Vue({
                 this.totalItems++
 
 
+                this.selectedDishes.push(dish.id);
+                // const parsed = JSON.stringify(this.selectedDishes);
+                localStorage.setItem('selectedDishes', this.selectedDishes);
+
             }else{
 
                 dish.quantity++;
@@ -129,39 +138,37 @@ new Vue({
         // //CHECKOUT
         payWithCreditCard() {
 
-            if (this.checkout.length > 0) {
+            if(this.hostedFieldInstance
+                && this.customerName != ''
+                && this.address != ''
+                && this.phone != '')
+            {
+                this.hostedFieldInstance.tokenize()
+                    .then(payload => {
 
-                if(this.hostedFieldInstance)
-                {
-                    this.hostedFieldInstance.tokenize()
-                        .then(payload => {
-                            console.log(payload);
-                            this.nonce = payload.nonce;
-                            document.querySelector('#nonce').value = payload.nonce;
-                            var form = document.querySelector('#payment-form');
-                            form.submit();
-                        //   form.reset();
+                        this.nonce = payload.nonce;
+                        document.querySelector('#nonce').value = payload.nonce;
+                        var form = document.querySelector('#payment-form');
 
-                    localStorage.removeItem('checkout');
-                    // inserire qui svuotamento array checkout
-                    //FAR PARTIRE EMAIL
+                        form.submit();
+
+                        // svuotamento array checkout
+                        localStorage.removeItem('checkout');
+
                     })
                     .catch(err => {
-                        console.error(err);
+                        console.error('errore',err);
                         if(err.code =="HOSTED_FIELDS_FIELDS_INVALID"){
                             err.message = 'Card details are invalid.';
                             this.error = err.message;
                         }
 
-                        if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
-                            err.message = 'The fields are empty. Please enter your payment information. ';
-                            this.error = err.message;
-                        }
+                    if(err.code =="HOSTED_FIELDS_FIELDS_EMPTY"){
+                        err.message = 'The fields are empty. Please enter your payment information. ';
+                        this.error = err.message;
+                    }
 
-                    })
-                }
-            } else {
-                this.error = "Your cart is empty";
+                })
             }
         }
     },
@@ -179,6 +186,11 @@ new Vue({
         if(localStorage.getItem('selectedRestaurant')) {
 
             this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        }
+
+        if(localStorage.getItem('selectedDishes')) {
+
+            this.selectedDishes = localStorage.getItem('selectedDishes');
         }
 
         // http://localhost:8000/menu/restaurant/1
@@ -199,7 +211,7 @@ new Vue({
             authorization: ''
         })
         .then(clientInstance => {
-            console.log('clientInst',clientInstance);
+
             let options = {
                 client: clientInstance,
                 styles: {
