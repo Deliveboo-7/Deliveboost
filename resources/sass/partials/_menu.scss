@@ -43,6 +43,7 @@
 // ---------COMANDI PER CAMBIARE QUANTITA ---------
 .cmdCheckout{
     background-color: $lightgray;
+    color:$gold;
     &:hover{
         color:$silver;
         background-color: $lightgrey;

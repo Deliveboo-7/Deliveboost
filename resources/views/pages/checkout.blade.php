@@ -36,7 +36,7 @@
 
     {{-- --------------------------PAYMENT FORM------------------------- --}}
 
-  <div class="container ">
+  <div class="container">
     <div class="row">
       <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
         <div class="card paymentForm my-3">
@@ -79,10 +79,15 @@
 
                 <div class="dish-list-chk py-2">
 
+                  <div class=" m-0 text-silver text-center bord-b p-2" v-if="checkout.length === 0"> YOUR CART IS EMPTY !</div>
+
                     <div class="row m-0  bord-b p-2" v-for="item in checkout">
                     {{-- <div class="col-6 col-sm-4 offset-sm-2 text-silver orderItem"> </div> --}}
-                    <input type="text" name="items[]" class="form-control col-10" placeholder="" :value="item.name" readonly>
+                    <input type="text" name="items[]" class="form-control col-6" placeholder="" :value= "item.name" readonly>
+                    <input type="text" name="items[]" class="form-control col-2" placeholder="" :value="item.price/100" readonly>
+                    <div @click="removeQty(item)" class="cmdCheckout text-center col-1 p-2 "><i class="fas fa-minus"></i></div>
                     <input type="text" name="qty[]" class="form-control col-1" placeholder="" :value="item.quantity" readonly>
+                    <div @click="addQty(item)" class=" cmdCheckout text-center col-1 p-2 "><i class="fas fa-plus "></i></div>  
                     {{-- <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label> --}}
 
                     </div>
@@ -98,7 +103,7 @@
                         <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>
                     </div> --}}
                 <label for="total_price" class="text-gold my-2">Amount:</label>
-                <input name="total_price" class="amount col-4 text-right my-2" :value="finalPrice/100" readonly>
+                <input name="total_price" class="amount col-10 text-left my-2" :value="finalPrice/100" readonly>
 
                 <input type="text" name="selectedRestaurant" :value="sendMailRestaurant" hidden>
                 <label class="text-gold">Credit Card Number</label>
