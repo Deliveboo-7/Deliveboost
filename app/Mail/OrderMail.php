@@ -14,17 +14,19 @@ class OrderMail extends Mailable
     public $cartList;
     public $email;
     public $restName;
+    public $orderCode;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($cartList, $email, $restName)
+    public function __construct($cartList, $email, $restName, $orderCode)
     {
         $this -> cartList = $cartList;
         $this -> email = $email;
         $this -> restName = $restName;
+        $this -> orderCode = $orderCode;
         
     }
 
