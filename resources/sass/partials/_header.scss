@@ -20,21 +20,18 @@ header {
 
     .dropdown-menu{
         background-color: $lightgray;
-            .dropdown-item {
-                color: $silver;
-                background-color: $lightgray;
-                border-color: $body;
-                border-style: solid ;
-                border-width: 0px 1px 1px 1px;
-
-
-                &:hover{
-
-                    transition: background-color .4s ease-in-out;
-                    background-color: $lightgrey;
-                }
+        .dropdown-item {
+            color: $silver;
+            background-color: $lightgray;
+            border-color: $body;
+            border-style: solid ;
+            border-width: 0px 1px 1px 1px;
+            &:hover{
+                transition: background-color .4s ease-in-out;
+                background-color: $lightgrey;
             }
-
         }
+
+        
     }
 }
