@@ -76,7 +76,7 @@
                 
                                 
                                 <div class="col-2 col-md-2 text-right">
-                                    {{ $dish -> price}} <span class="ml-2"> € </span>
+                                    {{ $dish -> price/100}} <span class="ml-2"> € </span>
                                 </div>
 
                                 <div class="col-2 text-center text-gold p-0">
