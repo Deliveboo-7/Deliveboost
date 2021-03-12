@@ -38,12 +38,25 @@
 <body>
     @include('components.header')
 
-    <div class="container-fluid statisticsContainer">
-        <div class="row jumbostats">        
+
+    <div class="container-fluid p-0" id="cover-statistics">
+        <div class="row no-gutters">
+            <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
+
+                <div class="title text-uppercase">
+                    <h1> statistics</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container  statisticsContainer">
+        {{-- <div class="row jumbostats">        
             <h2 class="jumbostats col-4 offset-4 text-gold py-3"> 
                 My Stats
             </h2>
-        </div>
+        </div> --}}
 
         <div class="row chartRow">
 
@@ -51,11 +64,13 @@
                 {{-- <p class="prova">PROVA CHART.JS</p>       
                 <canvas id="myChart" class="rounded shadow"></canvas> --}}
 
-                <h2 class="prova py-3"> Year</h2>
+                <h3 class="title text-gold text-lighter py-3"> Year</h3>
+                <hr>
                 <canvas id="userChartYear" class="rounded shadow"></canvas>
 
 
-                <h2 class="prova py-3"> Month </h2>
+                <h3 class="title text-gold  text-lighter py-3"> Month </h3>
+                <hr>
                 <canvas id="userChartMonth" class="rounded shadow"></canvas>
 
     
@@ -95,9 +110,14 @@
                             label: 'ogni barra è un ordine ricevuto dell utente loggato',
                             backgroundColor: {!! json_encode($chart->colours)!!} ,
                             data:  {!! json_encode($chart->dataset)!!} ,
-                            backgroundColor: 'rgba(192,192,192,0.1))',
-                            pointBackgroundColor: 'rgba(218,165,32,0.6',
-                            pointRadius: 6
+                            backgroundColor: 'rgba(192,192,192,0.1)',
+                            borderColor:'rgba(200, 179, 111, 0.3)',
+                            borderWidth:1,
+                            pointBackgroundColor: 'rgba(218,165,32,0.4)',
+                            pointBorderColor:'rgba(144,144,144,0.4)',
+                            pointBorderWidth:1,                       
+                            pointRadius: 2
+                        
                         },
                     ]
                 },
@@ -114,7 +134,7 @@
             }  
             //------------------------------------------
             var chartMonth = {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels:  {!!json_encode($chartMonth->labels)!!} ,
     
@@ -123,9 +143,13 @@
                             label: 'Month',
                             backgroundColor: {!! json_encode($chartMonth->colours)!!} ,
                             data:  {!! json_encode($chartMonth->dataset)!!} ,
-                            backgroundColor: 'blue',
-                            pointBackgroundColor: 'rgba(218,165,32,0.6',
-                            pointRadius: 6
+                            borderColor: 'rgba(192,192,192,0.6)',
+                            backgroundColor:'rgba(200, 179, 111, 0.1)',
+                            borderWidth:1,
+                            pointBackgroundColor: 'rgba(218,165,32,0.4)',
+                            pointBorderColor:'rgba(144,144,144,0.4)',
+                            pointBorderWidth:1,                       
+                            pointRadius: 2
                         },
                     ]
                 },

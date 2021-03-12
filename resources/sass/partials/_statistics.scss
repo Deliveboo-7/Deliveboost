@@ -1,3 +1,12 @@
+#cover-statistics{
+
+    background-image: url('/storage/images/cover_8.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
 .statisticsContainer {
 
     margin-top: 70px !important;
@@ -9,8 +18,8 @@
     
     }
 
-    .prova {
-        background-color: purple;
+    .title {
+        background-color: $body;
     }
 
 
