@@ -21,12 +21,12 @@ class OrderMail extends Mailable
      *
      * @return void
      */
-    public function __construct($cartList, $email, $restName, $orderCode)
+    public function __construct($cartList, $email, $restName)
     {
         $this -> cartList = $cartList;
         $this -> email = $email;
         $this -> restName = $restName;
-        $this -> orderCode = $orderCode;
+        // $this -> orderCode = $orderCode;
         
     }
 

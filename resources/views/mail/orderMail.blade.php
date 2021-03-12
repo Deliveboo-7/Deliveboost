@@ -14,7 +14,7 @@
 
         <h2>Good news! You have just received a new order!</h2>
 
-        <h1>Order Code: {{$orderCode}}</h1>
+        {{-- <h1>Order Code: {{$orderCode}}</h1> --}}
    
         <ul>
             @foreach ($cartList as $dish)
