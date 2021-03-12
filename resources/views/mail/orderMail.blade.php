@@ -8,18 +8,18 @@
 </head>
 <body>
     
-    <div class="container">
-        {{-- {{dd(get_defined_vars())}} --}}
-        <h1>New mail for: {{$email}}</h1>
-        <h1>Name: {{$restName}}</h1>
+    <div class="container orderMail">
         
+        <h1>New order for: {{$restName}}</h1>
+
         <h2>Good news! You have just received a new order!</h2>
 
-        
+        {{-- <h1>Order Code: {{$orderCode}}</h1> --}}
+   
         <ul>
             @foreach ($cartList as $dish)
 
-               <li>{{$dish[0]}} - {{$dish[1]}} </li>
+               <li>{{$dish[0]}}  x{{$dish[1]}} </li>
 
             @endforeach
             

@@ -27,6 +27,7 @@ new Vue({
             restaurantID : null,
             selectedRestaurant : 0,
             selectedDishes: [],
+            sendMailRestaurant : null,
 
             hostedFieldInstance: false,
             nonce: "",
@@ -77,6 +78,7 @@ new Vue({
         },
 
         selectRestaurant(id) {
+
             localStorage.setItem('selectedRestaurant', id);
         },
 
@@ -91,7 +93,7 @@ new Vue({
 
                 dish.quantity = 1;
                 this.cart.push(dish);
-                this.totalItems++
+                this.totalItems++;
 
 
                 this.selectedDishes.push(dish.id);
@@ -110,10 +112,14 @@ new Vue({
 
 
         saveCart() {
+            this.sendMailRestaurant = this.selectedRestaurant;
+            localStorage.setItem('sendMailRestaurant', this.sendMailRestaurant);
+
             const parsed = JSON.stringify(this.cart);
             localStorage.setItem('checkout', parsed);
             this.cart = [];
             this.finalPrice = 0;
+            this.restaurantID = null;
         },
 
         addQty(dish){
@@ -151,11 +157,12 @@ new Vue({
                             this.nonce = payload.nonce;
                             document.querySelector('#nonce').value = payload.nonce;
                             var form = document.querySelector('#payment-form');
-
                             form.submit();
 
                             // svuotamento array checkout
                             localStorage.removeItem('checkout');
+                            localStorage.removeItem('selectedRestaurant');
+                            this.restaurantID = null;
 
                         })
                         .catch(err => {
@@ -179,9 +186,10 @@ new Vue({
         }
     },
 
-    mounted() {
+    mounted: function () {
 
-        if(localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
+
+        if (localStorage.getItem('checkout') && localStorage.getItem('finalPrice')) {
 
             this.finalPrice = parseInt(localStorage.getItem('finalPrice'));
             this.checkout = JSON.parse(localStorage.getItem('checkout'));
@@ -189,69 +197,89 @@ new Vue({
             localStorage.removeItem('finalPrice');
         }
 
-        if(localStorage.getItem('selectedRestaurant')) {
+        // this.restaurantID = localStorage.getItem('selectedRestaurant');
+        this.restaurantID = parseInt(window.location.href.split('/').pop());
+        this.selectedRestaurant = localStorage.getItem('selectedRestaurant');
+        this.sendMailRestaurant = localStorage.getItem('sendMailRestaurant');
 
-            this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        if (parseInt(this.selectedRestaurant) !== parseInt(window.location.href.split('/').pop())) {
+
+            this.selectedRestaurant = parseInt(window.location.href.split('/').pop());
+            localStorage.setItem('selectedRestaurant', this.selectedRestaurant);
         }
 
-        if(localStorage.getItem('selectedDishes')) {
+        // localStorage.setItem('selectedRestaurant',this.selectedRestaurant);
 
-            this.selectedDishes = localStorage.getItem('selectedDishes');
-        }
+        // localStorage.setItem('selectedRestaurant', this.restaurantID);
+        // console.log(this.restaurantID);
 
-        // http://localhost:8000/menu/restaurant/1
-        // this.restaurantID = parseInt(window.location.href.slice(38));
-        this.restaurantID = localStorage.getItem('selectedRestaurant');
+        if (!isNaN(this.restaurantID)) {
 
-        if (this.restaurantID !== '') {
-
-            axios.get('/api/dishes', { params: this.restaurantID })
+            axios.get('/api/dishes', {params: this.restaurantID})
                 .then(res => {
                     console.log(res.data)
                     this.dishes = res.data;
                 })
         }
 
+        // if(localStorage.getItem('selectedRestaurant')) {
+        //
+        //     this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
+        //     // localStorage.removeItem('selectedRestaurant');
+        //
+        // }
+
+        if (localStorage.getItem('selectedDishes')) {
+
+            this.selectedDishes = localStorage.getItem('selectedDishes');
+            localStorage.removeItem('selectedDishes');
+
+        }
+
+        // http://localhost:8000/menu/restaurant/1
+        // this.restaurantID = parseInt(window.location.href.slice(38);
+
+
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: ''
+            authorization: 'sandbox_rz45x897_q45722tz9wpy5sm5'
         })
-        .then(clientInstance => {
+            .then(clientInstance => {
 
-            let options = {
-                client: clientInstance,
-                styles: {
-                    input: {
-                        'font-size': '14px',
-                        'font-family': 'Open Sans'
-                    }
-                },
-                fields: {
-                    number: {
-                        selector: '#creditCardNumber',
-                        placeholder: 'Enter Credit Card'
+                let options = {
+                    client: clientInstance,
+                    styles: {
+                        input: {
+                            'font-size': '14px',
+                            'font-family': 'Open Sans'
+                        }
                     },
-                    cvv: {
-                        selector: '#cvv',
-                        placeholder: 'Enter CVV'
-                    },
-                    expirationDate: {
-                        selector: '#expireDate',
-                        placeholder: '00 / 0000'
+                    fields: {
+                        number: {
+                            selector: '#creditCardNumber',
+                            placeholder: 'Enter Credit Card'
+                        },
+                        cvv: {
+                            selector: '#cvv',
+                            placeholder: 'Enter CVV'
+                        },
+                        expirationDate: {
+                            selector: '#expireDate',
+                            placeholder: '00 / 0000'
+                        }
                     }
                 }
-            }
 
-            return braintree.hostedFields.create(options)
-        })
-        .then(hostedFieldInstance => {
-            // @TODO - Use hostedFieldInstance to send data to Braintree
-            this.hostedFieldInstance = hostedFieldInstance;
-            console.log(hostedFieldInstance);
-        })
-        .catch(err => {
-            console.log(err);
-        });
+                return braintree.hostedFields.create(options)
+            })
+            .then(hostedFieldInstance => {
+                // @TODO - Use hostedFieldInstance to send data to Braintree
+                this.hostedFieldInstance = hostedFieldInstance;
+                // console.log(hostedFieldInstance);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     },
 });
 

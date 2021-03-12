@@ -14,6 +14,7 @@ class OrderMail extends Mailable
     public $cartList;
     public $email;
     public $restName;
+    public $orderCode;
 
     /**
      * Create a new message instance.
@@ -25,6 +26,7 @@ class OrderMail extends Mailable
         $this -> cartList = $cartList;
         $this -> email = $email;
         $this -> restName = $restName;
+        // $this -> orderCode = $orderCode;
         
     }
 

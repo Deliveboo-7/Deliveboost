@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 // PUBLIC
+Route::post('/payment-result', 'PublicController@payment') -> name('payment-result');
 Route::get('/', 'PublicController@index') -> name('homepage');
 Route::get('/menu/restaurant/{id}', 'PublicController@getRestaurantMenu') -> name('restaurant-menu');
 Route::get('/checkout', 'PublicController@checkout') -> name('checkout');
-Route::post('/payment-result', 'PublicController@payment') -> name('payment-result');
 // Route::post('/payment-unsuccessful', 'PublicController@payment') -> name('payment-unsuccessful');
 
 // ADMIN RESTAURANT

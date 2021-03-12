@@ -32,14 +32,14 @@
     <!-- Load Hosted Fields component. -->
     <script src="https://js.braintreegateway.com/web/3.73.1/js/hosted-fields.min.js"></script>
 
-    
+
     <!-- Animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     {{-- chart js --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    
+
 
 </head>
 <body>
@@ -62,6 +62,5 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- <script src="{{ asset('js/chart.js') }}" defer></script> --}}
 
-    
 </body>
 </html>

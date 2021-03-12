@@ -176,8 +176,9 @@ class OrderController extends Controller
         -> join('dishes', 'users.id', '=', 'dishes.user_id')
         -> join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
         -> join('orders', 'orders.id', '=', 'dish_order.order_id')
-        -> select(DB::raw('SUM(orders.total_price / 100) as income'), DB::raw('MONTH(orders.date) as month'))
+        -> select(DB::raw('SUM(orders.total_price / 100) as income'), DB::raw('MONTHNAME(orders.date) as month'))
         -> groupBy('month')
+        ->orderByRaw( "FIELD(month, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')" )
         -> where('user_id', 12 ) // $loggedUserIdM   //   12
         ->pluck('income', 'month')->all();
         for ($i=0; $i<=count($groupsMonth); $i++) {
