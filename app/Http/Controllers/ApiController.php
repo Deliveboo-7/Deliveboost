@@ -60,7 +60,9 @@ class ApiController extends Controller
 
     public function getDishes(Request $request) {
         $data = $request -> all();
-        $dishes = DB::table('dishes') -> where('user_id', $data[0]) -> get();
+        $dishes = DB::table('dishes') -> where('user_id', $data['0']) -> get();
+        
+        // dd($dishes);
         return response() -> json($dishes);
 
     }
