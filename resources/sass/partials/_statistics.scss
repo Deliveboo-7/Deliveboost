@@ -1,22 +1,11 @@
 #cover-statistics{
-
     background-image: url('/storage/images/cover_8.png');
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
-
-
 .statisticsContainer {
-
-    margin-top: 70px !important;
-    padding-bottom: 200px;
-    min-height: calc(100vh - 70px);
-    background-color: $body;
-    @media (min-width: 768px) {
-        padding-bottom: 100px;
-    
-    }
 
     .title {
         background-color: $body;
@@ -24,11 +13,6 @@
 
 
     canvas {
-        //border: $gold 5px solid;
         background-color: $body;
     }
-
-    // .container-fluid {
-    //     background-color: $silver;
-    // }
 }

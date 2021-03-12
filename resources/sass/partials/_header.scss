@@ -4,15 +4,10 @@ header {
     left: 0;
     width: 100%;
     z-index: 2;
-    
-
-
     .navbar .container-fluid{
         background-color: $header;
         height: 70px;
         border-bottom: 1px solid $lightgray;
-
-
         .navbar-toggler{
             border: none;
         }
@@ -25,20 +20,19 @@ header {
 
     .dropdown-menu{
         background-color: $lightgray;
-
             .dropdown-item {
+                color: $silver;
+                background-color: $lightgray;
+                border-color: $body;
+                border-style: solid ;
+                border-width: 0px 1px 1px 1px;
 
-            color: $silver;
-            background-color: $lightgray;
-            border-color: $body;
-            border-style: solid ;
-            border-width: 0px 1px 1px 1px;
 
+                &:hover{
 
-            &:hover{
-
-                transition: background-color .4s ease-in-out;
-                background-color: $lightgrey;
+                    transition: background-color .4s ease-in-out;
+                    background-color: $lightgrey;
+                }
             }
 
         }

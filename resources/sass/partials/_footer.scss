@@ -1,8 +1,6 @@
 footer{
     width: 100%;
     min-height: 80px;
-    // position:absolute;
-    // bottom:0;
     padding: 20px 0;
     background-color: $header;
     color: $gold;
@@ -10,26 +8,4 @@ footer{
     bottom: 0;
     border-top: 1px solid $lightgray;
 
-    a {
-        color: $gold;
-        text-decoration: none;
-    }
-    
-    a:hover 
-    {
-        color: $silver; 
-        text-decoration: none; 
-        cursor: pointer;  
-    }
-    .row{
-        margin: 0;
-    }
-
 }
-
-// div, label{
-
-//     min-height: 30px;
-//     background-color: rgb(54, 54, 54);
-//     border:solid 1px red;
-// }
