@@ -81,7 +81,7 @@
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center">
 
                                     <i class="fas fa-euro-sign"></i>
-                                    
+
                                 </div>
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center ">

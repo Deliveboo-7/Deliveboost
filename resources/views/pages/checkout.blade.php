@@ -10,10 +10,10 @@
       <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
           <div class="title text-uppercase">
               <h1>checkout</h1>
-             
-          </div>   
-      </div>   
-  </div>   
+
+          </div>
+      </div>
+  </div>
 </div>
 
 
@@ -56,18 +56,18 @@
             </div>
 
 {{-- ---------------------------------------------------------------------- --}}
-            <form id="payment-form " v-show="!nonce" method="POST" action="{{ url('/success')}}">
+            <form id="payment-form" v-show="!nonce" method="POST" action="{{ url('/payment-result') }}">
                 @csrf
                 @method('POST')
 
                 <label for="name" class="text-gold">Your Name</label>
-                <input type="text" id="name" class="form-control" placeholder="Type your name">
+                <input type="text" id="name" name="customer_name" class="form-control" placeholder="Type your name" v-model="customerName">
 
                 <label for="address" class="text-gold mt-2">Address for delivery</label>
-                <input type="text" id="address" class="form-control" placeholder="Type the adress for delivery">
+                <input type="text" id="address" class="form-control" name="customer_address" placeholder="Type the adress for delivery" v-model="address">
 
                 <label for="customer_phone" class="text-gold mt-2">Phone number</label>
-                <input type="text" id="customer_phone" name="customer_phone" v-model="phone" class="form-control" placeholder="">
+                <input type="text" id="customer_phone" name="customer_phone" class="form-control" placeholder="" v-model="phone" >
 
                 <input id="code" name="code" hidden>
 
@@ -84,7 +84,7 @@
                     <input type="text" name="items[]" class="form-control col-10" placeholder="" :value="item.name" readonly>
                     <input type="text" name="qty[]" class="form-control col-1" placeholder="" :value="item.quantity" readonly>
                     {{-- <label for="qty" class="col-1 text-center text-silver orderItem"> @{{item.quantity}}  </label> --}}
-                    
+
                     </div>
 
                 </div>
@@ -94,14 +94,13 @@
                         <input type="text" name="items[]" class="form-control" placeholder="" :value="item.name" readonly>
                         <div @click="removeQty(item)" class="btn-gold t text-gold text-center col-1  "><i class="fas fa-minus"></i></div>
                         <input type="text" name="qty[]" class="form-control" placeholder="" :value="item.quantity" readonly>
-                       
+
                         <div @click="addQty(item)" class=" btn-gold text-gold text-center col-1  "><i class="fas fa-plus "></i></div>
                     </div> --}}
-                    <label for="total_price" class="text-gold my-2">Amount:</label>
-                    <input name="total_price" class="amount col-4 text-right my-2" :value="finalPrice/100" readonly>
-                </div>
+                <label for="total_price" class="text-gold my-2">Amount:</label>
+                <input name="total_price" class="amount col-4 text-right my-2" :value="finalPrice/100" readonly>
 
-                <input type="text" name="selectedRestaurant" :value="selectedRestaurant" hidden>
+                <input type="text" name="selectedRestaurant" :value="sendMailRestaurant" hidden>
                 <label class="text-gold">Credit Card Number</label>
                 <div id="creditCardNumber" class="form-control"></div>
 
