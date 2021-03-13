@@ -32,17 +32,17 @@ class DishController extends Controller
 
     public function store(Request $request){
 
-        $data = $request -> all();
+        $request = $this -> setPriceInteger($request);
 
         $validatedData = $request -> validate([
             'name' => 'required|string|min:5|max:50',
-            'desc' => 'required|string|min:20',
+            'desc' => 'required|string|min:5',
             'price' => 'required',
             'visible' => 'required',
         ]);
 
 
-        $data['price'] *= 100;
+        
 
         $loggedUser = Auth::user();
         $newDish = Dish::make($validatedData);
@@ -74,20 +74,25 @@ class DishController extends Controller
     }
 
 
+    
+
+
     // -----------------------  UPDATE  -------------------
 
 
     public function update(Request $request, $id){
 
         $loggedUser = Auth::user();
-        $data = $request -> all();
+        
         $dish = Dish::findOrFail($id);
+        
 
         if($dish -> user_id === $loggedUser -> id ){
 
+            $request = $this -> setPriceInteger($request);
             $validatedData = $request -> validate([
                 'name' => 'required|string|min:5|max:50',
-                'desc' => 'required|string|min:20',
+                'desc' => 'required|string|min:5',
                 'price' => 'required',
                 'visible' => 'required',
             ]);
@@ -101,6 +106,20 @@ class DishController extends Controller
             return redirect() -> route('dashboard');
 
         }
+
+    }
+
+
+    private function setPriceInteger($request){
+
+      
+        $price = $request ->get('price') * 100;
+
+        $request -> merge([
+                'price'  => $price
+        ]);
+
+        return $request;
 
     }
 }

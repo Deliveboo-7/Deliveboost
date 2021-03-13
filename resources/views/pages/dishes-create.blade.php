@@ -51,7 +51,7 @@
 
                         <div class="form-group row mx-0">
                             <label for="price" class="col-sm-2 text-left px-2"> Price</label>
-                            <input type="number" required name="price" min="0" value="0" step=".01" class=" col-sm-2  @error('price') is-invalid @enderror">
+                            <input type="number" required name="price" min="0" step=".01" class=" col-sm-2  @error('price') is-invalid @enderror">
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

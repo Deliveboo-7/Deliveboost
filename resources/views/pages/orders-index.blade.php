@@ -36,7 +36,7 @@
 
         {{-- ----------------- ACCORDION---------------- --}}
 
-        <div class="accordion debug " id="accordion">
+        <div class="accordion" id="accordion">
 
             @foreach ($orders as $order)
 
