@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Chart;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Order;
 
@@ -28,7 +28,7 @@ class ChartController extends Controller
             $chart->dataset = (array_values($groups));
             $chart->colours = $colours;
         return view('pages.statistics-index', compact('chart'));
-    }    
+    }
 
 }
 
@@ -52,7 +52,7 @@ class ChartController extends Controller
 //         $chart->dataset = (array_values($groups));
 //         $chart->colours = $colours;
 //     return view('pages.statistics-index', compact('chart'));
-//     }    
+//     }
 // }
 
 

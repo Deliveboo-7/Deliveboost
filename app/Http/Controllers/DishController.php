@@ -45,7 +45,7 @@ class DishController extends Controller
         $data['price'] *= 100;
 
         $loggedUser = Auth::user();
-        $newDish = Dish::make($data);
+        $newDish = Dish::make($validatedData);
         $newDish -> user() -> associate($loggedUser);
         $newDish -> save();
 

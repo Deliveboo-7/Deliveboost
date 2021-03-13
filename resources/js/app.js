@@ -133,7 +133,7 @@ new Vue({
         removeQty(dish){
 
             if (dish.quantity > 0 ) {
-                
+
                 dish.quantity--;
                 this.finalPrice -= dish.price;
             }
@@ -245,7 +245,7 @@ new Vue({
 
         braintree.client.create({
             //We’ll need an authorization key to use the Braintree SDK
-            authorization: 'sandbox_pg48p87f_d5p5fxwxprgtmpc2'
+            authorization: ''
         })
             .then(clientInstance => {
 
