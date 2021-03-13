@@ -36,7 +36,7 @@
 
         {{-- ----------------- ACCORDION---------------- --}}
 
-        <div class="accordion  " id="accordion">
+        <div class="accordion debug " id="accordion">
 
             @foreach ($orders as $order)
 
@@ -106,16 +106,23 @@
 
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-6">
                                     <h5>
                                         Dishes
                                     </h5>
-                                    <div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="text-right">
                                         @foreach($order -> dishes as $dish)
+                                        
                                             {{ $dish -> name }}@if (!$loop->last), @endif
+                                        
                                         @endforeach
                                     </div>
                                 </div>
+
+                                    
+                                
                             </div>
                         </div>
                     </div>

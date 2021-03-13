@@ -29,7 +29,7 @@
           <div class="card-body">
 
             <div class="alert alert-success" v-if="nonce">
-              Thank you! Your order is confirmed!
+              Thank you for your order!
             </div>
 
             <div class="alert alert-danger" v-if="error" v-show="!nonce">

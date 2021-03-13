@@ -34,7 +34,7 @@
                 </button>
 
                 <button class="btn-gold col-2 offset-2 mb-4" >
-                    {{-- <a href="{{ route('restaurant-menu'-> ) }}"> --}}
+                    <a href="{{ route('restaurant-menu', Auth::user() -> id) }}">
                         <div>
                             Public Menu
                         </div>
