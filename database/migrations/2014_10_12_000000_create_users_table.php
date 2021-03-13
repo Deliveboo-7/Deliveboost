@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table -> string('phone_number', 20) -> unique();
             $table -> text('opening_info');
             $table -> string('website');
+            $table -> string('delivery_time');
+            $table -> string('price_range');
             $table -> tinyInteger('vote_average') -> unsigned();
 
             $table -> rememberToken();

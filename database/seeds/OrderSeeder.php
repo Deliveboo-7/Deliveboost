@@ -14,7 +14,7 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 100)
+        factory(Order::class, 1000)
             -> create()
             -> each(function ($order) {
 

@@ -12,7 +12,7 @@
                 <h1 class="">ST</h1>
             </div>
 
-            <h2 class="text-center text-lighter col-lg-12">The luxuriest end fastest food delivery service</h2>
+            <h2 class="text-center text-lighter col-lg-12">The luxuriest and fastest food delivery service</h2>
         </div>
 
         <section  class="homeTypologies row">
@@ -22,7 +22,7 @@
                 {{-- <div class="provaTypNames col-12 text-gold" @click="getName({{ $typology -> name }})">PROVA</div> --}}
                 <div class="homeTypo col-6 pb-4 col-lg-3" @click="getData({{ $typology -> id }})">
 
-                    <img src="{{ asset('storage/images/typ_KB.png') }}" alt="" :class="typologiesIds.includes({{ $typology -> id }}) ? 'typologySelected' : ''">
+                    <img src="{{ $typology -> icon }}" alt="" :class="typologiesIds.includes({{ $typology -> id }}) ? 'typologySelected' : ''">
                     <div class="homeTypName">
                         {{ $typology -> name }}
                     </div>
@@ -82,12 +82,12 @@
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center">
 
-                                    <i class="fas fa-euro-sign"></i>
+                                    <span>@{{ restaurant.price_range }}</span>
 
                                 </div>
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center ">
-                                    <span>Min20 </span>
+                                    <span>Min:@{{ restaurant.delivery_time }}</span>
                                 </div>
 
                             </div>

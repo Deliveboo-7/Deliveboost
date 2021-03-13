@@ -6,8 +6,12 @@ use App\Dish;
 use Faker\Generator as Faker;
 
 $factory->define(Dish::class, function (Faker $faker) {
+
+    $faker = \Faker\Factory::create();
+\Bezhanov\Faker\ProviderCollectionHelper::addAllProvidersTo($faker);
+
     return [
-        'desc' => $faker -> sentence,
+        'desc' => $faker -> ingredient . ', ' . $faker -> ingredient . ', ' . $faker -> ingredient,
         'name' => $faker -> name,
         'price' => rand(250,3000),
         'visible' => rand(0,1),

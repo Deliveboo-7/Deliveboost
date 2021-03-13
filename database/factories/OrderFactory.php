@@ -11,8 +11,8 @@ $factory->define(Order::class, function (Faker $faker) {
         'customer_name' => $faker -> name,
         'customer_address' => $faker -> streetAddress,
         'customer_phone' => "392-" . rand(1234567, 9876543),
-        'date' => $faker -> dateTimeBetween('-30 years','now'),
+        'date' => $faker -> dateTimeBetween('-5 years','now'),
         'status' => "status",
-        'total_price' => rand(1000,10000),
+        'total_price' => rand(1000, 50000),
     ];
 });
