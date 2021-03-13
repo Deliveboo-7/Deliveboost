@@ -2,7 +2,7 @@
 
 @section('content')
 
-    
+
 
     {{-- -------------------------- COVER IMAGE AND TITLE ------------------------- --}}
 
@@ -96,14 +96,14 @@
                                 </div>
                                 <div class="col-12">
                                     <h5 class="text-gold">
-                                        
+
                                             Total Price:
-                                        
+
                                     </h5>
                                     <div class="text-gold">
-                                        
+
                                             {{$order -> total_price/100}} $
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -111,7 +111,9 @@
                                         Dishes
                                     </h5>
                                     <div>
-                                        {{ $order -> dishes }}
+                                        @foreach($order -> dishes as $dish)
+                                            {{ $dish -> name }}@if (!$loop->last), @endif
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
