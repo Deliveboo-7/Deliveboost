@@ -20,11 +20,11 @@
                 <ul class="navbar-nav ml-auto text-gold">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="">
+                        <li class="text-right pr-2">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li class="nav-item text-right pr-2">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif

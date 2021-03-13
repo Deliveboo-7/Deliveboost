@@ -78,14 +78,14 @@ class PublicController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-
+//dd($result);
         //TRANSACTION VERIFICATION
         if ($result -> success) {
-
+            //dd($result);
             $transaction = $result->transaction;
 
             //DATA NEW ORDER
-            $data['code'] = $transaction -> id;
+            $orderCode = $data['code'] = $transaction -> id;
             $data['status'] = $transaction -> status;
             $data['date']= $transaction -> createdAt;
             $data['total_price'] *= 100;
@@ -95,7 +95,7 @@ class PublicController extends Controller
             $dishesId = explode(',', $data['dishes']);
             $dishes = Dish::findOrFail($dishesId);
             $newOrder -> dishes() -> attach($dishes);
-
+            
             //CONFIRMATION ORDER MAIL
             $restaurant = User::findOrFail($data['selectedRestaurant']);
 //            dd($restaurant);
@@ -104,7 +104,7 @@ class PublicController extends Controller
             $restName = $restaurant -> company_name;
 
             Mail::to($email)
-            ->send(new OrderMail($cartList -> toArray(), $email, $restName));
+            ->send(new OrderMail($cartList -> toArray(), $email, $restName, $orderCode));
 
 
             return view('pages.payment-successful', compact('transaction'));

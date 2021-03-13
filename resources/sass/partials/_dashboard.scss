@@ -66,12 +66,13 @@ hr {
         }
 
         &:hover{
-                        background-color: $lightgrey;
-                        // border: 1px solid $lightgrey;
-                        cursor: pointer;
-                        text-decoration: none;
-            
-                    }
+            background-color: $lightgrey;
+            // border: 1px solid $lightgrey;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color .4s ease-in-out !important;
+
+        }
 }
 
 
