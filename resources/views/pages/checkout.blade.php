@@ -65,7 +65,7 @@
                     <div class="row m-0  bord-b p-2" v-for="item in checkout">
                     {{-- <div class="col-6 col-sm-4 offset-sm-2 text-silver orderItem"> </div> --}}
                     <input type="text" name="items[]" class="form-control col-6" placeholder="" :value= "item.name" readonly>
-                    <input type="text" name="items[]" class="form-control text-right col-2" placeholder="" :value="item.price/100 " readonly>
+                    <input type="text" class="form-control text-right col-2" placeholder="" :value="item.price/100 " readonly>
                     <div @click="removeQty(item)" class="cmdCheckout text-center col-1 p-2 "><i class="fas fa-minus"></i></div>
                     <input type="text" name="qty[]" class="form-control col-1 text-center" placeholder="" :value="item.quantity" readonly>
                     <div @click="addQty(item)" class=" cmdCheckout text-center col-1 p-2 "><i class="fas fa-plus "></i></div>  
