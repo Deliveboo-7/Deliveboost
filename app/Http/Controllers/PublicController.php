@@ -85,7 +85,7 @@ class PublicController extends Controller
             $transaction = $result->transaction;
 
             //DATA NEW ORDER
-            $data['code'] = $transaction -> id;
+            $orderCode = $data['code'] = $transaction -> id;
             $data['status'] = $transaction -> status;
             $data['date']= $transaction -> createdAt;
             $data['total_price'] *= 100;
@@ -104,7 +104,7 @@ class PublicController extends Controller
             $restName = $restaurant -> company_name;
 
             Mail::to($email)
-            ->send(new OrderMail($cartList -> toArray(), $email, $restName));
+            ->send(new OrderMail($cartList -> toArray(), $email, $restName, $orderCode));
 
 
             return view('pages.payment-successful', compact('transaction'));
