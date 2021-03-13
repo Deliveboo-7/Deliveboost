@@ -1,5 +1,6 @@
 <?php
 
+use App\Dish;
 use App\Typology;
 use App\User;
 use Illuminate\Database\Seeder;
@@ -17,9 +18,13 @@ class UserSeeder extends Seeder
             -> create()
             -> each(function ($user) {
 
-                $typology = Typology::inRandomOrder() -> limit(3) -> get();
+//                $dishes = Dish::inRandomOrder() -> limit(rand(1, 4)) -> get();
+//                $user -> dishes() -> attach($dishes);
+
+                $typology = Typology::inRandomOrder() -> limit(rand(1, 4)) -> get();
 
                 $user -> typologies() -> attach($typology);
+
             });
     }
 }

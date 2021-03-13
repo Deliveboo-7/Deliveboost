@@ -2,6 +2,7 @@
 
 use App\Dish;
 use App\Order;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class OrderSeeder extends Seeder
@@ -13,12 +14,14 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 30)
+        factory(Order::class, 100)
             -> create()
             -> each(function ($order) {
 
-                $dish = Dish::inRandomOrder() -> limit(3) -> get();
-                $order -> dishes() -> attach($dish);
+                $randomUser = User::inRandomOrder() -> first();
+                $dishes = $randomUser -> dishes() -> limit(rand(1, 6)) -> get();
+
+                $order -> dishes() -> attach($dishes);
             });
     }
 }
