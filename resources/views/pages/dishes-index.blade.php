@@ -26,11 +26,19 @@
 
             <div class="row pt-5">
                 <button class=" btn-gold col-2 offset-3 mb-4" >
-                    <a href="{{ route('dishes-create') }}">New dish</a>
+                    <a href="{{ route('dishes-create') }}">
+                        <div>
+                            New dish
+                        </div>
+                    </a>
                 </button>
 
                 <button class="btn-gold col-2 offset-2 mb-4" >
-                    <a href="">Public menu</a>
+                    {{-- <a href="{{ route('restaurant-menu'-> ) }}"> --}}
+                        <div>
+                            Public Menu
+                        </div>
+                    </a>
                 </button>
             </div>
         </div>
@@ -89,7 +97,7 @@
 
                                 </div>
 
-                                <a href="{{ route('dishes-edit', $dish -> id) }}" type="button" class="col-1 offset-md-1 cmdCheckout text-center text-gold">                              
+                                <a href="{{ route('dishes-edit', $dish -> id) }}" type="button" class="col-1 offset-1 offset-md-1 btn_edit text-center text-gold">                              
                                     <i class="far fa-edit"></i>                                            
                                 </a>
                             

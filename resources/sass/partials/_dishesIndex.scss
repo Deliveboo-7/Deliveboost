@@ -4,13 +4,14 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-// .dishes-index {
-//     button a {
-//         color: $gold;
-//     }
-//     a:hover {
-//         text-decoration: none;
-//         color: $silver;
 
-//     }
-// }
+
+.btn_edit{
+    // background-color: $lightgray;
+    // color:$gold;
+    &:hover{
+        color:$silver;
+        // background-color: $lightgrey;
+        // cursor: pointer;
+    }
+}
