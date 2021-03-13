@@ -3,6 +3,7 @@ html,
 body  {
     position: relative;
     min-height: 100%;
+    font-size: 14px;
     
 }
 main {
@@ -48,27 +49,23 @@ main {
     //debug
     height: 300px;
     
-    
-   
-        
-    
-    
-    
+    h1{
+        position: relative;
+        // font-size: 5em;
+        font-weight:lighter;
+        top:50%;
+        transform: translate(0,-50%);
+    }
+
     .title{
-        background-color: $silver;
-        opacity:.75;      
+        background-color:$silver;
+        opacity:.9;      
         height: 100px;
         width: 100%;
         color:$body;
         text-align: center;
 
-        h1{
-            position: relative;
-            font-size: 2em;//se lo cambio non cambia un cazzo
-            font-weight:300;
-            top:50%;
-            transform: translate(0,-50%);
-        }
+       
     }
 }
 
@@ -95,23 +92,20 @@ main {
 
 form {
 
-    
-
     label {
         color: $silver;
     }
     input[type="text"], 
     input[type="email"], 
     input[type="password"]
-    // textarea[type="text"]
-    
         {
+
         border: none;
         color: $silver;
         background-color: $lightgray !important;
             &:focus {
                 color:$silver;
-                border: solid 2px $gold !important;
+                border: solid 1px $gold !important;
                 outline: none;
             }
     }
@@ -132,18 +126,19 @@ form {
 
 // ------------  TEXT --------------
 
+
 html h1 {
-    font-size: 2em !important;
+    font-size: 2.5em !important;
 }
 
 @media (min-width: 576px) {
     html h1 {
-        font-size: 2.5em !important;
+        font-size: 3.5em !important;
     }
 }
 @media (min-width: 768px) {
     html h1 {
-        font-size: 3em !important;
+        font-size: 4em !important;
     }
 }
 @media (min-width: 992px) {

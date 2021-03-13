@@ -5,19 +5,20 @@ footer{
     // bottom:0;
     padding: 20px 0;
     background-color: $header;
-    color: $gold;
     position: absolute;
+    color:$gold;
     bottom: 0;
     border-top: 1px solid $lightgray;
 
     a {
-        color: $gold;
+        color: $lightgrey-light;
+       
         text-decoration: none;
     }
     
     a:hover 
     {
-        color: $silver; 
+        color: $silver;
         text-decoration: none; 
         cursor: pointer;  
     }

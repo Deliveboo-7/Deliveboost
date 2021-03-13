@@ -22,7 +22,7 @@
                 {{-- <div class="provaTypNames col-12 text-gold" @click="getName({{ $typology -> name }})">PROVA</div> --}}
                 <div class="homeTypo col-6 pb-4 col-lg-3" @click="getData({{ $typology -> id }})">
 
-                    <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/140/2020/07/16090452/A659763.jpg" alt="" :class="typologiesIds.includes({{ $typology -> id }}) ? 'typologySelected' : ''">
+                    <img src="{{ asset('storage/images/typ_KB.png') }}" alt="" :class="typologiesIds.includes({{ $typology -> id }}) ? 'typologySelected' : ''">
                     <div class="homeTypName">
                         {{ $typology -> name }}
                     </div>
@@ -51,7 +51,7 @@
 
             <div class="row d-flex justify-content-start mb-3 text-white  pt-2 pb-2"  >
 
-                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-4 animate__animated animate__zoomIn animate__fast" v-for="restaurant in restaurants" >
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-4 animate__animated animate__zoomIn animate__fast" v-for="restaurant in restaurants" >
 
                         <div class="restaurantCard row d-flex flex-column align-items-center justify-content-center text-center p-2 mx-1  ">
                             <div class="col py-4">
@@ -60,15 +60,17 @@
                                 </h2>
                             </div>
 
-                            <div class="col text-light restaurantName py-4">
-
-                            <div class="col  text-light restaurantName py-4">
+                            <div class="col  text-light restaurantName py-2">
                                 @{{ restaurant.company_name }}
                                 <hr>
                             </div>
-
+                           
                             <div class="col text-silver p-2 ">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officia perferendis qui voluptatum illo! Temporibus minima atque tempore natus facere.</p>
+                                @{{ restaurant.phone_number }}
+                            </div>
+
+                            <div class="col text-silver p-2 mb-2 ">
+                                @{{ restaurant.website }}
                             </div>
 
                             <div class="col text-gold d-flex justify-content-between py-1">
@@ -85,7 +87,7 @@
                                 </div>
 
                                 <div class="col-4 text-silver d-flex justify-content-center align-items-center ">
-                                    <span> Min:20</span>
+                                    <span>Min20 </span>
                                 </div>
 
                             </div>

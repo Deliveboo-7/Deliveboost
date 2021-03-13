@@ -15,7 +15,17 @@
             color: $gold;
             padding: 0 15px;
         }
-    
+        textarea {
+                border: none;
+                color: $silver;
+                background-color: $lightgray;
+                    &:focus {
+                        background-color: $lightgray; 
+                        color:$silver ;
+                        border: solid 1px $gold;
+                        outline: none;
+                    }
+            }
         .card{
                 
             background-color: $body;

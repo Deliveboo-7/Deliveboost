@@ -1,6 +1,6 @@
 #cover-menu{
 
-    background-image: url('/storage/images/cover_5.png'); 
+    background-image: url('/storage/images/cover_3.png'); 
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -17,6 +17,14 @@
             padding:0;
         }
 }
+
+
+.dishlist{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
 
 // --------BOTTONE ORO PER CHECKOUT ---------
 

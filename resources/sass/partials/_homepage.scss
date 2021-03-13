@@ -53,37 +53,32 @@
     }
 }
 
-.homeRestourants {
-    color: $gold;
-    font-size: 50px;
-}
+// .homeRestourants {
+//     color: $gold;
+//     font-size: 50px;
+// }
 
-.emptySearchMex {
-    color: $silver;
-}
 
-.restSearchResults {
-    ul {
-        list-style-type: none;
-        color: $gold;
-        li {
-            border-bottom: 1px solid $gold;
-        }
-    }
-}
+// --------------cosa fanno??? --------------------------------
 
-.deleteSearch {
-    text-align: center;
-}
+// .emptySearchMex {
+//     color: $silver;
+// }
 
-.deleteSearch:hover {
-    cursor: pointer;
-}
+// .restSearchResults {
+//     ul {
+//         list-style-type: none;
+//         color: $gold;
+//         li {
+//             border-bottom: 1px solid $gold;
+//         }
+//     }
+// }
 
-.homeTypologies div {
-    width: calc(100%/2);
-    height: auto;
-}
+// .homeTypologies div {
+//     width: calc(100%/2);
+//     height: auto;
+// }
 
 
 @media (min-width: 576px) {
@@ -119,10 +114,10 @@
         // }
 
     }
-    .homeTypologies div {
-    //    width: calc(100%/2);
-  //      height: auto;
-    }
+//     .homeTypologies div {
+//     //    width: calc(100%/2);
+//   //      height: auto;
+//     }
 }
 
 @media (min-width: 992px) {
@@ -140,10 +135,10 @@
         // }
 
     }
-    .homeTypologies {
-        div {
-     //   width: calc(100%/4);
-      //  height: auto;
-        }
-    }
-}
+//     .homeTypologies {
+//         div {
+//        width: calc(100%/4);
+//        height: auto;
+//         }
+//     }
+ }

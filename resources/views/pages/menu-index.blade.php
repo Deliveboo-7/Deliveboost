@@ -20,38 +20,41 @@
 <div class="container "> 
 
     <div class="row mt-4">
-        <div class="col-12 order-2 col-lg-5 order-lg-1 p-2">
-
+        
+        <div class="col-12 order-2  order-lg-1 p-3 ">
 
             <div  class="row text-gold  mb-4 p-2 bord-b">
 
-                <div class="col-7 " style="font-size: 1em;">
+                <div class="col-2 " style="font-size: 1em;">
                     <h4 class="text-lighter">Menu</h4>
                 </div>
 
-                
-                <div class="col-3  offset-sm-1 col-md-3 text-gold text-right">
+                <div class="col-2  text-gold text-right">
                     <h4 class="text-lighter">Price</h4>
                 </div>
 
                 <div class="col-1 text-center text-gold p-0">
                     <h4 class="text-lighter">Add</h4>            
                 </div>
-            
+
             </div>
-            
+        </div>
+        
+        
+        <div class="col-12 order-2 col-lg-5 order-lg-2  px-4 dishlist">
+
             <div v-for="dish in dishes"   class="row text-silver my-2 p-2 bord-lbr">
-             
+
                     <div class="col-7 " style="font-size: 1em;">
                         @{{ dish.name }}
                     </div>
 
                     
-                    <div class="col-3  offset-sm-1 col-md-3 text-right">
+                    <div class="col-3   col-md-3 text-right">
                         @{{ dish.price/100 }} €
                     </div>
 
-                    <div class="col-1 cmdCheckout text-center text-gold p-0" @click="addDish(dish)">
+                    <div class="col-1 offset-sm-1 cmdCheckout text-center text-gold p-0" @click="addDish(dish)">
                         <i class="fas fa-plus " ></i>                   
                     </div>
 
@@ -74,7 +77,7 @@
 
         {{-- --------------------------RESTAURANT INFO------------------------- --}}
 
-        <div class="col-12 order-1 col-lg-6 offset-lg-1  order-lg-2 bord-b p-2">
+        <div class="col-12 order-1 col-lg-6 offset-lg-1  order-lg-3 bord-b p-2">
             <div class="row">
                 <div class="col-12">
                     <div class="row p-0">
@@ -133,7 +136,7 @@
 
         {{-- ------------  CART UPDATING LIVE --------- --}}
 
-        <div class="col-12 col-lg-6 offset-lg-6 order-3 py-3" >
+        <div class="col-12 col-lg-6 offset-lg-6 order-4 py-3" >
             <div class="dishesSelected d-none d-lg-block">
                 <h4 class="text-gold text-lighter text-center">YOUR ORDER</h4>
 

@@ -1,6 +1,6 @@
 
 #cover-orders{
-    background-image: url('/storage/images/cover_9.png');
+    background-image: url('/storage/images/cover_10.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -11,28 +11,40 @@
         border: none !important;
     }
     .orderCard {
-        border: 1px $silver solid;
+        
         button {
             color: $gold !important;
         }
         button:hover {
+            background-color: $lightgray;
             text-decoration: none !important;
-            color: $gold;
+            color: $silver !important;
         }
         button:focus {
             text-decoration: none !important;
-            color: $silver !important;
+
         }
     
         
     }
     .orderInfo {
-        color: black;
-        background-color: $lightgrey ;
+        color: $lightgrey-light;
+        background-color: $lightgray-alpha ;
     }
 
     .details > div {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px dashed $lightgrey;
+        padding:.5em;
+        &:hover{
+
+            border-bottom: 1px solid $gold;
+
+
+        }
+        
     }
+
 }

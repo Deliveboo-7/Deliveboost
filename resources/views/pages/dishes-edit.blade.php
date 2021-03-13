@@ -8,7 +8,7 @@
     <section class=" row no-gutters">
         <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
             <div class="title text-uppercase">
-                <h1>creation</h1>
+                <h1>trasformation</h1>
             </div>
         </div>
     </section>
@@ -49,7 +49,7 @@
 
                         <div class="form-group row mx-0">
                             <label for="price" class="col-sm-2 text-left px-2"> Price</label>
-                            <input type="number" required name="price" min="0" step=".01" class=" col-sm-2 @error('price') is-invalid @enderror" value="{{ $dish -> price / 100 }}">
+                            <input type="number" required name="price" min="0" step=".01" class=" col-sm-2 @error('price') is-invalid @enderror" value="{{ $dish -> price  }}">
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
