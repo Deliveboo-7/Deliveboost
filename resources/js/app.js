@@ -132,9 +132,12 @@ new Vue({
 
         removeQty(dish){
 
-            dish.quantity--;
-            // this.finalPrice *= 100 ;
-            this.finalPrice -= dish.price;
+            if (dish.quantity > 0 ) {
+                
+                dish.quantity--;
+                this.finalPrice -= dish.price;
+            }
+
             localStorage.setItem('finalPrice',this.finalPrice);
 
         },
