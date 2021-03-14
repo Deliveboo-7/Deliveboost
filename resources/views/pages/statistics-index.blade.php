@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My statistics</title>
+    <title>Deliveboost</title>
+    <link rel="icon" href="{{ asset('storage/icons/favicon.png') }}">
 
 
     <!-- Fonts -->
@@ -46,7 +47,7 @@
                 <div class="cover col-12 d-flex flex-row align-items-center justify-content-center">
     
                     <div class="title text-uppercase">
-                        <h1> My stats</h1>
+                        <h1>Sales Statistics</h1>
                     </div>
                 </div>
             </div>
@@ -83,12 +84,12 @@
                 var chartYear = {
                     type: 'line',
                     data: {
-                        labels:  {!!json_encode($chart->labels)!!} ,
+                        labels:  {!!json_encode($chartYear->labels)!!} ,
                         datasets: [
                             {
                                 label: 'Annual Revenue',
-                                backgroundColor: {!! json_encode($chart->colours)!!} ,
-                                data:  {!! json_encode($chart->dataset)!!} ,
+                                backgroundColor: {!! json_encode($chartYear->colours)!!} ,
+                                data:  {!! json_encode($chartYear->dataset)!!} ,
                                 backgroundColor: 'rgba(192,192,192,0.1)',
                                 borderColor:'rgba(200, 179, 111, 0.3)',
                                 borderWidth:1,
@@ -104,7 +105,10 @@
                             yAxes: [{
                                 display: true,
                                 ticks: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                    callback: function(value, index, values) {
+                                        return '€ ' + value;
+                                    }
                                 }
                             }]
                         }
@@ -132,10 +136,14 @@
                             yAxes: [{
                                 display: true,
                                 ticks: {
-                                    beginAtZero: true   
+                                    beginAtZero: true,
+                                    callback: function(value, index, values) {
+                                        return '€ ' + value;
+                                    }  
                                 }
                             }]
                         }
+                        
                     }
                 }
                 //--------------------------
