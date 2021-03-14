@@ -12,7 +12,7 @@ $factory->define(Dish::class, function (Faker $faker) {
 
     return [
         'desc' => $faker -> ingredient . ', ' . $faker -> ingredient . ', ' . $faker -> ingredient,
-        'name' => $faker -> name,
+        'name' => $faker -> dishes,
         'price' => rand(250,3000),
         'visible' => rand(0,1),
         'type' => "nullable"

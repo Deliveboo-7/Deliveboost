@@ -105,7 +105,7 @@
                                     <div class="text-gold">Typology:</div>
                                     <div  class="text-silver">
                                         @foreach ($restaurant -> typologies as $typology)
-                                            {{$typology -> name}} fwerrwe
+                                            {{$typology -> name}}
                                                 @if (!$loop->last),
                                                 @endif
                                         @endforeach
