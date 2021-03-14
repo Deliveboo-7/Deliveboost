@@ -9,6 +9,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Faker\Generator as Faker;
+
 
 class RegisterController extends Controller
 {
@@ -73,6 +75,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        $faker = \Faker\Factory::create();
+
         $newUser = User::create([
 
             'email' => $data['email'],
@@ -83,7 +87,9 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'opening_info' => $data['opening_info'],
             'website' => $data['website'],
-            'vote_average' => rand(1,3)
+            'vote_average' => rand(1,3),
+            'delivery_time' => 0,
+            'price_range'=> $faker->randomElement(['€', '€€', '€€€']), 
         ]);
 
         $typologies = Typology::findOrFail($data['typologies']);

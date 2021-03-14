@@ -43,7 +43,7 @@
         
         <div class="col-12 order-2 col-lg-5 order-lg-2  px-4 dishlist">
 
-            <div v-for="dish in dishes"   class="row text-silver my-2 p-2 bord-lbr">
+            <div v-for="dish in dishes" v-show="dish.visible"  class="row text-silver my-2 p-2 bord-lbr">
 
                     <div class="col-7 " style="font-size: 1em;">
                         @{{ dish.name }}
