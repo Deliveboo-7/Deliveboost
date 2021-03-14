@@ -88,7 +88,7 @@ class RegisterController extends Controller
             'opening_info' => $data['opening_info'],
             'website' => $data['website'],
             'vote_average' => rand(1,3),
-            'delivery_time' => 0,
+            'delivery_time' => $faker->randomElement(['5', '10', '15','20', '25', '30']),
             'price_range'=> $faker->randomElement(['€', '€€', '€€€']), 
         ]);
 
