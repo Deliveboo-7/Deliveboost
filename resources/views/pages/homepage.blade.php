@@ -12,7 +12,7 @@
                 <h1 class="">ST</h1>
             </div>
 
-            <h2 class="text-center text-lighter col-lg-12">The luxuriest and fastest food delivery service</h2>
+            <h2 class="text-center text-lighter col-lg-12">The luxurious and fastest food delivery service</h2>
         </div>
 
         <section  class="homeTypologies row">
