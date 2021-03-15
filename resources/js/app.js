@@ -221,16 +221,17 @@ new Vue({
             axios.get('/api/dishes', {params: this.restaurantID})
                 .then(res => {
                     console.log(res.data)
+                    res.data.sort(function(a, b){
+                        let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase()
+                        if (nameA < nameB) //sort string ascending
+                            return -1
+                        if (nameA > nameB)
+                            return 1
+                        return 0 //default return value (no sorting)
+                    })
                     this.dishes = res.data;
                 })
         }
-
-        // if(localStorage.getItem('selectedRestaurant')) {
-        //
-        //     this.selectedRestaurant = parseInt(localStorage.getItem('selectedRestaurant'));
-        //     // localStorage.removeItem('selectedRestaurant');
-        //
-        // }
 
         if (localStorage.getItem('selectedDishes')) {
 
