@@ -21,7 +21,8 @@ class OrderController extends Controller
         })
             ->with(['dishes' => function($query) {
                 $query->where('user_id', auth()->id());
-            }])
+        }])
+            -> orderby('date', 'desc')
             ->get();
 
         return view ('pages.orders-index', compact('orders'));
