@@ -18,5 +18,10 @@
             </div>
         </div>
     </div>
+    <div class="row my-4">
+        <div class="col-4 offset-4 col-md-2 offset-md-5">
+            <a class="btn-gold text-center m-0" href="{{route('homepage')}}">HOMEPAGE</a>
+        </div>
+    </div>
 </div>
 @endsection
