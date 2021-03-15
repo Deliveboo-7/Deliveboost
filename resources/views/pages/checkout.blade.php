@@ -17,7 +17,7 @@
 
     {{-- --------------------------PAYMENT FORM------------------------- --}}
 
-  <div class="container-fluid">
+  <div class="container-fluid p-0">
     <div class="row">
       <div class="col-12  col-sm-10 offset-sm-1 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
         <div class="card paymentForm my-3">
@@ -62,10 +62,10 @@
 
                   <div class=" m-0 text-silver text-center bord-b p-2" v-if="checkout.length === 0"> YOUR CART IS EMPTY !</div>
 
-                    <div class="row m-0  bord-b p-2" v-for="item in checkout">
+                    <div class="row m-0  bord-b p-0" v-for="item in checkout">
                     {{-- <div class="col-6 col-sm-4 offset-sm-2 text-silver orderItem"> </div> --}}
-                    <input type="text" name="items[]" class="form-control col-6" placeholder="" :value= "item.name" readonly>
-                    <input type="text" class="form-control text-right col-2" placeholder="" :value="item.price/100 " readonly>
+                    <input type="text" name="items[]" class="form-control col-6 p-0" placeholder="" :value= "item.name" readonly>
+                    <input type="text" class="form-control text-right col-2 offset-1" placeholder="" :value="item.price/100 " readonly>
                     <div @click="removeQty(item)" class="cmdCheckout text-center col-1 p-2 "><i class="fas fa-minus"></i></div>
                     <input type="text" name="qty[]" class="form-control col-1 text-center" placeholder="" :value="item.quantity" readonly>
                     <div @click="addQty(item)" class=" cmdCheckout text-center col-1 p-2 "><i class="fas fa-plus "></i></div>  
