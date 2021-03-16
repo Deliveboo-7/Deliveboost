@@ -13,7 +13,7 @@ Tecnologie
 
 
 ### Versione Desktop
-<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/desktop-home.png?raw=true">
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/desktop-carrello.png?raw=true">
 
 <img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/desktop-carrello.png?raw=true">
 
