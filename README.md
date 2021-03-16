@@ -13,7 +13,16 @@ Tecnologie
 
 
 ### Versione Desktop
-<img src="https://raw.githubusercontent.com/manuelbosi/vue-boolflix/main/screenshot/boolfix_desktop.PNG" width="951" height="466">
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/desktop-home.png?raw=true">
+
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/desktop-carrello.png?raw=true">
+
+
+### Versione Tablet
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/ipad.png?raw=true">
+
 
 ### Versione Mobile
-<img src="https://raw.githubusercontent.com/manuelbosi/vue-boolflix/main/screenshot/boolfix_mobile.PNG" width="228" height="385">
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/mobile-home.png?raw=true">
+
+<img src="https://github.com/Deliveboo-7/Deliveboost/blob/main/screenshot/mobile-stats.png?raw=true">
