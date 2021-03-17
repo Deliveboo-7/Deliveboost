@@ -7,9 +7,12 @@ Tecnologie
 
 ### Funzionalità
 - Ricerca di ristoranti di lusso per consegna a domicilio. Possibilità di ricerca singola o multipla
-- Possibilità di implementare un carrello ed effettuare un checkout con pagamento simulato tramite Braintree
-- Possibilità di modificare e creare nuovi piatti, analizzare statistiche vendite(chart.js)
+- Possibilità di implementare un carrello ed effettuare un checkout con pagamento simulato
+- Possibilità di modificare e creare nuovi piatti, analizzare statistiche vendite
 
+### Tools
+- Chart JS (grafici)
+- Braintree (pagamenti)
 
 
 ### Versione Desktop
