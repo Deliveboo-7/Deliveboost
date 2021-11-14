@@ -25,7 +25,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use \App\Http\Traits\RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -89,7 +89,7 @@ class RegisterController extends Controller
             'website' => $data['website'],
             'vote_average' => rand(1,3),
             'delivery_time' => $faker->randomElement(['5', '10', '15','20', '25', '30']),
-            'price_range'=> $faker->randomElement(['€', '€€', '€€€']), 
+            'price_range'=> $faker->randomElement(['€', '€€', '€€€']),
         ]);
 
         $typologies = Typology::findOrFail($data['typologies']);
